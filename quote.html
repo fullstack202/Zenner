@@ -14,9 +14,8 @@
     <link type="text/css" href="assets/css/style.css" rel="stylesheet" />
 </head>
 
-<body class="flex xl:px-20 2xl:px-40" x-data="page1()"
-    style="max-width:1920px;margin:auto"
->
+<body class="flex xl:px-20 2xl:px-40" x-data="page1()" x-init="[initDate(), getNoOfDays()]"
+    style="max-width:1920px;margin:auto">
     <section class="
         w-full
         lg:w-8/12
@@ -69,7 +68,7 @@
                 <a @click="data.tab = 2" href="#02"
                     x-bind:class="data.tab == 2 ? 'mx-1 border-b-4 border-primary_light w-32 lg:w-1/4 py-4 text-primary' : 'mx-1 border-b-4 border-gray-300 w-32 lg:w-1/4 py-4 text-gray-400'">
                     02 TRAVELER
-                    <div  x-show="data.form.travellers[0].email" class="
+                    <div x-show="data.form.travellers[0].email" class="
                 absolute
                 text-center
                 mt-10
@@ -80,13 +79,13 @@
                 justify-center
                 text-primary_light
               ">
-                        <span  class="pl-2 uppercase" x-text="data.form.travellers.length + ' Person'"></span>
+                        <span class="pl-2 uppercase" x-text="data.form.travellers.length + ' Person'"></span>
                     </div>
                 </a>
                 <a @click="data.tab = 3" href="#03"
                     x-bind:class="data.tab == 3 ? 'mx-1 border-b-4 border-primary_light w-32 lg:w-1/4 py-4 text-primary' : 'mx-1 border-b-4 border-gray-300 w-32 lg:w-1/4 py-4 text-gray-400'">
                     03 PAYMENT
-                    <div  x-show="data.form.payment.card_number" class="
+                    <div x-show="data.form.payment.card_number" class="
                 absolute
                 text-center
                 mt-10
@@ -97,7 +96,7 @@
                 justify-center
                 text-primary_light
               ">
-                        <span  class="pl-2 uppercase" x-text="'VISA '+data.form.payment.card_number.substr(1,4)"></span>
+                        <span class="pl-2 uppercase" x-text="'VISA '+data.form.payment.card_number.substr(1,4)"></span>
                     </div>
                 </a>
                 <a @click="data.tab = 4" href="#04"
@@ -456,17 +455,20 @@
                             </div>
                         </div>
                         <div class="w-full lg:w-1/2 p-1 mb-3">
-                            <button class="
-                    w-full
-                    rounded-xl
-                    border border-primary
-                    py-1
-                    px-3
-                    flex
-                    py-5
-                  ">
+                            <button @click="showDatepicker = {
+                                traveller: index,
+                                show: true
+                            }" class="
+                                w-full
+                                rounded-xl
+                                border border-primary
+                                py-1
+                                px-3
+                                flex
+                                py-5
+                            ">
                                 <span class="text-xl xl:text-2xl font-semibold px-2"
-                                    x-text="summaryData.when.from.label"></span>
+                                    x-text="traveller.date.label"></span>
                                 <svg class="ml-auto" width="32" height="32" viewBox="0 0 32 32" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -550,7 +552,7 @@
                         <div class="w-full lg:w-1/2 p-1 mb-3">
                             <div class="w-full rounded-xl border border-primary py-1 px-3">
                                 <label class="px-3 text-gray-400">Email</label>
-                                <input x-model="traveller.email" placeholder="test@test.com" type="text" class="
+                                <input x-model="traveller.email" placeholder="test@test.com" type="email" class="
                       text-xl
                       xl:text-2xl
                       font-semibold
@@ -789,12 +791,11 @@
         <div class="w-full lg:w-3/4 flex mt-40">
             <span class="text-xl xl:text-2xl">Summary of your insurance</span>
             <a class="ml-auto mt-2" href="index.html">
-                <svg  width="17" height="20" viewBox="0 0 17 20" fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                    d="M15.9999 18H1.99994C1.73472 18 1.48037 18.1054 1.29283 18.2929C1.1053 18.4804 0.999938 18.7348 0.999938 19C0.999938 19.2652 1.1053 19.5196 1.29283 19.7071C1.48037 19.8947 1.73472 20 1.99994 20H15.9999C16.2652 20 16.5195 19.8947 16.707 19.7071C16.8946 19.5196 16.9999 19.2652 16.9999 19C16.9999 18.7348 16.8946 18.4804 16.707 18.2929C16.5195 18.1054 16.2652 18 15.9999 18ZM1.99994 16H2.08994L6.25994 15.62C6.71673 15.5745 7.14397 15.3732 7.46994 15.05L16.4699 6.05001C16.8193 5.68098 17.008 5.18852 16.9949 4.68055C16.9818 4.17257 16.7678 3.69052 16.3999 3.34001L13.6599 0.600011C13.3023 0.264106 12.8337 0.0713693 12.3433 0.0584625C11.8528 0.0455557 11.3747 0.21338 10.9999 0.530011L1.99994 9.53001C1.6767 9.85598 1.47544 10.2832 1.42994 10.74L0.999938 14.91C0.986467 15.0565 1.00547 15.2041 1.0556 15.3424C1.10573 15.4807 1.18574 15.6062 1.28994 15.71C1.38338 15.8027 1.49419 15.876 1.61603 15.9258C1.73787 15.9755 1.86833 16.0008 1.99994 16ZM12.2699 2.00001L14.9999 4.73001L12.9999 6.68001L10.3199 4.00001L12.2699 2.00001Z"
-                    fill="black" />
-            </svg>
+                <svg width="17" height="20" viewBox="0 0 17 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M15.9999 18H1.99994C1.73472 18 1.48037 18.1054 1.29283 18.2929C1.1053 18.4804 0.999938 18.7348 0.999938 19C0.999938 19.2652 1.1053 19.5196 1.29283 19.7071C1.48037 19.8947 1.73472 20 1.99994 20H15.9999C16.2652 20 16.5195 19.8947 16.707 19.7071C16.8946 19.5196 16.9999 19.2652 16.9999 19C16.9999 18.7348 16.8946 18.4804 16.707 18.2929C16.5195 18.1054 16.2652 18 15.9999 18ZM1.99994 16H2.08994L6.25994 15.62C6.71673 15.5745 7.14397 15.3732 7.46994 15.05L16.4699 6.05001C16.8193 5.68098 17.008 5.18852 16.9949 4.68055C16.9818 4.17257 16.7678 3.69052 16.3999 3.34001L13.6599 0.600011C13.3023 0.264106 12.8337 0.0713693 12.3433 0.0584625C11.8528 0.0455557 11.3747 0.21338 10.9999 0.530011L1.99994 9.53001C1.6767 9.85598 1.47544 10.2832 1.42994 10.74L0.999938 14.91C0.986467 15.0565 1.00547 15.2041 1.0556 15.3424C1.10573 15.4807 1.18574 15.6062 1.28994 15.71C1.38338 15.8027 1.49419 15.876 1.61603 15.9258C1.73787 15.9755 1.86833 16.0008 1.99994 16ZM12.2699 2.00001L14.9999 4.73001L12.9999 6.68001L10.3199 4.00001L12.2699 2.00001Z"
+                        fill="black" />
+                </svg>
             </a>
         </div>
         <div class="w-full lg:w-3/4 shadow-md rounded-xl p-10">
@@ -802,11 +803,13 @@
             <ul>
                 <li class="mb-5">
                     <h2 class="mb-3 text-primary opacity-70 text-xl">Your Plan:</h2>
-                    <strong class="text-primary font-bold text-lg xl:text-xl mb-3" x-text="data.form.quote.plan"></strong>
+                    <strong class="text-primary font-bold text-lg xl:text-xl mb-3"
+                        x-text="data.form.quote.plan"></strong>
                 </li>
                 <li>
                     <h2 class="mb-3 text-primary opacity-70 text-xl">Total Price:</h2>
-                    <strong class="text-primary font-bold text-lg xl:text-xl" x-text="'$'+data.form.quote.price"></strong>
+                    <strong class="text-primary font-bold text-lg xl:text-xl"
+                        x-text="'$'+data.form.quote.price"></strong>
                 </li>
             </ul>
         </div>
@@ -817,7 +820,8 @@
                     <h2 class="mb-3 text-primary opacity-70 text-xl">
                         State of Residence:
                     </h2>
-                    <strong class="text-primary font-bold text-lg xl:text-xl mb-3 uppercase" x-text="summaryData.what"></strong>
+                    <strong class="text-primary font-bold text-lg xl:text-xl mb-3 uppercase"
+                        x-text="summaryData.what"></strong>
                 </li>
                 <li class="mb-5">
                     <h2 class="mb-3 text-primary opacity-70 text-xl">Travel Dates:</h2>
@@ -838,10 +842,110 @@
         </div>
     </section>
 
+
+
+    <!-- Datepicker -->
+
+
+    <div class="w-screen h-screen bg-gray-200 fixed flex items-center justify-center"
+        x-show.transition="showDatepicker.show">
+        <input type="hidden" name="date" x-ref="date" />
+        <div class="bg-white mt-12 rounded-lg shadow p-4" style="width: 17rem"
+            @click.away="showDatepicker.show = false">
+            <div class="flex justify-between items-center mb-2">
+                <div>
+                    <span x-text="MONTH_NAMES[month]" class="text-lg font-bold text-gray-800"></span>
+                    <span x-text="year" class="ml-1 text-lg text-gray-600 font-normal"></span>
+                </div>
+                <div>
+                    <button type="button" class="
+              transition
+              ease-in-out
+              duration-100
+              inline-flex
+              cursor-pointer
+              hover:bg-gray-200
+              p-1
+              rounded-full
+            " :class="{'cursor-not-allowed opacity-25': month == 0 }" :disabled="month == 0 ? true : false"
+                        @click="month--; getNoOfDays()">
+                        <svg class="h-6 w-6 text-gray-500 inline-flex" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                        </svg>
+                    </button>
+                    <button type="button" class="
+              transition
+              ease-in-out
+              duration-100
+              inline-flex
+              cursor-pointer
+              hover:bg-gray-200
+              p-1
+              rounded-full
+            " :class="{'cursor-not-allowed opacity-25': month == 11 }" :disabled="month == 11 ? true : false"
+                        @click="month++; getNoOfDays()">
+                        <svg class="h-6 w-6 text-gray-500 inline-flex" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="flex flex-wrap mb-3 -mx-1">
+                <template x-for="(day, index) in DAYS" :key="index">
+                    <div style="width: 14.26%" class="px-1">
+                        <div x-text="day" class="text-gray-800 font-medium text-center text-xs"></div>
+                    </div>
+                </template>
+            </div>
+
+            <div class="flex flex-wrap -mx-1">
+                <template x-for="blankday in blankdays">
+                    <div style="width: 14.28%" class="text-center border p-1 border-transparent text-sm"></div>
+                </template>
+                <template x-for="(date, dateIndex) in no_of_days" :key="dateIndex">
+                    <div style="width: 14.28%" class="px-1 mb-1">
+                        <div @click="getDateValue(date)" x-text="date" class="
+                cursor-pointer
+                text-center text-sm
+                leading-none
+                rounded-full
+                leading-loose
+                transition
+                ease-in-out
+                duration-100
+              " :class="{'bg-blue-500 text-white': isToday(date) == true, 'text-gray-700 hover:bg-blue-200': isToday(date) == false }">
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </div>
+
+    </div>
     <script type="text/javascript" src="assets/js/main.js" defer></script>
 
     <script>
+
+        const MONTH_NAMES = [
+            "JAN",
+            "FEB",
+            "MAR",
+            "APR",
+            "MAY",
+            "JUN",
+            "JUL",
+            "AUG",
+            "SEP",
+            "OCT",
+            "NOV",
+            "DEC",
+        ];
+        const DAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
         function page1() {
+
             let tabActive = 1;
             if (location.href.split("#")[1] !== undefined) {
                 tabActive = parseInt(location.href.split("#")[1]);
@@ -910,8 +1014,75 @@
                 },
                 addNewTraveller,
                 saveData,
+                showDatepicker: {
+                    traveller: 0,
+                    show: false
+                },
+                datepickerValue: "",
+                month: "",
+                year: "",
+                no_of_days: [],
+                blankdays: [],
+                days: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+                initDate() {
+                    let today = new Date();
+                    this.month = today.getMonth();
+                    this.year = today.getFullYear();
+                    this.datepickerValue = new Date(
+                        this.year,
+                        this.month,
+                        today.getDate()
+                    ).toDateString();
+                },
+                isToday(date) {
+                    const today = new Date();
+                    const d = new Date(this.year, this.month, date);
+                    return today.toDateString() === d.toDateString() ? true : false;
+                },
+                getDateValue(date) {
+                    let selectedDate = new Date(this.year, this.month, date);
+                    this.datepickerValue = selectedDate.toDateString();
+                    this.$refs.date.value =
+                        selectedDate.getFullYear() +
+                        "-" +
+                        ("0" + selectedDate.getMonth()).slice(-2) +
+                        "-" +
+                        ("0" + selectedDate.getDate()).slice(-2);
+
+                    // save to real model
+                    this.data.form.travellers[this.showDatepicker.traveller].date = {
+                        label: ("0" + selectedDate.getDate()).slice(-2) + " " + MONTH_NAMES[this.month] + " " + this.year,
+                        month: ("0" + selectedDate.getDate()).slice(-2) + " " + MONTH_NAMES[this.month],
+                        date: this.$refs.date.value
+                    }
+
+                    this.showDatepicker = {
+                        traveller: 0,
+                        show: false
+                    }
+                },
+
+                getNoOfDays() {
+                    let daysInMonth = new Date(this.year, this.month + 1, 0).getDate();
+
+                    // find where to start calendar day of week
+                    let dayOfWeek = new Date(this.year, this.month).getDay();
+                    let blankdaysArray = [];
+                    for (var i = 1; i <= dayOfWeek; i++) {
+                        blankdaysArray.push(i);
+                    }
+
+                    let daysArray = [];
+                    for (var i = 1; i <= daysInMonth; i++) {
+                        daysArray.push(i);
+                    }
+
+                    this.blankdays = blankdaysArray;
+                    this.no_of_days = daysArray;
+                },
             };
         }
+
     </script>
 </body>
 
