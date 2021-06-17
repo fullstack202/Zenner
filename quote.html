@@ -69,7 +69,7 @@
                 <a @click="data.tab = 2" href="#02"
                     x-bind:class="data.tab == 2 ? 'mx-1 border-b-4 border-primary_light w-32 lg:w-1/4 py-4 text-primary' : 'mx-1 border-b-4 border-gray-300 w-32 lg:w-1/4 py-4 text-gray-400'">
                     02 TRAVELER
-                    <div  x-show="data.form.travellers.length" class="
+                    <div  x-show="data.form.travellers[0].email" class="
                 absolute
                 text-center
                 mt-10
@@ -86,7 +86,7 @@
                 <a @click="data.tab = 3" href="#03"
                     x-bind:class="data.tab == 3 ? 'mx-1 border-b-4 border-primary_light w-32 lg:w-1/4 py-4 text-primary' : 'mx-1 border-b-4 border-gray-300 w-32 lg:w-1/4 py-4 text-gray-400'">
                     03 PAYMENT
-                    <div class="pl-2 uppercase" x-show="data.form.payment.card_number" class="
+                    <div  x-show="data.form.payment.card_number" class="
                 absolute
                 text-center
                 mt-10
