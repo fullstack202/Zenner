@@ -1,0 +1,17 @@
+.hide-scroll-bar {
+-ms-overflow-style: none;
+scrollbar-width: none;
+}
+.hide-scroll-bar::-webkit-scrollbar {
+display: none;
+}
+
+.bg-right-cover{
+    background-position: center;
+}
+.form-checkbox{
+    border-radius: 30%;
+}
+.card-plan-shadow{
+        box-shadow: 16.0951px 17.7046px 19.3141px rgba(23, 18, 63, 0.120028);
+}

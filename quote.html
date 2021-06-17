@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="Zenner" />
+    <link rel="shortcut icon" href="./assets/img/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png" />
+    <title>Zenner Quote</title>
+    <link type="text/css" href="assets/css/style.css" rel="stylesheet" />
+</head>
+
+<body class="flex xl:px-20 2xl:px-40" x-data="page1()"
+    style="max-width:1920px;margin:auto"
+>
+    <section class="
+        w-full
+        lg:w-8/12
+        h-full
+        lg:pt-10
+        overflow-y-scroll
+        hide-scroll-bar
+        relative
+        flex
+        justify-center
+        flex-wrap
+        items-start
+        pb-40
+      ">
+        <div class="py-10 w-full">
+            <img class="ml-10" width="auto" src="/assets/img/logo.png" alt="Logo Zenner" />
+        </div>
+        <!-- Tabs -->
+        <div class="px-5 flex overflow-x-scroll hide-scroll-bar mt-5 lg:w-full lg:px-10">
+            <div class="
+            flex flex-nowrap
+            lg:text-lg
+            xl:text-xl
+            font-bold
+            text-center
+            relative
+            h-20
+            lg:h-40
+            items-start
+            lg:w-full
+          ">
+                <a @click="data.tab = 1" href="#01"
+                    x-bind:class="data.tab == 1 ? 'mx-1 border-b-4 border-primary_light w-32 lg:w-1/4 py-4 text-primary' : 'mx-1 border-b-4 border-gray-300 w-32 lg:w-1/4 py-4 text-gray-400'">
+                    01 QUOTE
+                    <div x-show="data.form.quote.plan" class="
+                absolute
+                text-center
+                mt-10
+                w-32
+                lg:w-1/4
+                justify-center
+                text-primary_light
+                hidden
+                lg:flex
+              ">
+                        <span class="text-sm pl-2" x-text="data.form.quote.plan"></span>
+                    </div>
+                </a>
+                <a @click="data.tab = 2" href="#02"
+                    x-bind:class="data.tab == 2 ? 'mx-1 border-b-4 border-primary_light w-32 lg:w-1/4 py-4 text-primary' : 'mx-1 border-b-4 border-gray-300 w-32 lg:w-1/4 py-4 text-gray-400'">
+                    02 TRAVELER
+                    <div x-show="data.form.travellers.length" class="
+                absolute
+                text-center
+                mt-10
+                w-32
+                lg:w-1/4
+                hidden
+                lg:flex
+                justify-center
+                text-primary_light
+              ">
+                        <span class="text-sm ml-2 uppercase" x-text="data.form.travellers.length + ' Person'"></span>
+                    </div>
+                </a>
+                <a @click="data.tab = 3" href="#03"
+                    x-bind:class="data.tab == 3 ? 'mx-1 border-b-4 border-primary_light w-32 lg:w-1/4 py-4 text-primary' : 'mx-1 border-b-4 border-gray-300 w-32 lg:w-1/4 py-4 text-gray-400'">
+                    03 PAYMENT
+                    <div x-show="data.form.payment.card_number" class="
+                absolute
+                text-center
+                mt-10
+                w-32
+                lg:w-1/4
+                hidden
+                lg:flex
+                justify-center
+                text-primary_light
+              ">
+                        <span x-text="'VISA '+data.form.payment.card_number.substr(1,4)"></span>
+                    </div>
+                </a>
+                <a @click="data.tab = 4" href="#04"
+                    x-bind:class="data.tab == 4 ? 'mx-1 border-b-4 border-primary_light w-32 lg:w-1/4 py-4 text-primary' : 'mx-1 border-b-4 border-gray-300 w-32 lg:w-1/4 py-4 text-gray-400'">
+                    04 SUCCES</a>
+            </div>
+        </div>
+        <!-- End Tabs -->
+
+        <div class="w-full px-5 2xl:px-20 text-left">
+            <div class="w-full flex flex-wrap justify-center items-start" x-show="data.tab == 1">
+                <div class="
+              w-full
+              hidden
+              lg:block
+              lg:w-1/4
+              shadow-xl
+              lg:shadow-none
+              py-10
+              h-full
+              mt-5
+            ">
+                    <ul class="py-5 mt-20 text-primary opacity-70">
+                        <li class="flex items-center pb-7">
+                            <div>Plan Overview</div>
+                        </li>
+                        <li class="flex items-center pb-7">
+                            <div>Trip Cancellation</div>
+                        </li>
+                        <li class="flex items-center pb-7">
+                            <div>Cancel for Any Reason</div>
+                        </li>
+                        <li class="flex items-center pb-7">
+                            <div>Trip Intrurruption</div>
+                        </li>
+                        <li class="flex items-center pb-7">
+                            <div>Medical Expenses</div>
+                        </li>
+                        <li class="flex items-center">
+                            <div>Trip Delay</div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="w-full lg:w-1/4 shadow-xl lg:shadow-none p-5 rounded-xl mt-5">
+                    <div class="w-full flex flex-wrap">
+                        <h1 class="text-primary font-bold text-2xl mb-3 lg:w-full">
+                            Starter
+                        </h1>
+                        <span class="ml-auto mb-3 flex">
+                            <b class="font-bold text-3xl">$20</b>
+                            <span class="text-gray-400 mt-2 ml-2">/month</span></span>
+                    </div>
+                    <ul class="py-5">
+                        <li class="flex items-center pb-3 lg:pb-10">
+                            <div class="block lg:hidden">Plan Overview</div>
+                            <div class="w-5 lg:w-full flex justify-center ml-auto">
+                                <svg width="14" height="12" viewBox="0 0 14 12" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M13.5537 1.77865L11.8672 0.0886602C11.8105 0.0318998 11.7336 0 11.6534 0C11.5731 0 11.4962 0.0318998 11.4395 0.0886602L4.3167 7.21075C4.26004 7.26751 4.18311 7.29941 4.10287 7.29941C4.02264 7.29941 3.94571 7.26751 3.88904 7.21075L2.20257 5.52076C2.1459 5.464 2.06897 5.4321 1.98874 5.4321C1.9085 5.4321 1.83157 5.464 1.77491 5.52076L0.0884273 7.21075C-0.0294758 7.32859 -0.0294758 7.51962 0.0884273 7.63747L3.88904 11.4357C3.94571 11.4925 4.02264 11.5244 4.10287 11.5244C4.18311 11.5244 4.26004 11.4925 4.3167 11.4357L13.5537 2.20114C13.6688 2.0838 13.6688 1.89599 13.5537 1.77865Z"
+                                        fill="#391F75" />
+                                </svg>
+                            </div>
+                        </li>
+                        <li class="flex items-center pb-3 lg:pb-10">
+                            <div class="block lg:hidden">Trip Cancellation</div>
+                            <div class="w-5 lg:w-full flex justify-center ml-auto">
+                                <svg width="14" height="12" viewBox="0 0 14 12" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M13.5537 1.77865L11.8672 0.0886602C11.8105 0.0318998 11.7336 0 11.6534 0C11.5731 0 11.4962 0.0318998 11.4395 0.0886602L4.3167 7.21075C4.26004 7.26751 4.18311 7.29941 4.10287 7.29941C4.02264 7.29941 3.94571 7.26751 3.88904 7.21075L2.20257 5.52076C2.1459 5.464 2.06897 5.4321 1.98874 5.4321C1.9085 5.4321 1.83157 5.464 1.77491 5.52076L0.0884273 7.21075C-0.0294758 7.32859 -0.0294758 7.51962 0.0884273 7.63747L3.88904 11.4357C3.94571 11.4925 4.02264 11.5244 4.10287 11.5244C4.18311 11.5244 4.26004 11.4925 4.3167 11.4357L13.5537 2.20114C13.6688 2.0838 13.6688 1.89599 13.5537 1.77865Z"
+                                        fill="#391F75" />
+                                </svg>
+                            </div>
+                        </li>
+                        <li class="flex items-center pb-3 lg:pb-10">
+                            <div class="block lg:hidden">Cancel for Any Reason</div>
+                            <div class="w-5 lg:w-full flex justify-center ml-auto">
+                                <svg width="14" height="12" viewBox="0 0 14 12" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M13.5537 1.77865L11.8672 0.0886602C11.8105 0.0318998 11.7336 0 11.6534 0C11.5731 0 11.4962 0.0318998 11.4395 0.0886602L4.3167 7.21075C4.26004 7.26751 4.18311 7.29941 4.10287 7.29941C4.02264 7.29941 3.94571 7.26751 3.88904 7.21075L2.20257 5.52076C2.1459 5.464 2.06897 5.4321 1.98874 5.4321C1.9085 5.4321 1.83157 5.464 1.77491 5.52076L0.0884273 7.21075C-0.0294758 7.32859 -0.0294758 7.51962 0.0884273 7.63747L3.88904 11.4357C3.94571 11.4925 4.02264 11.5244 4.10287 11.5244C4.18311 11.5244 4.26004 11.4925 4.3167 11.4357L13.5537 2.20114C13.6688 2.0838 13.6688 1.89599 13.5537 1.77865Z"
+                                        fill="#391F75" />
+                                </svg>
+                            </div>
+                        </li>
+                        <li class="flex items-center pb-3 lg:pb-10">
+                            <div class="block lg:hidden">Trip Intrurruption</div>
+                            <div class="lg:w-full flex justify-center ml-auto">1 user</div>
+                        </li>
+                        <li class="flex items-center pb-3 lg:pb-10">
+                            <div class="block lg:hidden">Medical Expenses</div>
+                            <div class="w-5 lg:w-full flex justify-center ml-auto">
+                                <svg width="14" height="12" viewBox="0 0 14 12" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M13.5537 1.77865L11.8672 0.0886602C11.8105 0.0318998 11.7336 0 11.6534 0C11.5731 0 11.4962 0.0318998 11.4395 0.0886602L4.3167 7.21075C4.26004 7.26751 4.18311 7.29941 4.10287 7.29941C4.02264 7.29941 3.94571 7.26751 3.88904 7.21075L2.20257 5.52076C2.1459 5.464 2.06897 5.4321 1.98874 5.4321C1.9085 5.4321 1.83157 5.464 1.77491 5.52076L0.0884273 7.21075C-0.0294758 7.32859 -0.0294758 7.51962 0.0884273 7.63747L3.88904 11.4357C3.94571 11.4925 4.02264 11.5244 4.10287 11.5244C4.18311 11.5244 4.26004 11.4925 4.3167 11.4357L13.5537 2.20114C13.6688 2.0838 13.6688 1.89599 13.5537 1.77865Z"
+                                        fill="#391F75" />
+                                </svg>
+                            </div>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="block lg:hidden">Trip Delay</div>
+                            <div class="w-5 lg:w-full flex justify-center ml-auto">
+                                <svg width="15" height="16" viewBox="0 0 15 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M8.63786 7.95677C8.60945 7.92846 8.59349 7.89002 8.59349 7.84994C8.59349 7.80985 8.60945 7.77142 8.63786 7.74311L14.2331 2.15287C14.5869 1.79886 14.5864 1.22531 14.2322 0.8718C13.8779 0.518292 13.3039 0.518697 12.9501 0.872705L7.35548 6.46053C7.32715 6.48891 7.28868 6.50486 7.24857 6.50486C7.20845 6.50486 7.16998 6.48891 7.14165 6.46053L1.54704 0.872705C1.19326 0.51903 0.619524 0.518895 0.265573 0.872403C-0.0883787 1.22591 -0.0885139 1.7992 0.265271 2.15287L5.85928 7.74311C5.88768 7.77142 5.90364 7.80985 5.90364 7.84994C5.90364 7.89002 5.88768 7.92846 5.85928 7.95677L0.265271 13.5476C0.0364121 13.7764 -0.0529097 14.1098 0.0309517 14.4222C0.114813 14.7347 0.359117 14.9787 0.671837 15.0623C0.984557 15.146 1.31818 15.0566 1.54704 14.8278L7.14165 9.23693C7.16998 9.20855 7.20845 9.1926 7.24857 9.1926C7.28868 9.1926 7.32715 9.20855 7.35548 9.23693L12.9501 14.8278C13.3039 15.1814 13.8776 15.1816 14.2316 14.8281C14.5855 14.4746 14.5856 13.9013 14.2319 13.5476L8.63786 7.95677Z"
+                                        fill="#F496D1" />
+                                </svg>
+                            </div>
+                        </li>
+                    </ul>
+                    <button
+                        @click="data.form.quote = { plan: 'Starter', price: 20}; data.tab = data.tab+1; location.href = '#0'+data.tab;  location.href = '#0'+data.tab "
+                        class="
+                w-full
+                bg-primary
+                text-white
+                p-3
+                text-center
+                rounded-xl
+                lg:mt-20
+              ">
+                        Choose plan
+                    </button>
+                </div>
+                <div class="
+              w-full
+              lg:w-1/4
+              shadow-xl
+              card-plan-shadow
+              p-5
+              rounded-xl
+              mt-5
+            ">
+                    <div class="w-full flex flex-wrap">
+                        <h1 class="text-primary font-bold text-2xl mb-3 lg:w-full">
+                            Pro
+                        </h1>
+                        <span class="ml-auto mb-3 flex">
+                            <b class="font-bold text-3xl">$100</b>
+                            <span class="text-gray-400 mt-2 ml-2"> /month
+                            </span>
+
+                        </span>
+                    </div>
+                    <ul class="py-5">
+                        <li class="flex items-center pb-3 lg:pb-10">
+                            <div class="block lg:hidden">Plan Overview</div>
+                            <div class="w-5 lg:w-full flex justify-center ml-auto">
+                                <svg width="14" height="12" viewBox="0 0 14 12" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M13.5537 1.77865L11.8672 0.0886602C11.8105 0.0318998 11.7336 0 11.6534 0C11.5731 0 11.4962 0.0318998 11.4395 0.0886602L4.3167 7.21075C4.26004 7.26751 4.18311 7.29941 4.10287 7.29941C4.02264 7.29941 3.94571 7.26751 3.88904 7.21075L2.20257 5.52076C2.1459 5.464 2.06897 5.4321 1.98874 5.4321C1.9085 5.4321 1.83157 5.464 1.77491 5.52076L0.0884273 7.21075C-0.0294758 7.32859 -0.0294758 7.51962 0.0884273 7.63747L3.88904 11.4357C3.94571 11.4925 4.02264 11.5244 4.10287 11.5244C4.18311 11.5244 4.26004 11.4925 4.3167 11.4357L13.5537 2.20114C13.6688 2.0838 13.6688 1.89599 13.5537 1.77865Z"
+                                        fill="#391F75" />
+                                </svg>
+                            </div>
+                        </li>
+                        <li class="flex items-center pb-3 lg:pb-10">
+                            <div class="block lg:hidden">Trip Cancellation</div>
+                            <div class="w-5 lg:w-full flex justify-center ml-auto">
+                                <svg width="14" height="12" viewBox="0 0 14 12" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M13.5537 1.77865L11.8672 0.0886602C11.8105 0.0318998 11.7336 0 11.6534 0C11.5731 0 11.4962 0.0318998 11.4395 0.0886602L4.3167 7.21075C4.26004 7.26751 4.18311 7.29941 4.10287 7.29941C4.02264 7.29941 3.94571 7.26751 3.88904 7.21075L2.20257 5.52076C2.1459 5.464 2.06897 5.4321 1.98874 5.4321C1.9085 5.4321 1.83157 5.464 1.77491 5.52076L0.0884273 7.21075C-0.0294758 7.32859 -0.0294758 7.51962 0.0884273 7.63747L3.88904 11.4357C3.94571 11.4925 4.02264 11.5244 4.10287 11.5244C4.18311 11.5244 4.26004 11.4925 4.3167 11.4357L13.5537 2.20114C13.6688 2.0838 13.6688 1.89599 13.5537 1.77865Z"
+                                        fill="#391F75" />
+                                </svg>
+                            </div>
+                        </li>
+                        <li class="flex items-center pb-3 lg:pb-10">
+                            <div class="block lg:hidden">Cancel for Any Reason</div>
+                            <div class="w-5 lg:w-full flex justify-center ml-auto">
+                                <svg width="14" height="12" viewBox="0 0 14 12" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M13.5537 1.77865L11.8672 0.0886602C11.8105 0.0318998 11.7336 0 11.6534 0C11.5731 0 11.4962 0.0318998 11.4395 0.0886602L4.3167 7.21075C4.26004 7.26751 4.18311 7.29941 4.10287 7.29941C4.02264 7.29941 3.94571 7.26751 3.88904 7.21075L2.20257 5.52076C2.1459 5.464 2.06897 5.4321 1.98874 5.4321C1.9085 5.4321 1.83157 5.464 1.77491 5.52076L0.0884273 7.21075C-0.0294758 7.32859 -0.0294758 7.51962 0.0884273 7.63747L3.88904 11.4357C3.94571 11.4925 4.02264 11.5244 4.10287 11.5244C4.18311 11.5244 4.26004 11.4925 4.3167 11.4357L13.5537 2.20114C13.6688 2.0838 13.6688 1.89599 13.5537 1.77865Z"
+                                        fill="#391F75" />
+                                </svg>
+                            </div>
+                        </li>
+                        <li class="flex items-center pb-3 lg:pb-10">
+                            <div class="block lg:hidden">Trip Intrurruption</div>
+                            <div class="lg:w-full flex justify-center ml-auto">1 user</div>
+                        </li>
+                        <li class="flex items-center pb-3 lg:pb-10">
+                            <div class="block lg:hidden">Medical Expenses</div>
+                            <div class="w-5 lg:w-full flex justify-center ml-auto">
+                                <svg width="14" height="12" viewBox="0 0 14 12" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M13.5537 1.77865L11.8672 0.0886602C11.8105 0.0318998 11.7336 0 11.6534 0C11.5731 0 11.4962 0.0318998 11.4395 0.0886602L4.3167 7.21075C4.26004 7.26751 4.18311 7.29941 4.10287 7.29941C4.02264 7.29941 3.94571 7.26751 3.88904 7.21075L2.20257 5.52076C2.1459 5.464 2.06897 5.4321 1.98874 5.4321C1.9085 5.4321 1.83157 5.464 1.77491 5.52076L0.0884273 7.21075C-0.0294758 7.32859 -0.0294758 7.51962 0.0884273 7.63747L3.88904 11.4357C3.94571 11.4925 4.02264 11.5244 4.10287 11.5244C4.18311 11.5244 4.26004 11.4925 4.3167 11.4357L13.5537 2.20114C13.6688 2.0838 13.6688 1.89599 13.5537 1.77865Z"
+                                        fill="#391F75" />
+                                </svg>
+                            </div>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="block lg:hidden">Trip Delay</div>
+                            <div class="w-5 lg:w-full flex justify-center ml-auto">
+                                <svg width="15" height="16" viewBox="0 0 15 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M8.63786 7.95677C8.60945 7.92846 8.59349 7.89002 8.59349 7.84994C8.59349 7.80985 8.60945 7.77142 8.63786 7.74311L14.2331 2.15287C14.5869 1.79886 14.5864 1.22531 14.2322 0.8718C13.8779 0.518292 13.3039 0.518697 12.9501 0.872705L7.35548 6.46053C7.32715 6.48891 7.28868 6.50486 7.24857 6.50486C7.20845 6.50486 7.16998 6.48891 7.14165 6.46053L1.54704 0.872705C1.19326 0.51903 0.619524 0.518895 0.265573 0.872403C-0.0883787 1.22591 -0.0885139 1.7992 0.265271 2.15287L5.85928 7.74311C5.88768 7.77142 5.90364 7.80985 5.90364 7.84994C5.90364 7.89002 5.88768 7.92846 5.85928 7.95677L0.265271 13.5476C0.0364121 13.7764 -0.0529097 14.1098 0.0309517 14.4222C0.114813 14.7347 0.359117 14.9787 0.671837 15.0623C0.984557 15.146 1.31818 15.0566 1.54704 14.8278L7.14165 9.23693C7.16998 9.20855 7.20845 9.1926 7.24857 9.1926C7.28868 9.1926 7.32715 9.20855 7.35548 9.23693L12.9501 14.8278C13.3039 15.1814 13.8776 15.1816 14.2316 14.8281C14.5855 14.4746 14.5856 13.9013 14.2319 13.5476L8.63786 7.95677Z"
+                                        fill="#F496D1" />
+                                </svg>
+                            </div>
+                        </li>
+                    </ul>
+                    <button
+                        @click="data.form.quote = { plan: 'Pro', price: 100} ;data.tab = data.tab+1; location.href = '#0'+data.tab"
+                        class="
+                w-full
+                bg-primary
+                text-white
+                p-3
+                text-center
+                rounded-xl
+                lg:mt-20
+              ">
+                        Choose plan
+                    </button>
+                </div>
+                <div class="w-full lg:w-1/4 shadow-xl lg:shadow-none p-5 rounded-xl mt-5">
+                    <div class="w-full flex flex-wrap">
+                        <h1 class="text-primary font-bold text-2xl mb-3 lg:w-full">
+                            Enterprise
+                        </h1>
+                        <span class="ml-auto mb-3 flex">
+                            <b class="font-bold text-3xl">$200</b>
+                            <span class="text-gray-400 mt-2 ml-2">/month</span>
+                        </span>
+                    </div>
+                    <ul class="py-5">
+                        <li class="flex items-center pb-3 lg:pb-10">
+                            <div class="block lg:hidden">Plan Overview</div>
+                            <div class="w-5 lg:w-full flex justify-center ml-auto">
+                                <svg width="14" height="12" viewBox="0 0 14 12" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M13.5537 1.77865L11.8672 0.0886602C11.8105 0.0318998 11.7336 0 11.6534 0C11.5731 0 11.4962 0.0318998 11.4395 0.0886602L4.3167 7.21075C4.26004 7.26751 4.18311 7.29941 4.10287 7.29941C4.02264 7.29941 3.94571 7.26751 3.88904 7.21075L2.20257 5.52076C2.1459 5.464 2.06897 5.4321 1.98874 5.4321C1.9085 5.4321 1.83157 5.464 1.77491 5.52076L0.0884273 7.21075C-0.0294758 7.32859 -0.0294758 7.51962 0.0884273 7.63747L3.88904 11.4357C3.94571 11.4925 4.02264 11.5244 4.10287 11.5244C4.18311 11.5244 4.26004 11.4925 4.3167 11.4357L13.5537 2.20114C13.6688 2.0838 13.6688 1.89599 13.5537 1.77865Z"
+                                        fill="#391F75" />
+                                </svg>
+                            </div>
+                        </li>
+                        <li class="flex items-center pb-3 lg:pb-10">
+                            <div class="block lg:hidden">Trip Cancellation</div>
+                            <div class="w-5 lg:w-full flex justify-center ml-auto">
+                                <svg width="14" height="12" viewBox="0 0 14 12" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M13.5537 1.77865L11.8672 0.0886602C11.8105 0.0318998 11.7336 0 11.6534 0C11.5731 0 11.4962 0.0318998 11.4395 0.0886602L4.3167 7.21075C4.26004 7.26751 4.18311 7.29941 4.10287 7.29941C4.02264 7.29941 3.94571 7.26751 3.88904 7.21075L2.20257 5.52076C2.1459 5.464 2.06897 5.4321 1.98874 5.4321C1.9085 5.4321 1.83157 5.464 1.77491 5.52076L0.0884273 7.21075C-0.0294758 7.32859 -0.0294758 7.51962 0.0884273 7.63747L3.88904 11.4357C3.94571 11.4925 4.02264 11.5244 4.10287 11.5244C4.18311 11.5244 4.26004 11.4925 4.3167 11.4357L13.5537 2.20114C13.6688 2.0838 13.6688 1.89599 13.5537 1.77865Z"
+                                        fill="#391F75" />
+                                </svg>
+                            </div>
+                        </li>
+                        <li class="flex items-center pb-3 lg:pb-10">
+                            <div class="block lg:hidden">Cancel for Any Reason</div>
+                            <div class="w-5 lg:w-full flex justify-center ml-auto">
+                                <svg width="14" height="12" viewBox="0 0 14 12" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M13.5537 1.77865L11.8672 0.0886602C11.8105 0.0318998 11.7336 0 11.6534 0C11.5731 0 11.4962 0.0318998 11.4395 0.0886602L4.3167 7.21075C4.26004 7.26751 4.18311 7.29941 4.10287 7.29941C4.02264 7.29941 3.94571 7.26751 3.88904 7.21075L2.20257 5.52076C2.1459 5.464 2.06897 5.4321 1.98874 5.4321C1.9085 5.4321 1.83157 5.464 1.77491 5.52076L0.0884273 7.21075C-0.0294758 7.32859 -0.0294758 7.51962 0.0884273 7.63747L3.88904 11.4357C3.94571 11.4925 4.02264 11.5244 4.10287 11.5244C4.18311 11.5244 4.26004 11.4925 4.3167 11.4357L13.5537 2.20114C13.6688 2.0838 13.6688 1.89599 13.5537 1.77865Z"
+                                        fill="#391F75" />
+                                </svg>
+                            </div>
+                        </li>
+                        <li class="flex items-center pb-3 lg:pb-10">
+                            <div class="block lg:hidden">Trip Intrurruption</div>
+                            <div class="lg:w-full flex justify-center ml-auto">1 user</div>
+                        </li>
+                        <li class="flex items-center pb-3 lg:pb-10">
+                            <div class="block lg:hidden">Medical Expenses</div>
+                            <div class="w-5 lg:w-full flex justify-center ml-auto">
+                                <svg width="14" height="12" viewBox="0 0 14 12" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M13.5537 1.77865L11.8672 0.0886602C11.8105 0.0318998 11.7336 0 11.6534 0C11.5731 0 11.4962 0.0318998 11.4395 0.0886602L4.3167 7.21075C4.26004 7.26751 4.18311 7.29941 4.10287 7.29941C4.02264 7.29941 3.94571 7.26751 3.88904 7.21075L2.20257 5.52076C2.1459 5.464 2.06897 5.4321 1.98874 5.4321C1.9085 5.4321 1.83157 5.464 1.77491 5.52076L0.0884273 7.21075C-0.0294758 7.32859 -0.0294758 7.51962 0.0884273 7.63747L3.88904 11.4357C3.94571 11.4925 4.02264 11.5244 4.10287 11.5244C4.18311 11.5244 4.26004 11.4925 4.3167 11.4357L13.5537 2.20114C13.6688 2.0838 13.6688 1.89599 13.5537 1.77865Z"
+                                        fill="#391F75" />
+                                </svg>
+                            </div>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="block lg:hidden">Trip Delay</div>
+                            <div class="w-5 lg:w-full flex justify-center ml-auto">
+                                <svg width="15" height="16" viewBox="0 0 15 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M8.63786 7.95677C8.60945 7.92846 8.59349 7.89002 8.59349 7.84994C8.59349 7.80985 8.60945 7.77142 8.63786 7.74311L14.2331 2.15287C14.5869 1.79886 14.5864 1.22531 14.2322 0.8718C13.8779 0.518292 13.3039 0.518697 12.9501 0.872705L7.35548 6.46053C7.32715 6.48891 7.28868 6.50486 7.24857 6.50486C7.20845 6.50486 7.16998 6.48891 7.14165 6.46053L1.54704 0.872705C1.19326 0.51903 0.619524 0.518895 0.265573 0.872403C-0.0883787 1.22591 -0.0885139 1.7992 0.265271 2.15287L5.85928 7.74311C5.88768 7.77142 5.90364 7.80985 5.90364 7.84994C5.90364 7.89002 5.88768 7.92846 5.85928 7.95677L0.265271 13.5476C0.0364121 13.7764 -0.0529097 14.1098 0.0309517 14.4222C0.114813 14.7347 0.359117 14.9787 0.671837 15.0623C0.984557 15.146 1.31818 15.0566 1.54704 14.8278L7.14165 9.23693C7.16998 9.20855 7.20845 9.1926 7.24857 9.1926C7.28868 9.1926 7.32715 9.20855 7.35548 9.23693L12.9501 14.8278C13.3039 15.1814 13.8776 15.1816 14.2316 14.8281C14.5855 14.4746 14.5856 13.9013 14.2319 13.5476L8.63786 7.95677Z"
+                                        fill="#F496D1" />
+                                </svg>
+                            </div>
+                        </li>
+                    </ul>
+                    <button
+                        @click="data.form.quote = { plan: 'Enterprice', price: 20};data.tab = data.tab+1; location.href = '#0'+data.tab"
+                        class="
+                w-full
+                bg-primary
+                text-white
+                p-3
+                text-center
+                rounded-xl
+                lg:mt-20
+              ">
+                        Choose plan
+                    </button>
+                </div>
+            </div>
+            <div class="w-full flex flex-wrap justify-center" x-show="data.tab == 2">
+                <h1 class="
+              text-semibold
+              px-5
+              lg:px-0
+              text-2xl
+              lg:text-5xl
+              text-primary text-left
+              w-full
+            ">
+                    Traveler Info
+                </h1>
+                <template x-for="(traveller, index) in data.form.travellers" :key="index">
+                    <div class="w-full flex flex-wrap mt-10 text-md lg:text-xl">
+                        <div class="w-full lg:w-1/2 p-1 mb-3">
+                            <div class="w-full rounded-xl border border-primary py-1 px-3">
+                                <label class="px-3 text-gray-400">First Name</label>
+                                <input x-model="traveller.firtsname" placeholder="John" type="text" class="
+                      text-xl
+                      xl:text-2xl
+                      font-semibold
+                      w-full
+                      pb-2
+                      px-3
+                      focus:outline-none
+                      border-0
+                    " />
+                            </div>
+                        </div>
+                        <div class="w-full lg:w-1/2 p-1 mb-3">
+                            <div class="w-full rounded-xl border border-primary py-1 px-3">
+                                <label class="px-3 text-gray-400">Last Name</label>
+                                <input x-model="traveller.lastname" placeholder="Doe" type="text" class="
+                      text-xl
+                      xl:text-2xl
+                      font-semibold
+                      w-full
+                      pb-2
+                      px-3
+                      focus:outline-none
+                      border-0
+                    " />
+                            </div>
+                        </div>
+                        <div class="w-full lg:w-1/2 p-1 mb-3">
+                            <button class="
+                    w-full
+                    rounded-xl
+                    border border-primary
+                    py-1
+                    px-3
+                    flex
+                    py-5
+                  ">
+                                <span class="text-xl xl:text-2xl font-semibold px-2"
+                                    x-text="summaryData.when.from.label"></span>
+                                <svg class="ml-auto" width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M10 5.77778C10 5.34822 10.5858 5 11 5C11.4142 5 12 5.34822 12 5.77778V7.33333H10V5.77778Z"
+                                        fill="#9D9D9D" />
+                                    <path
+                                        d="M20 5.77778C20 5.34822 20.5858 5 21 5C21.4142 5 22 5.34822 22 5.77778V7.33333H20V5.77778Z"
+                                        fill="#9D9D9D" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M10 7.33333H7.75C7.33579 7.33333 7 7.68156 7 8.11111V25.2222C7 25.6518 7.33579 26 7.75 26H24.25C24.6642 26 25 25.6518 25 25.2222V8.11111C25 7.68156 24.6642 7.33333 24.25 7.33333H22H20H12H10ZM23.5 12H8.5V24.4444H23.5V12Z"
+                                        fill="#9D9D9D" />
+                                    <path
+                                        d="M10 15.5C10 14.6716 10.6716 14 11.5 14C12.3284 14 13 14.6716 13 15.5C13 16.3284 12.3284 17 11.5 17C10.6716 17 10 16.3284 10 15.5Z"
+                                        fill="#9D9D9D" />
+                                    <path
+                                        d="M22 18.5C22 17.6716 21.3284 17 20.5 17C19.6716 17 19 17.6716 19 18.5C19 19.3284 19.6716 20 20.5 20C21.3284 20 22 19.3284 22 18.5Z"
+                                        fill="#9D9D9D" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="w-full lg:w-1/2 p-1 mb-3">
+                            <div class="w-full rounded-xl border border-primary py-1 px-3">
+                                <label class="px-3 text-gray-400">Zip Code</label>
+                                <input x-model="traveller.zipcode" placeholder="10102" type="text" class="
+                      text-xl
+                      xl:text-2xl
+                      font-semibold
+                      w-full
+                      pb-1
+                      px-3
+                      focus:outline-none
+                      border-0
+                    " />
+                            </div>
+                        </div>
+                        <div class="w-full p-1 mb-3">
+                            <div class="w-full rounded-xl border border-primary py-1 px-3">
+                                <label class="px-3 text-gray-400">Address</label>
+                                <input x-model="traveller.address" placeholder="" type="text" class="
+                      text-xl
+                      xl:text-2xl
+                      font-semibold
+                      w-full
+                      pb-1
+                      px-3
+                      focus:outline-none
+                      border-0
+                    " />
+                            </div>
+                        </div>
+                        <div class="w-full lg:w-1/2 p-1 mb-3">
+                            <div class="w-full rounded-xl border border-primary py-1 px-3">
+                                <label class="px-3 text-gray-400">City</label>
+                                <input x-model="traveller.city" placeholder="New York" type="text" class="
+                      text-xl
+                      xl:text-2xl
+                      font-semibold
+                      w-full
+                      pb-1
+                      px-3
+                      focus:outline-none
+                      border-0
+                    " />
+                            </div>
+                        </div>
+                        <div class="w-full lg:w-1/2 p-1 mb-3">
+                            <div class="w-full rounded-xl border border-primary py-1 px-3">
+                                <label class="px-3 text-gray-400">State</label>
+                                <input x-model="traveller.state" placeholder="NY" type="text" class="
+                      text-xl
+                      xl:text-2xl
+                      font-semibold
+                      w-full
+                      pb-1
+                      px-3
+                      focus:outline-none
+                      border-0
+                    " />
+                            </div>
+                        </div>
+                        <div class="w-full lg:w-1/2 p-1 mb-3">
+                            <div class="w-full rounded-xl border border-primary py-1 px-3">
+                                <label class="px-3 text-gray-400">Email</label>
+                                <input x-model="traveller.email" placeholder="test@test.com" type="text" class="
+                      text-xl
+                      xl:text-2xl
+                      font-semibold
+                      w-full
+                      pb-1
+                      px-3
+                      focus:outline-none
+                      border-0
+                    " />
+                            </div>
+                        </div>
+                        <div class="w-full lg:w-1/2 p-1 mb-3">
+                            <div class="w-full rounded-xl border border-primary py-1 px-3">
+                                <label class="px-3 text-gray-400">Phone</label>
+                                <input x-model="traveller.phone" placeholder="+1 212 973 8638" type="text" class="
+                      text-xl
+                      xl:text-2xl
+                      font-semibold
+                      w-full
+                      pb-1
+                      px-3
+                      focus:outline-none
+                      border-0
+                    " />
+                            </div>
+                        </div>
+                        <hr class="border-b w-full mt-10" />
+                    </div>
+                </template>
+
+                <button @click="addNewTraveller()" class="
+              my-2
+              mt-10
+              focus:outline-none
+              flex
+              justify-start
+              text-left
+              w-full
+              p-2
+            ">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 12H8M12 8V12V8ZM12 12V16V12ZM12 12H16H12Z" stroke="black" stroke-width="2"
+                            stroke-linecap="round" />
+                        <path
+                            d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                            stroke="black" stroke-width="2" />
+                    </svg>
+                    <span class="ml-2">Add more travellers </span>
+                </button>
+            </div>
+            <div class="w-full flex flex-wrap justify-center" x-show="data.tab == 3">
+                <h1 class="
+              text-semibold
+              px-5
+              lg:px-0
+              text-2xl
+              lg:text-5xl
+              text-primary text-left
+              w-full
+            ">
+                    Payment Info
+                </h1>
+                <div class="w-full bg-yellow-200 text-red-500 p-5 rounded-xl mt-10">
+                    Your total price has changed based on your state of residence and
+                    date of birth. See the details in your summary.
+                </div>
+                <div class="w-full flex flex-wrap mt-10 text-md lg:text-xl">
+                    <div class="w-full p-1 mb-3">
+                        <div class="w-full rounded-xl border border-primary py-1 px-3">
+                            <label class="px-3 text-gray-400">Name</label>
+                            <input x-model="data.form.payment.name" placeholder="John Doe" type="text" class="
+                    text-xl
+                    xl:text-2xl
+                    font-semibold
+                    w-full
+                    pb-1
+                    px-3
+                    focus:outline-none
+                    border-0
+                  " />
+                        </div>
+                    </div>
+                    <div class="w-full lg:w-1/2 p-1 mb-3">
+                        <div class="w-full rounded-xl border border-primary py-1 px-3">
+                            <label class="px-3 text-gray-400">Month</label>
+                            <input x-model="data.form.payment.month" placeholder="01" type="text" class="
+                    text-xl
+                    xl:text-2xl
+                    font-semibold
+                    w-full
+                    pb-1
+                    px-3
+                    focus:outline-none
+                    border-0
+                  " />
+                        </div>
+                    </div>
+                    <div class="w-full lg:w-1/2 p-1 mb-3">
+                        <div class="w-full rounded-xl border border-primary py-1 px-3">
+                            <label class="px-3 text-gray-400">Year</label>
+                            <input x-model="data.form.payment.year" placeholder="2022" type="text" class="
+                    text-xl
+                    xl:text-2xl
+                    font-semibold
+                    w-full
+                    pb-1
+                    px-3
+                    focus:outline-none
+                    border-0
+                  " />
+                        </div>
+                    </div>
+                    <div class="w-full p-1 mb-3">
+                        <div class="w-full rounded-xl border border-primary py-1 px-3">
+                            <label class="px-3 text-gray-400">Card Number</label>
+                            <input x-model="data.form.payment.card_number" placeholder="1234 1234 1234 1234" type="text"
+                                class="
+                    text-xl
+                    xl:text-2xl
+                    font-semibold
+                    w-full
+                    pb-1
+                    px-3
+                    focus:outline-none
+                    border-0
+                  " />
+                        </div>
+                    </div>
+                    <div class="w-full p-1 mb-3 flex flex-wrap items-center">
+                        <p class="w-2/3 text-xs lg:text-base px-1">
+                            Is your credit card billing address the same as your mailing
+                            adress?
+                        </p>
+                        <img class="w-1/3 ml-auto" src="/assets/img/payment-info.png" alt="Payment Info" />
+                        <div class="w-full flex mt-5">
+                            <div class="flex">
+                                <input x-model="data.form.payment.question" class="w-5 h-5 mr-3" type="radio"
+                                    name="question" value="1" />
+                                <span class="-mt-1">Yes</span>
+                            </div>
+                            <div class="ml-5 flex">
+                                <input x-model="data.form.payment.question" class="w-5 h-5 mr-3" type="radio"
+                                    name="question" value="0" />
+                                <span class="-mt-1">No</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full flex flex-wrap justify-center text-center lg:px-10" x-show="data.tab == 4">
+                <div class="w-full flex mb-10 mt-10">
+                    <svg class="mx-auto" width="70" height="70" viewBox="0 0 70 70" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M70 35C70 44.2826 66.3125 53.185 59.7487 59.7487C53.185 66.3125 44.2826 70 35 70C25.7174 70 16.815 66.3125 10.2513 59.7487C3.68749 53.185 0 44.2826 0 35C0 25.7174 3.68749 16.815 10.2513 10.2513C16.815 3.68749 25.7174 0 35 0C44.2826 0 53.185 3.68749 59.7487 10.2513C66.3125 16.815 70 25.7174 70 35ZM52.6312 21.7437C52.3187 21.4323 51.9466 21.1871 51.5372 21.0228C51.1278 20.8585 50.6894 20.7784 50.2483 20.7874C49.8072 20.7964 49.3724 20.8943 48.97 21.0751C48.5676 21.256 48.2058 21.5161 47.9062 21.84L32.7119 41.1994L23.555 32.0381C22.933 31.4585 22.1103 31.143 21.2602 31.158C20.4101 31.173 19.5991 31.5173 18.9979 32.1185C18.3967 32.7197 18.0524 33.5308 18.0374 34.3808C18.0224 35.2309 18.3379 36.0536 18.9175 36.6756L30.4937 48.2562C30.8056 48.5675 31.177 48.8128 31.5857 48.9775C31.9944 49.1421 32.4321 49.2228 32.8726 49.2146C33.3132 49.2065 33.7476 49.1096 34.1499 48.93C34.5522 48.7503 34.9143 48.4914 35.2144 48.1688L52.6794 26.3375C53.2748 25.7184 53.6037 24.8906 53.5955 24.0317C53.5873 23.1728 53.2427 22.3514 52.6356 21.7437H52.6312Z"
+                            fill="#2EBA34" />
+                    </svg>
+                </div>
+                <h1 class="w-full text-2xl lg:text-4xl xl:text-5xl mb-10 font-semibold">
+                    <div class="w-full mb-3">Thank you!</div>
+                    Your order has been received.
+                </h1>
+                <div class="w-full text-3xl mb-10">
+                    <span class="text-primary opacity-70">Your Order Number:</span>
+                    <span class="text-primary_light">#29293</span>
+                </div>
+                <p class="w-full mb-10 text-xl text-gray-400">
+                    Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
+                    sint. Velit officia consequat duis enim velit mollit. Exercitation
+                    veniam consequat sunt nostrud amet.
+                </p>
+                <button class="
+              focus:outline-none
+              mx-auto
+              mb-10
+              bg-primary
+              text-white
+              rounded-xl
+              px-8
+              py-4
+              flex
+            ">
+                    <svg class="mr-2" width="25" height="24" viewBox="0 0 25 24" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M4.5 4V20C4.5 20.5304 4.71071 21.0391 5.08579 21.4142C5.46086 21.7893 5.96957 22 6.5 22H18.5C19.0304 22 19.5391 21.7893 19.9142 21.4142C20.2893 21.0391 20.5 20.5304 20.5 20V8.342C20.5 8.07556 20.4467 7.81181 20.3433 7.56624C20.2399 7.32068 20.0885 7.09824 19.898 6.912L15.458 2.57C15.0844 2.20466 14.5826 2.00007 14.06 2H6.5C5.96957 2 5.46086 2.21071 5.08579 2.58579C4.71071 2.96086 4.5 3.46957 4.5 4V4Z"
+                            stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                            d="M14.5 2V6C14.5 6.53043 14.7107 7.03914 15.0858 7.41421C15.4609 7.78929 15.9696 8 16.5 8H20.5"
+                            stroke="white" stroke-width="2" stroke-linejoin="round" />
+                    </svg>
+                    Download Your Policy
+                </button>
+                <div class="w-full flex justify-center">
+                    <a href="#">
+                        <img src="/assets/img/play-store.png" alt="PlayStore" />
+                    </a>
+                    <a href="#">
+                        <img src="/assets/img/app-store.png" alt="AppStore" />
+                    </a>
+                </div>
+            </div>
+            <button x-show="data.tab < 4 && data.tab !== 1"
+                @click="data.tab = data.tab+1; location.href = '#0'+data.tab; saveData()" class="
+            w-11/12
+            lg:w-auto
+            focus:outline-none
+            rounded-xl
+            py-4
+            px-5
+            bg-primary
+            text-white
+            flex
+            lg:mb-20
+            lg:mt-20
+            ml-auto
+            lg:relative
+            fixed
+            bottom-5
+            mt-10
+          ">
+                <span class="mr-10">NEXT</span>
+                <svg class="ml-auto" width="25" height="24" viewBox="0 0 25 24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5.5 12L19.5 12" stroke="white" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M12.5 5L19.5 12L12.5 19" stroke="white" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </button>
+        </div>
+    </section>
+    <section class="hidden lg:block items-start w-4/12 p-5">
+        <div class="w-full lg:w-3/4 flex mt-40">
+            <span class="text-xl xl:text-2xl">Summary of your insurance</span>
+            <svg class="ml-auto mt-2" width="17" height="20" viewBox="0 0 17 20" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M15.9999 18H1.99994C1.73472 18 1.48037 18.1054 1.29283 18.2929C1.1053 18.4804 0.999938 18.7348 0.999938 19C0.999938 19.2652 1.1053 19.5196 1.29283 19.7071C1.48037 19.8947 1.73472 20 1.99994 20H15.9999C16.2652 20 16.5195 19.8947 16.707 19.7071C16.8946 19.5196 16.9999 19.2652 16.9999 19C16.9999 18.7348 16.8946 18.4804 16.707 18.2929C16.5195 18.1054 16.2652 18 15.9999 18ZM1.99994 16H2.08994L6.25994 15.62C6.71673 15.5745 7.14397 15.3732 7.46994 15.05L16.4699 6.05001C16.8193 5.68098 17.008 5.18852 16.9949 4.68055C16.9818 4.17257 16.7678 3.69052 16.3999 3.34001L13.6599 0.600011C13.3023 0.264106 12.8337 0.0713693 12.3433 0.0584625C11.8528 0.0455557 11.3747 0.21338 10.9999 0.530011L1.99994 9.53001C1.6767 9.85598 1.47544 10.2832 1.42994 10.74L0.999938 14.91C0.986467 15.0565 1.00547 15.2041 1.0556 15.3424C1.10573 15.4807 1.18574 15.6062 1.28994 15.71C1.38338 15.8027 1.49419 15.876 1.61603 15.9258C1.73787 15.9755 1.86833 16.0008 1.99994 16ZM12.2699 2.00001L14.9999 4.73001L12.9999 6.68001L10.3199 4.00001L12.2699 2.00001Z"
+                    fill="black" />
+            </svg>
+        </div>
+        <div class="w-full lg:w-3/4 shadow-md rounded-xl mt-10 p-10">
+            <h1 class="text-primary text-xl 2xl:text-2xl mb-10 font-bold">Plan Summary</h1>
+            <ul>
+                <li class="mb-5">
+                    <h2 class="mb-3 text-primary opacity-70 text-xl">Your Plan:</h2>
+                    <strong class="text-primary font-bold text-xl 2xl:text-2xl mb-3" x-text="data.form.quote.plan"></strong>
+                </li>
+                <li>
+                    <h2 class="mb-3 text-primary opacity-70 text-xl">Total Price:</h2>
+                    <strong class="text-primary font-bold text-xl 2xl:text-2xl" x-text="'$'+data.form.quote.price"></strong>
+                </li>
+            </ul>
+        </div>
+        <div class="w-full lg:w-3/4 shadow-md rounded-xl mt-10 p-10">
+            <h1 class="text-primary text-xl 2xl:text-2xl mb-10 font-bold">Travel Summary</h1>
+            <ul>
+                <li class="mb-5">
+                    <h2 class="mb-3 text-primary opacity-70 text-xl">
+                        State of Residence:
+                    </h2>
+                    <strong class="text-primary font-bold text-xl 2xl:text-2xl mb-3">Arizona</strong>
+                </li>
+                <li class="mb-5">
+                    <h2 class="mb-3 text-primary opacity-70 text-xl">Travel Dates:</h2>
+                    <strong class="text-primary font-bold text-xl 2xl:text-2xl">06/14/2021-06/18/2021</strong>
+                </li>
+                <li>
+                    <h2 class="mb-3 text-primary opacity-70 text-xl">
+                        Travelling with:
+                    </h2>
+                    <strong class="text-primary font-bold text-xl 2xl:text-2xl">Parent</strong>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <script type="text/javascript" src="assets/js/main.js" defer></script>
+
+    <script>
+        function page1() {
+            let tabActive = 1;
+            if (location.href.split("#")[1] !== undefined) {
+                tabActive = parseInt(location.href.split("#")[1]);
+            } else {
+                tabActive = 1;
+            }
+
+            let newForm = {
+                quote: {
+                    plan: "",
+                    price: 0,
+                },
+                travellers: [
+                    {
+                        firstname: "",
+                        lastname: "",
+                        date: "",
+                        zipcode: "",
+                        address: "",
+                        city: "",
+                        state: "",
+                        email: "",
+                        phone: "",
+                    },
+                ],
+                payment: {
+                    name: "",
+                    month: "",
+                    year: "",
+                    card_number: "",
+                    question: "",
+                },
+            };
+
+            if (localStorage.getItem("form-data-quote")) {
+                let jsonData = localStorage.getItem("form-data-quote") || "";
+                newForm = JSON.parse(jsonData);
+            }
+            let summaryData = "";
+            if (localStorage.getItem("form-data-page1")) {
+                let jsonData0 = localStorage.getItem("form-data-page1") || "";
+                summaryData = JSON.parse(jsonData0);
+            }
+            function addNewTraveller() {
+                this.data.form.travellers.push({
+                    firstname: "",
+                    lastname: "",
+                    date: "",
+                    zipcode: "",
+                    address: "",
+                    city: "",
+                    state: "",
+                    email: "",
+                    phone: "",
+                });
+            }
+            function saveData() {
+                localStorage.setItem("form-data-quote", JSON.stringify(newForm));
+            }
+
+            return {
+                summaryData: summaryData,
+                data: {
+                    tab: tabActive,
+                    form: newForm,
+                },
+                addNewTraveller,
+                saveData,
+            };
+        }
+    </script>
+</body>
+
+</html>
