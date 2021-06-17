@@ -1,4 +1,18 @@
-# Notes
+#Zenner UI
+
+## npm install
+
+
+For development
+##npm run dev
+
+For Production
+## npm run deploy
+
+## Notes
+
+
+
 
 Data Save to LocalStorage
 
