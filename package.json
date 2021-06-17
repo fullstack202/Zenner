@@ -14,7 +14,7 @@
     "deploy": "npm run build-css && npm run build-js && npm run copy"
   },
   "author": "Zenner",
-  "license": "",
+  "license": "Zenner",
   "dependencies": {
     "alpinejs": "^2.8.0",
     "tailwindcss": "^2.0.3"

@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta name="description" content="Zenner" />
-    <link rel="shortcut icon" href="./assets/img/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png" />
+    <link rel="shortcut icon" href="assets/img/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <title>Zenner</title>
     <link type="text/css" href="assets/css/style.css" rel="stylesheet" />
 </head>
@@ -30,20 +32,20 @@ style="max-width:1920px;margin:auto"
         pb-20
       ">
         <div class="p-10 lg:pl-20 w-full">
-            <img class="m-auto lg:ml-0" width="auto" src="/assets/img/logo.png" alt="Logo Zenner" />
+            <img class="m-auto lg:ml-0" width="auto" src="assets/img/logo.png" alt="Logo Zenner" />
         </div>
 
         <section x-show="data.tab == 1" class="w-full block lg:hidden">
-            <img width="100%" height="auto" src="/assets/img/bg1-md.jpg" alt="bg1 md" />
+            <img width="100%" height="auto" src="assets/img/bg1-md.jpg" alt="bg1 md" />
         </section>
         <section x-show="data.tab == 2" class="w-full block lg:hidden">
-            <img width="100%" height="auto" src="/assets/img/bg2-md.jpg" alt="bg2 md" />
+            <img width="100%" height="auto" src="assets/img/bg2-md.jpg" alt="bg2 md" />
         </section>
         <section x-show="data.tab == 3" class="w-full block lg:hidden">
-            <img width="100%" height="auto" src="/assets/img/bg3-md.jpg" alt="bg3 md" />
+            <img width="100%" height="auto" src="assets/img/bg3-md.jpg" alt="bg3 md" />
         </section>
         <section x-show="data.tab == 4" class="w-full block lg:hidden">
-            <img width="100%" height="auto" src="/assets/img/bg4-md.jpg" alt="bg4 md" />
+            <img width="100%" height="auto" src="assets/img/bg4-md.jpg" alt="bg4 md" />
         </section>
 
         <!-- Tabs -->
@@ -58,6 +60,9 @@ style="max-width:1920px;margin:auto"
             lg:h-40
             items-start
             lg:w-full
+            lg:mx-10
+            xl:mx-20
+            2xl:mx-32
           ">
                 <a @click="data.tab = 1" href="#01"
                     x-bind:class="data.tab == 1 ? 'mx-1 border-b-4 border-primary_light w-32 lg:w-1/4 py-4 text-primary' : 'mx-1 border-b-4 border-gray-300 w-32 lg:w-1/4 py-4 text-gray-400'">01
@@ -172,6 +177,8 @@ style="max-width:1920px;margin:auto"
               font-bold
               lg:mb-10
               mt-10
+              px-2
+
             ">
                     Where are you traveling to?
                 </h1>
@@ -184,7 +191,7 @@ style="max-width:1920px;margin:auto"
               text-xl
             ">
                     <button @click="selectShow.from = !selectShow.from"
-                        x-bind:class="data.form.where.from ? 'relative focus:outline-none m-2 w-full lg:w-1/2 py-5 rounded-xl border-2  text-left px-5 border-primary_light text-primary' : 'relative focus:outline-none m-2 w-full lg:w-1/2 py-5 rounded-xl border-2 border-gray-400 text-left px-5 text-gray-400 hover:border-primary_light hover:text-primary'">
+                        x-bind:class="data.form.where.from ? 'relative focus:outline-none my-2 lg:mx-2 w-full lg:w-1/2 py-5 rounded-xl border-2  text-left px-5 border-primary_light text-primary' : 'relative focus:outline-none my-2 lg:mx-2 w-full lg:w-1/2 py-5 rounded-xl border-2 border-gray-400 text-left px-5 text-gray-400 hover:border-primary_light hover:text-primary'">
                         <span x-show="!data.form.where.from">From</span>
                         <span x-show="data.form.where.from">
                             <span x-text="data.form.where.from.name"></span>
@@ -212,7 +219,7 @@ style="max-width:1920px;margin:auto"
                         </ul>
                     </button>
                     <button @click="selectShow.to = !selectShow.to"
-                        x-bind:class="data.form.where.to ? 'relative focus:outline-none m-2 w-full lg:w-1/2 py-5 rounded-xl border-2  text-left px-5 border-primary_light text-primary' : 'relative focus:outline-none m-2 w-full lg:w-1/2 py-5 rounded-xl border-2 border-gray-400 text-left px-5 text-gray-400 hover:border-primary_light hover:text-primary'">
+                        x-bind:class="data.form.where.to ? 'relative focus:outline-none my-2 lg:mx-2 w-full lg:w-1/2 py-5 rounded-xl border-2  text-left px-5 border-primary_light text-primary' : 'relative focus:outline-none my-2 lg:mx-2 w-full lg:w-1/2 py-5 rounded-xl border-2 border-gray-400 text-left px-5 text-gray-400 hover:border-primary_light hover:text-primary'">
                         <span x-show="!data.form.where.to">To</span>
                         <span x-show="data.form.where.to">
                             <span x-text="data.form.where.to.name"></span>
@@ -250,6 +257,8 @@ style="max-width:1920px;margin:auto"
               text-primary
               font-bold
               mt-10
+              px-2
+
             ">
                     What’s your state of residence?
                 </h1>
@@ -276,6 +285,7 @@ style="max-width:1920px;margin:auto"
               text-primary
               font-bold
               mt-10
+              px-2
             ">
                     What dates are you traveling?
                 </h1>
@@ -345,6 +355,8 @@ style="max-width:1920px;margin:auto"
               text-primary
               font-bold
               mt-10
+              px-2
+
             ">
                     Are you traveling with any of the following:
                 </h1>
@@ -352,7 +364,10 @@ style="max-width:1920px;margin:auto"
               w-full
               flex flex-wrap
               lg:flex-nowrap
-              my-10
+              mb-10
+              mt-10
+              mx-5
+              lg:mt-20
               justify-center
               text-xl
             ">
@@ -549,7 +564,8 @@ style="max-width:1920px;margin:auto"
                     </div>
                 </div>
             </div>
-            <button x-show="data.tab < 4" @click="data.tab = data.tab+1; location.href = '#0'+data.tab" class="
+            <button x-show="data.tab < 4" 
+            @click="data.tab = data.tab+1; location.href = '#0'+data.tab" class="
             w-11/12
             lg:w-auto
             focus:outline-none
@@ -560,10 +576,11 @@ style="max-width:1920px;margin:auto"
             text-white
             flex
             lg:mb-20
-            lg:mt-20
+            lg:mt-80
             ml-auto
             fixed
             bottom-5
+            left-4
             lg:relative
           ">
                 <span class="mr-10">NEXT</span>
@@ -586,7 +603,7 @@ style="max-width:1920px;margin:auto"
             text-white
             flex
             lg:mb-20
-            lg:mt-20
+            lg:mt-40
             ml-auto
             fixed
             bottom-5

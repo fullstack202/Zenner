@@ -1,6 +1,9 @@
 module.exports = {
   purge: {},
   theme: {
+    fontFamily: {
+      'body': ['Poppins'],
+    },
     extend: {
       backgroundImage: theme => ({
         '01': "url('/assets/img/bg1.jpg')",

@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta name="description" content="Zenner" />
-    <link rel="shortcut icon" href="./assets/img/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png" />
+    <link rel="shortcut icon" href="assets/img/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <title>Zenner Quote</title>
     <link type="text/css" href="assets/css/style.css" rel="stylesheet" />
 </head>
@@ -29,11 +31,11 @@
         items-start
         pb-40
       ">
-        <div class="py-10 w-full">
-            <img class="ml-10" width="auto" src="/assets/img/logo.png" alt="Logo Zenner" />
+        <div class="pt-10 pb-5 w-full">
+            <img class="ml-10" width="auto" src="assets/img/logo.png" alt="Logo Zenner" />
         </div>
         <!-- Tabs -->
-        <div class="px-5 flex overflow-x-scroll hide-scroll-bar mt-5 lg:w-full lg:px-10">
+        <div class="px-5 flex overflow-x-scroll hide-scroll-bar lg:mt-5 lg:w-full lg:px-10">
             <div class="
             flex flex-nowrap
             lg:text-lg
@@ -45,6 +47,7 @@
             lg:h-40
             items-start
             lg:w-full
+            lg:mx-10
           ">
                 <a @click="data.tab = 1" href="#01"
                     x-bind:class="data.tab == 1 ? 'mx-1 border-b-4 border-primary_light w-32 lg:w-1/4 py-4 text-primary' : 'mx-1 border-b-4 border-gray-300 w-32 lg:w-1/4 py-4 text-gray-400'">
@@ -60,13 +63,13 @@
                 hidden
                 lg:flex
               ">
-                        <span class="text-sm pl-2" x-text="data.form.quote.plan"></span>
+                        <span class="pl-2 uppercase" x-text="data.form.quote.plan"></span>
                     </div>
                 </a>
                 <a @click="data.tab = 2" href="#02"
                     x-bind:class="data.tab == 2 ? 'mx-1 border-b-4 border-primary_light w-32 lg:w-1/4 py-4 text-primary' : 'mx-1 border-b-4 border-gray-300 w-32 lg:w-1/4 py-4 text-gray-400'">
                     02 TRAVELER
-                    <div x-show="data.form.travellers.length" class="
+                    <div  x-show="data.form.travellers.length" class="
                 absolute
                 text-center
                 mt-10
@@ -77,13 +80,13 @@
                 justify-center
                 text-primary_light
               ">
-                        <span class="text-sm ml-2 uppercase" x-text="data.form.travellers.length + ' Person'"></span>
+                        <span  class="pl-2 uppercase" x-text="data.form.travellers.length + ' Person'"></span>
                     </div>
                 </a>
                 <a @click="data.tab = 3" href="#03"
                     x-bind:class="data.tab == 3 ? 'mx-1 border-b-4 border-primary_light w-32 lg:w-1/4 py-4 text-primary' : 'mx-1 border-b-4 border-gray-300 w-32 lg:w-1/4 py-4 text-gray-400'">
                     03 PAYMENT
-                    <div x-show="data.form.payment.card_number" class="
+                    <div class="pl-2 uppercase" x-show="data.form.payment.card_number" class="
                 absolute
                 text-center
                 mt-10
@@ -94,7 +97,7 @@
                 justify-center
                 text-primary_light
               ">
-                        <span x-text="'VISA '+data.form.payment.card_number.substr(1,4)"></span>
+                        <span  class="pl-2 uppercase" x-text="'VISA '+data.form.payment.card_number.substr(1,4)"></span>
                     </div>
                 </a>
                 <a @click="data.tab = 4" href="#04"
@@ -117,20 +120,20 @@
               h-full
               mt-5
             ">
-                    <ul class="py-5 mt-20 text-primary opacity-70">
-                        <li class="flex items-center pb-7">
+                    <ul class="p-10 mt-20 text-primary opacity-70">
+                        <li class="flex items-center pb-6">
                             <div>Plan Overview</div>
                         </li>
-                        <li class="flex items-center pb-7">
+                        <li class="flex items-center pb-6">
                             <div>Trip Cancellation</div>
                         </li>
-                        <li class="flex items-center pb-7">
+                        <li class="flex items-center pb-6">
                             <div>Cancel for Any Reason</div>
                         </li>
-                        <li class="flex items-center pb-7">
+                        <li class="flex items-center pb-6">
                             <div>Trip Intrurruption</div>
                         </li>
-                        <li class="flex items-center pb-7">
+                        <li class="flex items-center pb-6">
                             <div>Medical Expenses</div>
                         </li>
                         <li class="flex items-center">
@@ -138,16 +141,16 @@
                         </li>
                     </ul>
                 </div>
-                <div class="w-full lg:w-1/4 shadow-xl lg:shadow-none p-5 rounded-xl mt-5">
-                    <div class="w-full flex flex-wrap">
+                <div class="w-full lg:w-1/4 shadow-xl lg:shadow-none p-5 lg:p-10 rounded-xl lg:mt-5">
+                    <div class="w-full flex flex-wrap justify-center text-center">
                         <h1 class="text-primary font-bold text-2xl mb-3 lg:w-full">
                             Starter
                         </h1>
-                        <span class="ml-auto mb-3 flex">
+                        <span class="ml-auto mb-3 flex lg:w-full justify-center">
                             <b class="font-bold text-3xl">$20</b>
-                            <span class="text-gray-400 mt-2 ml-2">/month</span></span>
+                            <span class="text-gray-400 mt-2 ml-2 l">/month</span></span>
                     </div>
-                    <ul class="py-5">
+                    <ul class="lg:py-5">
                         <li class="flex items-center pb-3 lg:pb-10">
                             <div class="block lg:hidden">Plan Overview</div>
                             <div class="w-5 lg:w-full flex justify-center ml-auto">
@@ -217,6 +220,7 @@
                 p-3
                 text-center
                 rounded-xl
+                mt-5
                 lg:mt-20
               ">
                         Choose plan
@@ -227,22 +231,22 @@
               lg:w-1/4
               shadow-xl
               card-plan-shadow
-              p-5
+              p-5 lg:p-10
               rounded-xl
               mt-5
             ">
-                    <div class="w-full flex flex-wrap">
+                    <div class="w-full flex flex-wrap justify-center text-center">
                         <h1 class="text-primary font-bold text-2xl mb-3 lg:w-full">
                             Pro
                         </h1>
-                        <span class="ml-auto mb-3 flex">
+                        <span class="ml-auto mb-3 flex lg:w-full justify-center">
                             <b class="font-bold text-3xl">$100</b>
                             <span class="text-gray-400 mt-2 ml-2"> /month
                             </span>
 
                         </span>
                     </div>
-                    <ul class="py-5">
+                    <ul class="lg:py-5">
                         <li class="flex items-center pb-3 lg:pb-10">
                             <div class="block lg:hidden">Plan Overview</div>
                             <div class="w-5 lg:w-full flex justify-center ml-auto">
@@ -278,7 +282,7 @@
                         </li>
                         <li class="flex items-center pb-3 lg:pb-10">
                             <div class="block lg:hidden">Trip Intrurruption</div>
-                            <div class="lg:w-full flex justify-center ml-auto">1 user</div>
+                            <div class="lg:w-full flex justify-center ml-auto">3 user</div>
                         </li>
                         <li class="flex items-center pb-3 lg:pb-10">
                             <div class="block lg:hidden">Medical Expenses</div>
@@ -294,11 +298,11 @@
                         <li class="flex items-center">
                             <div class="block lg:hidden">Trip Delay</div>
                             <div class="w-5 lg:w-full flex justify-center ml-auto">
-                                <svg width="15" height="16" viewBox="0 0 15 16" fill="none"
+                                <svg width="14" height="12" viewBox="0 0 14 12" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
-                                        d="M8.63786 7.95677C8.60945 7.92846 8.59349 7.89002 8.59349 7.84994C8.59349 7.80985 8.60945 7.77142 8.63786 7.74311L14.2331 2.15287C14.5869 1.79886 14.5864 1.22531 14.2322 0.8718C13.8779 0.518292 13.3039 0.518697 12.9501 0.872705L7.35548 6.46053C7.32715 6.48891 7.28868 6.50486 7.24857 6.50486C7.20845 6.50486 7.16998 6.48891 7.14165 6.46053L1.54704 0.872705C1.19326 0.51903 0.619524 0.518895 0.265573 0.872403C-0.0883787 1.22591 -0.0885139 1.7992 0.265271 2.15287L5.85928 7.74311C5.88768 7.77142 5.90364 7.80985 5.90364 7.84994C5.90364 7.89002 5.88768 7.92846 5.85928 7.95677L0.265271 13.5476C0.0364121 13.7764 -0.0529097 14.1098 0.0309517 14.4222C0.114813 14.7347 0.359117 14.9787 0.671837 15.0623C0.984557 15.146 1.31818 15.0566 1.54704 14.8278L7.14165 9.23693C7.16998 9.20855 7.20845 9.1926 7.24857 9.1926C7.28868 9.1926 7.32715 9.20855 7.35548 9.23693L12.9501 14.8278C13.3039 15.1814 13.8776 15.1816 14.2316 14.8281C14.5855 14.4746 14.5856 13.9013 14.2319 13.5476L8.63786 7.95677Z"
-                                        fill="#F496D1" />
+                                        d="M13.5537 1.77865L11.8672 0.0886602C11.8105 0.0318998 11.7336 0 11.6534 0C11.5731 0 11.4962 0.0318998 11.4395 0.0886602L4.3167 7.21075C4.26004 7.26751 4.18311 7.29941 4.10287 7.29941C4.02264 7.29941 3.94571 7.26751 3.88904 7.21075L2.20257 5.52076C2.1459 5.464 2.06897 5.4321 1.98874 5.4321C1.9085 5.4321 1.83157 5.464 1.77491 5.52076L0.0884273 7.21075C-0.0294758 7.32859 -0.0294758 7.51962 0.0884273 7.63747L3.88904 11.4357C3.94571 11.4925 4.02264 11.5244 4.10287 11.5244C4.18311 11.5244 4.26004 11.4925 4.3167 11.4357L13.5537 2.20114C13.6688 2.0838 13.6688 1.89599 13.5537 1.77865Z"
+                                        fill="#391F75" />
                                 </svg>
                             </div>
                         </li>
@@ -312,22 +316,23 @@
                 p-3
                 text-center
                 rounded-xl
+                mt-5
                 lg:mt-20
               ">
                         Choose plan
                     </button>
                 </div>
-                <div class="w-full lg:w-1/4 shadow-xl lg:shadow-none p-5 rounded-xl mt-5">
-                    <div class="w-full flex flex-wrap">
+                <div class="w-full lg:w-1/4 shadow-xl lg:shadow-none p-5 lg:p-10 rounded-xl mt-5">
+                    <div class="w-full flex flex-wrap justify-center text-center">
                         <h1 class="text-primary font-bold text-2xl mb-3 lg:w-full">
                             Enterprise
                         </h1>
-                        <span class="ml-auto mb-3 flex">
+                        <span class="ml-auto mb-3 flex justify-center lg:w-full">
                             <b class="font-bold text-3xl">$200</b>
                             <span class="text-gray-400 mt-2 ml-2">/month</span>
                         </span>
                     </div>
-                    <ul class="py-5">
+                    <ul class="lg:py-5">
                         <li class="flex items-center pb-3 lg:pb-10">
                             <div class="block lg:hidden">Plan Overview</div>
                             <div class="w-5 lg:w-full flex justify-center ml-auto">
@@ -363,7 +368,7 @@
                         </li>
                         <li class="flex items-center pb-3 lg:pb-10">
                             <div class="block lg:hidden">Trip Intrurruption</div>
-                            <div class="lg:w-full flex justify-center ml-auto">1 user</div>
+                            <div class="lg:w-full flex justify-center ml-auto">Unlimited</div>
                         </li>
                         <li class="flex items-center pb-3 lg:pb-10">
                             <div class="block lg:hidden">Medical Expenses</div>
@@ -379,11 +384,11 @@
                         <li class="flex items-center">
                             <div class="block lg:hidden">Trip Delay</div>
                             <div class="w-5 lg:w-full flex justify-center ml-auto">
-                                <svg width="15" height="16" viewBox="0 0 15 16" fill="none"
+                                <svg width="14" height="12" viewBox="0 0 14 12" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
-                                        d="M8.63786 7.95677C8.60945 7.92846 8.59349 7.89002 8.59349 7.84994C8.59349 7.80985 8.60945 7.77142 8.63786 7.74311L14.2331 2.15287C14.5869 1.79886 14.5864 1.22531 14.2322 0.8718C13.8779 0.518292 13.3039 0.518697 12.9501 0.872705L7.35548 6.46053C7.32715 6.48891 7.28868 6.50486 7.24857 6.50486C7.20845 6.50486 7.16998 6.48891 7.14165 6.46053L1.54704 0.872705C1.19326 0.51903 0.619524 0.518895 0.265573 0.872403C-0.0883787 1.22591 -0.0885139 1.7992 0.265271 2.15287L5.85928 7.74311C5.88768 7.77142 5.90364 7.80985 5.90364 7.84994C5.90364 7.89002 5.88768 7.92846 5.85928 7.95677L0.265271 13.5476C0.0364121 13.7764 -0.0529097 14.1098 0.0309517 14.4222C0.114813 14.7347 0.359117 14.9787 0.671837 15.0623C0.984557 15.146 1.31818 15.0566 1.54704 14.8278L7.14165 9.23693C7.16998 9.20855 7.20845 9.1926 7.24857 9.1926C7.28868 9.1926 7.32715 9.20855 7.35548 9.23693L12.9501 14.8278C13.3039 15.1814 13.8776 15.1816 14.2316 14.8281C14.5855 14.4746 14.5856 13.9013 14.2319 13.5476L8.63786 7.95677Z"
-                                        fill="#F496D1" />
+                                        d="M13.5537 1.77865L11.8672 0.0886602C11.8105 0.0318998 11.7336 0 11.6534 0C11.5731 0 11.4962 0.0318998 11.4395 0.0886602L4.3167 7.21075C4.26004 7.26751 4.18311 7.29941 4.10287 7.29941C4.02264 7.29941 3.94571 7.26751 3.88904 7.21075L2.20257 5.52076C2.1459 5.464 2.06897 5.4321 1.98874 5.4321C1.9085 5.4321 1.83157 5.464 1.77491 5.52076L0.0884273 7.21075C-0.0294758 7.32859 -0.0294758 7.51962 0.0884273 7.63747L3.88904 11.4357C3.94571 11.4925 4.02264 11.5244 4.10287 11.5244C4.18311 11.5244 4.26004 11.4925 4.3167 11.4357L13.5537 2.20114C13.6688 2.0838 13.6688 1.89599 13.5537 1.77865Z"
+                                        fill="#391F75" />
                                 </svg>
                             </div>
                         </li>
@@ -397,6 +402,7 @@
                 p-3
                 text-center
                 rounded-xl
+                mt-5
                 lg:mt-20
               ">
                         Choose plan
@@ -406,7 +412,9 @@
             <div class="w-full flex flex-wrap justify-center" x-show="data.tab == 2">
                 <h1 class="
               text-semibold
-              px-5
+              px-2
+              mt-5
+              lg:mt-0
               lg:px-0
               text-2xl
               lg:text-5xl
@@ -497,7 +505,7 @@
                         <div class="w-full p-1 mb-3">
                             <div class="w-full rounded-xl border border-primary py-1 px-3">
                                 <label class="px-3 text-gray-400">Address</label>
-                                <input x-model="traveller.address" placeholder="" type="text" class="
+                                <input x-model="traveller.address" placeholder="Address" type="text" class="
                       text-xl
                       xl:text-2xl
                       font-semibold
@@ -596,7 +604,9 @@
             <div class="w-full flex flex-wrap justify-center" x-show="data.tab == 3">
                 <h1 class="
               text-semibold
-              px-5
+              px-3
+              mt-5
+              lg:mt-0
               lg:px-0
               text-2xl
               lg:text-5xl
@@ -605,11 +615,11 @@
             ">
                     Payment Info
                 </h1>
-                <div class="w-full bg-yellow-200 text-red-500 p-5 rounded-xl mt-10">
+                <div class="text-xs lg:text-lg w-full bg-yellow-200 text-red-500 p-5 rounded-xl mt-5 lg:mt-10">
                     Your total price has changed based on your state of residence and
                     date of birth. See the details in your summary.
                 </div>
-                <div class="w-full flex flex-wrap mt-10 text-md lg:text-xl">
+                <div class="w-full flex flex-wrap mt-5 text-md lg:text-xl">
                     <div class="w-full p-1 mb-3">
                         <div class="w-full rounded-xl border border-primary py-1 px-3">
                             <label class="px-3 text-gray-400">Name</label>
@@ -625,7 +635,7 @@
                   " />
                         </div>
                     </div>
-                    <div class="w-full lg:w-1/2 p-1 mb-3">
+                    <div class="w-1/2 p-1 mb-3">
                         <div class="w-full rounded-xl border border-primary py-1 px-3">
                             <label class="px-3 text-gray-400">Month</label>
                             <input x-model="data.form.payment.month" placeholder="01" type="text" class="
@@ -640,7 +650,7 @@
                   " />
                         </div>
                     </div>
-                    <div class="w-full lg:w-1/2 p-1 mb-3">
+                    <div class="w-1/2 p-1 mb-3">
                         <div class="w-full rounded-xl border border-primary py-1 px-3">
                             <label class="px-3 text-gray-400">Year</label>
                             <input x-model="data.form.payment.year" placeholder="2022" type="text" class="
@@ -676,7 +686,7 @@
                             Is your credit card billing address the same as your mailing
                             adress?
                         </p>
-                        <img class="w-1/3 ml-auto" src="/assets/img/payment-info.png" alt="Payment Info" />
+                        <img class="w-1/3 ml-auto" src="assets/img/payment-info.png" alt="Payment Info" />
                         <div class="w-full flex mt-5">
                             <div class="flex">
                                 <input x-model="data.form.payment.question" class="w-5 h-5 mr-3" type="radio"
@@ -693,7 +703,7 @@
                 </div>
             </div>
             <div class="w-full flex flex-wrap justify-center text-center lg:px-10" x-show="data.tab == 4">
-                <div class="w-full flex mb-10 mt-10">
+                <div class="w-full flex mb-5 lg:mb-10 mt-5 lg:mt-10">
                     <svg class="mx-auto" width="70" height="70" viewBox="0 0 70 70" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -701,15 +711,15 @@
                             fill="#2EBA34" />
                     </svg>
                 </div>
-                <h1 class="w-full text-2xl lg:text-4xl xl:text-5xl mb-10 font-semibold">
+                <h1 class="w-full text-2xl lg:text-4xl xl:text-5xl mb-5 lg:mb-10 font-semibold">
                     <div class="w-full mb-3">Thank you!</div>
                     Your order has been received.
                 </h1>
-                <div class="w-full text-3xl mb-10">
-                    <span class="text-primary opacity-70">Your Order Number:</span>
+                <div class="w-full text-2xl xl:text-3xl mb-5 lg:mb-10 flex flex-wrap justify-center">
+                    <div class="text-primary opacity-70 w-full lg:w-auto">Your Order Number:</div>
                     <span class="text-primary_light">#29293</span>
                 </div>
-                <p class="w-full mb-10 text-xl text-gray-400">
+                <p class="w-full mb-5 lg:mb-10 text-sm text-gray-400">
                     Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
                     sint. Velit officia consequat duis enim velit mollit. Exercitation
                     veniam consequat sunt nostrud amet.
@@ -738,10 +748,10 @@
                 </button>
                 <div class="w-full flex justify-center">
                     <a href="#">
-                        <img src="/assets/img/play-store.png" alt="PlayStore" />
+                        <img src="assets/img/play-store.png" alt="PlayStore" />
                     </a>
                     <a href="#">
-                        <img src="/assets/img/app-store.png" alt="AppStore" />
+                        <img src="assets/img/app-store.png" alt="AppStore" />
                     </a>
                 </div>
             </div>
@@ -778,44 +788,51 @@
     <section class="hidden lg:block items-start w-4/12 p-5">
         <div class="w-full lg:w-3/4 flex mt-40">
             <span class="text-xl xl:text-2xl">Summary of your insurance</span>
-            <svg class="ml-auto mt-2" width="17" height="20" viewBox="0 0 17 20" fill="none"
+            <a class="ml-auto mt-2" href="index.html">
+                <svg  width="17" height="20" viewBox="0 0 17 20" fill="none"
                 xmlns="http://www.w3.org/2000/svg">
                 <path
                     d="M15.9999 18H1.99994C1.73472 18 1.48037 18.1054 1.29283 18.2929C1.1053 18.4804 0.999938 18.7348 0.999938 19C0.999938 19.2652 1.1053 19.5196 1.29283 19.7071C1.48037 19.8947 1.73472 20 1.99994 20H15.9999C16.2652 20 16.5195 19.8947 16.707 19.7071C16.8946 19.5196 16.9999 19.2652 16.9999 19C16.9999 18.7348 16.8946 18.4804 16.707 18.2929C16.5195 18.1054 16.2652 18 15.9999 18ZM1.99994 16H2.08994L6.25994 15.62C6.71673 15.5745 7.14397 15.3732 7.46994 15.05L16.4699 6.05001C16.8193 5.68098 17.008 5.18852 16.9949 4.68055C16.9818 4.17257 16.7678 3.69052 16.3999 3.34001L13.6599 0.600011C13.3023 0.264106 12.8337 0.0713693 12.3433 0.0584625C11.8528 0.0455557 11.3747 0.21338 10.9999 0.530011L1.99994 9.53001C1.6767 9.85598 1.47544 10.2832 1.42994 10.74L0.999938 14.91C0.986467 15.0565 1.00547 15.2041 1.0556 15.3424C1.10573 15.4807 1.18574 15.6062 1.28994 15.71C1.38338 15.8027 1.49419 15.876 1.61603 15.9258C1.73787 15.9755 1.86833 16.0008 1.99994 16ZM12.2699 2.00001L14.9999 4.73001L12.9999 6.68001L10.3199 4.00001L12.2699 2.00001Z"
                     fill="black" />
             </svg>
+            </a>
         </div>
-        <div class="w-full lg:w-3/4 shadow-md rounded-xl mt-10 p-10">
-            <h1 class="text-primary text-xl 2xl:text-2xl mb-10 font-bold">Plan Summary</h1>
+        <div class="w-full lg:w-3/4 shadow-md rounded-xl p-10">
+            <h1 class="text-primary text-lg xl:text-xl mb-5 font-bold">Plan Summary</h1>
             <ul>
                 <li class="mb-5">
                     <h2 class="mb-3 text-primary opacity-70 text-xl">Your Plan:</h2>
-                    <strong class="text-primary font-bold text-xl 2xl:text-2xl mb-3" x-text="data.form.quote.plan"></strong>
+                    <strong class="text-primary font-bold text-lg xl:text-xl mb-3" x-text="data.form.quote.plan"></strong>
                 </li>
                 <li>
                     <h2 class="mb-3 text-primary opacity-70 text-xl">Total Price:</h2>
-                    <strong class="text-primary font-bold text-xl 2xl:text-2xl" x-text="'$'+data.form.quote.price"></strong>
+                    <strong class="text-primary font-bold text-lg xl:text-xl" x-text="'$'+data.form.quote.price"></strong>
                 </li>
             </ul>
         </div>
-        <div class="w-full lg:w-3/4 shadow-md rounded-xl mt-10 p-10">
-            <h1 class="text-primary text-xl 2xl:text-2xl mb-10 font-bold">Travel Summary</h1>
+        <div class="w-full lg:w-3/4 shadow-md rounded-xl p-10">
+            <h1 class="text-primary text-lg xl:text-xl mb-5 font-bold">Travel Summary</h1>
             <ul>
                 <li class="mb-5">
                     <h2 class="mb-3 text-primary opacity-70 text-xl">
                         State of Residence:
                     </h2>
-                    <strong class="text-primary font-bold text-xl 2xl:text-2xl mb-3">Arizona</strong>
+                    <strong class="text-primary font-bold text-lg xl:text-xl mb-3 uppercase" x-text="summaryData.what"></strong>
                 </li>
                 <li class="mb-5">
                     <h2 class="mb-3 text-primary opacity-70 text-xl">Travel Dates:</h2>
-                    <strong class="text-primary font-bold text-xl 2xl:text-2xl">06/14/2021-06/18/2021</strong>
+                    <strong class="text-primary font-bold text-lg xl:text-xl">
+                        <span x-text="summaryData.when.from.label"></span> /
+                        <span x-text="summaryData.when.to.label"></span>
+                    </strong>
                 </li>
                 <li>
                     <h2 class="mb-3 text-primary opacity-70 text-xl">
                         Travelling with:
                     </h2>
-                    <strong class="text-primary font-bold text-xl 2xl:text-2xl">Parent</strong>
+                    <strong class="text-primary font-bold text-lg xl:text-xl">
+                        <span x-text="summaryData.who"></span>
+                    </strong>
                 </li>
             </ul>
         </div>
