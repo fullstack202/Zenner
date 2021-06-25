@@ -576,7 +576,7 @@
                 </div>
             </div>
             <button x-show="data.tab < 4" @click="data.tab = data.tab+1; location.href = '#0'+data.tab" class="
-            w-11/12
+            w-full
             lg:w-auto
             focus:outline-none
             rounded-xl
@@ -589,9 +589,6 @@
             lg:mt-40
             2xl:mt-80
             ml-auto
-            fixed
-            bottom-5
-            left-4
             lg:relative
           ">
                 <span class="mr-10">NEXT</span>
@@ -604,21 +601,20 @@
                 </svg>
             </button>
             <button x-show="data.tab >= 4" @click="getQuote()" class="
-            w-11/12
-            lg:w-auto
-            focus:outline-none
-            rounded-xl
-            py-4
-            px-5
-            bg-primary
-            text-white
-            flex
-            lg:mb-20
-            lg:mt-40
-            ml-auto
-            fixed
-            bottom-5
-            lg:relative
+                w-full
+                lg:w-auto
+                focus:outline-none
+                rounded-xl
+                py-4
+                px-5
+                bg-primary
+                text-white
+                flex
+                lg:mb-20
+                lg:mt-40
+                2xl:mt-80
+                ml-auto
+                lg:relative
           ">
                 <span class="mr-10">GET A QUOTE</span>
                 <svg class="ml-auto" width="25" height="24" viewBox="0 0 25 24" fill="none"
