@@ -538,15 +538,15 @@
                             <div class="w-full rounded-xl border border-primary py-1 px-3">
                                 <label class="px-3 text-gray-400">State</label>
                                 <input x-model="traveller.state" placeholder="NY" type="text" class="
-                      text-xl
-                      xl:text-2xl
-                      font-semibold
-                      w-full
-                      pb-1
-                      px-3
-                      focus:outline-none
-                      border-0
-                    " />
+                                    text-xl
+                                    xl:text-2xl
+                                    font-semibold
+                                    w-full
+                                    pb-1
+                                    px-3
+                                    focus:outline-none
+                                    border-0
+                                    " />
                             </div>
                         </div>
                         <div class="w-full lg:w-1/2 p-1 mb-3">
@@ -758,7 +758,7 @@
                 </div>
             </div>
             <button x-show="data.tab < 4 && data.tab !== 1"
-                @click="data.tab = data.tab+1; location.href = '#0'+data.tab; saveData()" class="
+                @click="nextTab()" class="
             w-11/12
             lg:w-auto
             focus:outline-none
@@ -1011,6 +1011,30 @@
                 data: {
                     tab: tabActive,
                     form: newForm,
+                },
+                nextTab() {
+                    // Validation
+                    let nexttab = false
+                    if(this.data.tab === 2 && this.data.form.travellers[0].email !== ""){
+                        nexttab = true
+                    }
+                    else if(this.data.tab === 3 && this.data.form.payment.card_number !== ""){
+                        nexttab = true
+                    }
+                    else if(this.data.tab === 4 && this.data.form.quote.plan){
+                        nexttab = true
+                    }
+                    else{
+                        nexttab = false
+                    }
+                    // End
+                    if(nexttab){
+                        this.data.tab = this.data.tab+1
+                        location.href = '#0'+this.data.tab
+                        this.saveData()
+                    }else{
+                        // alert("Nooo")
+                    }
                 },
                 addNewTraveller,
                 saveData,

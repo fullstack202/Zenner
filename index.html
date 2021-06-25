@@ -105,7 +105,7 @@
                 <a @click="data.tab = 2" href="#02"
                     x-bind:class="data.tab == 2 ? 'mx-1 border-b-4 border-primary_light w-32 lg:w-1/4 py-4 text-primary' : 'mx-1 border-b-4 border-gray-300 w-32 lg:w-1/4 py-4 text-gray-400'">02
                     WHAT
-                    <div x-show="data.form.what" class="
+                    <div x-show="data.form.what.code" class="
                 absolute
                 text-center
                 mt-10
@@ -124,7 +124,7 @@
                                 d="M11.7782 2.14122C10.828 1.19123 9.55958 0.626898 8.21774 0.55714C6.8759 0.487381 5.55577 0.917141 4.51216 1.76347C3.46855 2.60981 2.77543 3.81272 2.56657 5.14004C2.35771 6.46736 2.64792 7.825 3.38119 8.95093L7.15953 14.7513C7.24361 14.8804 7.35858 14.9865 7.494 15.0599C7.62943 15.1333 7.78103 15.1717 7.93508 15.1717C8.08912 15.1717 8.24072 15.1333 8.37615 15.0599C8.51158 14.9865 8.62654 14.8804 8.71062 14.7513L12.4891 8.95093C13.1695 7.90647 13.4702 6.65987 13.3407 5.42007C13.2113 4.18028 12.6597 3.02265 11.7782 2.14122ZM11.6512 8.40509L7.93509 14.1098L4.21894 8.40509C3.08144 6.65887 3.3254 4.322 4.79903 2.84831C5.21086 2.43647 5.69977 2.10978 6.23786 1.88689C6.77595 1.664 7.35267 1.54928 7.93509 1.54928C8.51752 1.54928 9.09423 1.664 9.63232 1.88689C10.1704 2.10978 10.6593 2.43647 11.0712 2.84831C12.5448 4.322 12.7887 6.65887 11.6512 8.40509Z"
                                 fill="#7000FF" />
                         </svg>
-                        <span class="pl-1 2xl:pl-2 text-xs 2xl:text-sm uppercase" x-text="data.form.what"></span>
+                        <span class="pl-1 2xl:pl-2 text-xs 2xl:text-sm uppercase" x-text="data.form.what.name"></span>
                     </div>
                 </a>
                 <a @click="data.tab = 3" href="#03"
@@ -214,7 +214,7 @@
                   max-h-80
                   overflow-y-scroll
                 ">
-                            <template x-for="where in data.where_options">
+                            <template x-for="where in whereFilteredOptions()">
                                 <li class="
                       px-5
                       py-3
@@ -244,7 +244,7 @@
                   max-h-80
                   overflow-y-scroll
                 ">
-                            <template x-for="where in data.where_options">
+                            <template x-for="where in whereFilteredOptions()">
                                 <li class="
                       px-5
                       py-3
@@ -271,8 +271,32 @@
             ">
                     What’s your state of residence?
                 </h1>
-                <div class="w-full flex flex-wrap lg:flex-nowrap my-10 justify-center">
-                    <input x-model="data.form.what" class="
+                <div class="relative w-full flex flex-wrap  my-10 justify-center">
+
+                    <button
+                    x-show="!selectShow.what"
+                    @click="selectShow.what = !selectShow.what"
+                    class="
+                    w-full
+                    px-10
+                    py-5
+                    rounded-xl
+                    border-2
+                    border-primary_light
+                    text-2xl
+                    uppercase
+                    focus:outline-none
+                    text-left
+                  " 
+                      >  <span x-show="!data.form.what.name">
+                        State of Residence
+                      </span>
+                       <span x-show="data.form.what.name"></span>
+                            <span x-text="data.form.what.name"></span>
+                        </span>
+                        </button>
+
+                    <input x-show="selectShow.what" x-model="search_what" class="
                 w-full
                 px-10
                 py-5
@@ -283,6 +307,33 @@
                 uppercase
                 focus:outline-none
               " type="text" placeholder="State of Residence" />
+
+                    <ul
+                    
+                    x-show="selectShow.what && whatFilteredOptions()"
+                    class="
+                    w-full
+                    py-5
+                    rounded-xl
+                    text-2xl
+                    uppercase
+                    absolute
+                    top-20
+                    left-0
+                    shadow-lg
+                    cursor-pointer
+                    max-h-40
+                    overflow-y-scroll
+                    bg-white
+                    z-50
+                    ">
+
+                        <template  x-for="what in whatFilteredOptions()">
+                            <li class="py-3 px-10 hover:bg-gray-100" x-bind:class="data.form.what.code ? 'text-primary' : ''" 
+                            x-text="what.name"
+                                @click="data.form.what = what; selectShow.what = !selectShow.what"></li>
+                        </template>
+                </ul>
                 </div>
             </div>
             <div class="w-full flex flex-wrap justify-center" x-show="data.tab == 3">
@@ -381,7 +432,9 @@
               justify-center
               text-xl
             ">
-                    <div class="
+                    <div 
+                    @click="(data.form.who.includes('Parents')) ? '' : data.form.who.push('Parents')"
+                    class="
                 lg:h-52
                 w-full
                 lg:w-1/4
@@ -439,7 +492,10 @@
                         </svg>
                         <span class="mr-10 lg:w-full lg:mx-auto text-center font-bold mb-5 lg:mt-40">Parents</span>
                     </div>
-                    <div class="
+                    <div 
+                    @click="(data.form.who.includes('Kids')) ? '' : data.form.who.push('Kids')"
+                    
+                    class="
                 lg:h-52
                 w-full
                 lg:w-1/4
@@ -476,7 +532,10 @@
                         </svg>
                         <span class="mr-10 lg:w-full lg:mx-auto text-center font-bold mb-5 lg:mt-40">Kids</span>
                     </div>
-                    <div class="
+                    <div 
+                    @click="(data.form.who.includes('Friends')) ? '' : data.form.who.push('Friends')"
+                    
+                    class="
                 lg:h-52
                 w-full
                 lg:w-1/4
@@ -513,7 +572,10 @@
                         </svg>
                         <span class="mr-10 lg:w-full lg:mx-auto text-center font-bold mb-5 lg:mt-40">Friends</span>
                     </div>
-                    <div class="
+                    <div 
+                    @click="(data.form.who.includes('Pets')) ? '' : data.form.who.push('Pets')"
+                    
+                    class="
                 lg:h-52
                 w-full
                 lg:w-1/4
@@ -575,7 +637,7 @@
                     </div>
                 </div>
             </div>
-            <button x-show="data.tab < 4" @click="data.tab = data.tab+1; location.href = '#0'+data.tab" class="
+            <button x-show="data.tab < 4" @click="nextTab()" class="
             w-full
             lg:w-auto
             focus:outline-none
@@ -1361,6 +1423,33 @@
       "textString": "America West Airlines (HP)"
     }
   ];
+
+  let what_options = [
+    {
+        "name": "Country Name",
+        "code": "CN"
+    },
+    {
+        "name": "Country Name 2",
+        "code": "CN2"
+    },
+    {
+        "name": "Country Name 3",
+        "code": "CN3"
+    },
+    {
+        "name": "Country Name 4",
+        "code": "CN4"
+    },
+    {
+        "name": "Country Name 5",
+        "code": "CN5"
+    },
+    {
+        "name": "Country Name 6",
+        "code": "CN6"
+    },
+  ];
         function page1() {
             let tabActive = 1;
             if (location.href.split("#")[1] !== undefined) {
@@ -1375,7 +1464,10 @@
                     from: "",
                     to: "",
                 },
-                what: "",
+                what: {
+                    name: "",
+                    code: ""
+                },
                 when: {
                     from: {
                         label: "",
@@ -1405,11 +1497,76 @@
                 selectShow: {
                     from: false,
                     to: false,
+                    what: false,
                 },
+                search_what: "",
+                search_where: "",
                 data: {
                     tab: tabActive,
-                    where_options: where_options,
-                    form: newForm,
+                    form: newForm
+                },
+                where_options: where_options,
+                what_options: what_options,
+                dynamicSort(property) {
+                var sortOrder = 1;
+                if(property[0] === "-") {
+                    sortOrder = -1;
+                    property = property.substr(1);
+                }
+                return function (a,b) {
+                    /* next line works with strings and numbers, 
+                    * and you may want to customize it to your needs
+                    */
+                    var result = (a[property] < b[property]) ? -1 : (a[property] > b[property]) ? 1 : 0;
+                    return result * sortOrder;
+                }
+            },
+                whereFilteredOptions() {
+                    return where_options.sort(this.dynamicSort("name"));
+                    // if(this.search_where){
+                        // return where_options.filter((option) => {
+                        //     name = option.name.toLowerCase()
+                        //     return name.includes(this.search_where.toLowerCase());
+                        // });
+                    // }else{
+                    //     return ""
+                    // }
+                },
+                whatFilteredOptions() {
+                    if(this.search_what){
+                        return what_options.filter((option) => {
+                            name = option.name.toLowerCase()
+                            return name.includes(this.search_what.toLowerCase());
+                        }).sort(this.dynamicSort("name"));
+                    }else{
+                        return ""
+                    }
+                },
+                nextTab() {
+                    // Validation
+                    let nexttab = false
+                    if(this.data.tab === 1 && this.data.form.where.from !== ""  && this.data.form.where.to !== ""){
+                        nexttab = true
+                    }
+                    else if(this.data.tab === 2 && this.data.form.what.code !== ""){
+                        nexttab = true
+                    }
+                    else if(this.data.tab === 3 && this.data.form.when.from.date !== "" && this.data.form.when.to.date !== ""){
+                        nexttab = true
+                    }
+                    else if(this.data.tab === 4){
+                        nexttab = true
+                    }
+                    else{
+                        nexttab = false
+                    }
+                    // End
+                    if(nexttab){
+                        this.data.tab = this.data.tab+1
+                        location.href = '#0'+this.data.tab
+                    }else{
+                        // alert("Nooo")
+                    }
                 },
                 getQuote,
                 showDatepicker: {
@@ -1435,7 +1592,6 @@
                 isToday(date) {
                     const today = new Date();
                     const d = new Date(this.year, this.month, date);
-
                     return today.toDateString() === d.toDateString() ? true : false;
                 },
 
