@@ -36,14 +36,21 @@
         <section x-show="data.tab == 1" class="w-full block lg:hidden">
             <img width="100%" height="auto" src="assets/img/bg1-md.jpg" alt="bg1 md" />
         </section>
-        <section x-show="data.tab == 2" class="w-full block lg:hidden">
+        <section x-show="data.tab == 2" class="w-full block lg:hidden relative">
             <img width="100%" height="auto" src="assets/img/bg2-md.jpg" alt="bg2 md" />
+            <div class="text-xs p-2 px-4 bg-white absolute bottom-16 right-2 rounded-full rounded-tr-none">Hello!</div>
+            <div class="w-36 text-xs p-2 px-4 bg-white absolute bottom-2 right-2 rounded-full rounded-tr-none">It's cold out there!
+                Don't forget a coat</div>
         </section>
-        <section x-show="data.tab == 3" class="w-full block lg:hidden">
+        <section x-show="data.tab == 3" class="w-full block lg:hidden relative">
             <img width="100%" height="auto" src="assets/img/bg3-md.jpg" alt="bg3 md" />
+            <div class="text-xs p-2 px-4 bg-white absolute bottom-16 right-2 rounded-full rounded-tr-none">Hello!</div>
         </section>
-        <section x-show="data.tab == 4" class="w-full block lg:hidden">
+        <section x-show="data.tab == 4" class="w-full block lg:hidden relative">
             <img width="100%" height="auto" src="assets/img/bg4-md.jpg" alt="bg4 md" />
+            <div class="text-xs p-2 px-4 bg-white absolute bottom-16 right-2 rounded-full rounded-tr-none">Hello!</div>
+            <div class="w-36 text-xs p-2 px-4 bg-white absolute bottom-2 right-2 rounded-full rounded-tr-none">It's cold out there!
+                Don't forget a coat</div>
         </section>
 
         <!-- Tabs -->
@@ -204,6 +211,8 @@
                   rounded-xl
                   py-3
                   z-50
+                  max-h-80
+                  overflow-y-scroll
                 ">
                             <template x-for="where in data.where_options">
                                 <li class="
@@ -232,6 +241,8 @@
                   rounded-xl
                   py-3
                   z-50
+                  max-h-80
+                  overflow-y-scroll
                 ">
                             <template x-for="where in data.where_options">
                                 <li class="
@@ -620,10 +631,22 @@
             </button>
         </div>
     </section>
-    <section x-show="data.tab == 1" class="lg:w-5/12 hidden lg:block h-screen bg-01 bg-cover"></section>
-    <section x-show="data.tab == 2" class="lg:w-5/12 hidden lg:block h-screen bg-02 bg-cover"></section>
-    <section x-show="data.tab == 3" class="lg:w-5/12 hidden lg:block h-screen bg-03 bg-cover"></section>
-    <section x-show="data.tab == 4" class="lg:w-5/12 hidden lg:block h-screen bg-04 bg-cover"></section>
+    <section x-show="data.tab == 1" class="lg:w-5/12 hidden lg:block h-screen bg-01 bg-cover">
+    
+    </section>
+    <section x-show="data.tab == 2" class="lg:w-5/12 hidden lg:block h-screen bg-02 bg-cover relative">
+        <div class="p-2 px-4 bg-white absolute bottom-32 right-10 rounded-full rounded-tr-none">Hello!</div>
+        <div class="w-52 p-2 px-4 bg-white absolute bottom-10 right-10 rounded-full rounded-tr-none">It's cold out there!
+            Don't forget a coat</div>
+    </section>
+    <section x-show="data.tab == 3" class="lg:w-5/12 hidden lg:block h-screen bg-03 bg-cover relative">
+        <div class="p-2 px-4 bg-white absolute bottom-32 right-10 rounded-full rounded-tr-none">Hello!</div>
+    </section>
+    <section x-show="data.tab == 4" class="lg:w-5/12 hidden lg:block h-screen bg-04 bg-cover relative">
+        <div class="p-2 px-4 bg-white absolute bottom-32 right-10 rounded-full rounded-tr-none">Hello!</div>
+        <div class="w-52 p-2 px-4 bg-white absolute bottom-10 right-10 rounded-full rounded-tr-none">It's cold out there!
+            Don't forget a coat</div>
+    </section>
 
 
 
@@ -725,6 +748,623 @@
         ];
         const DAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
+        let where_options = [
+    {
+      "name": "United Airlines",
+      "code": "UA",
+      "textString": "United Airlines (UA)"
+    },
+    {
+      "name": "American Airlines",
+      "code": "AA",
+      "textString": "American Airlines (AA)"
+    },
+    {
+      "name": "Air Jamaica",
+      "code": "JM",
+      "textString": "Air Jamaica (JM)"
+    },
+    {
+      "name": "Air Namibia",
+      "code": "SW",
+      "textString": "Air Namibia (SW)"
+    },
+    {
+      "name": "Iberia",
+      "code": "IB",
+      "textString": "Iberia (IB)"
+    },
+    {
+      "name": "Virgin Blue Airlines",
+      "code": "DJ",
+      "textString": "Virgin Blue Airlines (DJ)"
+    },
+    {
+      "name": "Silk Air",
+      "code": "MI",
+      "textString": "Silk Air (MI)"
+    },
+    {
+      "name": "US Air / American Code Share",
+      "code": "US/AA",
+      "textString": "US Air / American Code Share (US/AA)"
+    },
+    {
+      "name": "Allegiant Air",
+      "code": "G4",
+      "textString": "Allegiant Air (G4)"
+    },
+    {
+      "name": "All Nippon Airways",
+      "code": "NH",
+      "textString": "All Nippon Airways (NH)"
+    },
+    {
+      "name": "Air Berlin",
+      "code": "AB",
+      "textString": "Air Berlin (AB)"
+    },
+    {
+      "name": "Kulula Airlines",
+      "code": "MN",
+      "textString": "Kulula Airlines (MN)"
+    },
+    {
+      "name": "Caribbean Airlines",
+      "code": "BW",
+      "textString": "Caribbean Airlines (BW)"
+    },
+    {
+      "name": "TACA Airlines",
+      "code": "TA",
+      "textString": "TACA Airlines (TA)"
+    },
+    {
+      "name": "Inter Caribbean Airlines",
+      "code": "JY",
+      "textString": "Inter Caribbean Airlines (JY)"
+    },
+    {
+      "name": "Midwest Express Airlines",
+      "code": "YX",
+      "textString": "Midwest Express Airlines (YX)"
+    },
+    {
+      "name": "Aerolineas Argentinas",
+      "code": "AR",
+      "textString": "Aerolineas Argentinas (AR)"
+    },
+    {
+      "name": "Singapore Airlines",
+      "code": "SQ",
+      "textString": "Singapore Airlines (SQ)"
+    },
+    {
+      "name": "Spanair",
+      "code": "JK",
+      "textString": "Spanair (JK)"
+    },
+    {
+      "name": "WinAir",
+      "code": "WM",
+      "textString": "WinAir (WM)"
+    },
+    {
+      "name": "Sun Country Airlines",
+      "code": "SY",
+      "textString": "Sun Country Airlines (SY)"
+    },
+    {
+      "name": "Northwest Airlines",
+      "code": "NWA",
+      "textString": "Northwest Airlines (NWA)"
+    },
+    {
+      "name": "Aerogal Airlines",
+      "code": "2K",
+      "textString": "Aerogal Airlines (2K)"
+    },
+    {
+      "name": "Aer Lingus P.L.C.",
+      "code": "EI",
+      "textString": "Aer Lingus P.L.C. (EI)"
+    },
+    {
+      "name": "Malaysia Airline",
+      "code": "MH",
+      "textString": "Malaysia Airline (MH)"
+    },
+    {
+      "name": "Carribean Star",
+      "code": "8B",
+      "textString": "Carribean Star (8B)"
+    },
+    {
+      "name": "Tigerair",
+      "code": "TGW",
+      "textString": "Tigerair (TGW)"
+    },
+    {
+      "name": "China Southern Airlines",
+      "code": "CZ",
+      "textString": "China Southern Airlines (CZ)"
+    },
+    {
+      "name": "Cape Air",
+      "code": "9K",
+      "textString": "Cape Air (9K)"
+    },
+    {
+      "name": "Austrian",
+      "code": "OS",
+      "textString": "Austrian (OS)"
+    },
+    {
+      "name": "Etihad Airways",
+      "code": "EY",
+      "textString": "Etihad Airways (EY)"
+    },
+    {
+      "name": "Insel Air International BV",
+      "code": "71",
+      "textString": "Insel Air International BV (71)"
+    },
+    {
+      "name": "Aeromexico",
+      "code": "AM",
+      "textString": "Aeromexico (AM)"
+    },
+    {
+      "name": "Seabourne Airlines",
+      "code": "BB",
+      "textString": "Seabourne Airlines (BB)"
+    },
+    {
+      "name": "Kenya Airways",
+      "code": "KQ",
+      "textString": "Kenya Airways (KQ)"
+    },
+    {
+      "name": "Eurowings",
+      "code": "EW",
+      "textString": "Eurowings (EW)"
+    },
+    {
+      "name": "LANPERU",
+      "code": "LP",
+      "textString": "LANPERU (LP)"
+    },
+    {
+      "name": "Hainan Airlines",
+      "code": "HU",
+      "textString": "Hainan Airlines (HU)"
+    },
+    {
+      "name": "Air India",
+      "code": "AI",
+      "textString": "Air India (AI)"
+    },
+    {
+      "name": "Norwegian Airlines",
+      "code": "DY",
+      "textString": "Norwegian Airlines (DY)"
+    },
+    {
+      "name": "Kingfisher",
+      "code": "IT",
+      "textString": "Kingfisher (IT)"
+    },
+    {
+      "name": "Private Jet",
+      "code": "PV",
+      "textString": "Private Jet (PV)"
+    },
+    {
+      "name": "Kiwi International",
+      "code": "KP",
+      "textString": "Kiwi International (KP)"
+    },
+    {
+      "name": "Bangkok Airways",
+      "code": "PG",
+      "textString": "Bangkok Airways (PG)"
+    },
+    {
+      "name": "Mexicana De Aviacion",
+      "code": "MX",
+      "textString": "Mexicana De Aviacion (MX)"
+    },
+    {
+      "name": "Air Tahiti Nui",
+      "code": "VT",
+      "textString": "Air Tahiti Nui (VT)"
+    },
+    {
+      "name": "Copa",
+      "code": "CM",
+      "textString": "Copa (CM)"
+    },
+    {
+      "name": "Turkish Airlines",
+      "code": "TK",
+      "textString": "Turkish Airlines (TK)"
+    },
+    {
+      "name": "Varig",
+      "code": "RG",
+      "textString": "Varig (RG)"
+    },
+    {
+      "name": "Jet Airways",
+      "code": "9W",
+      "textString": "Jet Airways (9W)"
+    },
+    {
+      "name": "Airtran Airways Inc",
+      "code": "FL",
+      "textString": "Airtran Airways Inc (FL)"
+    },
+    {
+      "name": "Egyptair",
+      "code": "MS",
+      "textString": "Egyptair (MS)"
+    },
+    {
+      "name": "Qatar Airways",
+      "code": "QR",
+      "textString": "Qatar Airways (QR)"
+    },
+    {
+      "name": "Flybaboo Airlines",
+      "code": "F7",
+      "textString": "Flybaboo Airlines (F7)"
+    },
+    {
+      "name": "Gulf Air",
+      "code": "GF",
+      "textString": "Gulf Air (GF)"
+    },
+    {
+      "name": "Piedmont Airlines",
+      "code": "PI",
+      "textString": "Piedmont Airlines (PI)"
+    },
+    {
+      "name": "Luxair",
+      "code": "LG",
+      "textString": "Luxair (LG)"
+    },
+    {
+      "name": "Qantas Airways",
+      "code": "QF",
+      "textString": "Qantas Airways (QF)"
+    },
+    {
+      "name": "Air Asia",
+      "code": "AK",
+      "textString": "Air Asia (AK)"
+    },
+    {
+      "name": "Frontier Airlines",
+      "code": "F9",
+      "textString": "Frontier Airlines (F9)"
+    },
+    {
+      "name": "EVA Airways Corporation",
+      "code": "BR",
+      "textString": "EVA Airways Corporation (BR)"
+    },
+    {
+      "name": "Aeroflot Russian Airlines",
+      "code": "SU",
+      "textString": "Aeroflot Russian Airlines (SU)"
+    },
+    {
+      "name": "Virgin Atlantic Airways Ltd.",
+      "code": "VS",
+      "textString": "Virgin Atlantic Airways Ltd. (VS)"
+    },
+    {
+      "name": "LACSA (Lineas Aereas Costarricenses)",
+      "code": "LR",
+      "textString": "LACSA (Lineas Aereas Costarricenses) (LR)"
+    },
+    {
+      "name": "Finnair",
+      "code": "AY",
+      "textString": "Finnair (AY)"
+    },
+    {
+      "name": "US Airways",
+      "code": "US",
+      "textString": "US Airways (US)"
+    },
+    {
+      "name": "Air Canada",
+      "code": "AC",
+      "textString": "Air Canada (AC)"
+    },
+    {
+      "name": "Nature Air",
+      "code": "5C",
+      "textString": "Nature Air (5C)"
+    },
+    {
+      "name": "SN Brussels Airlines",
+      "code": "SN",
+      "textString": "SN Brussels Airlines (SN)"
+    },
+    {
+      "name": "Asiana Airlines",
+      "code": "OZ",
+      "textString": "Asiana Airlines (OZ)"
+    },
+    {
+      "name": "Aloha Airlines",
+      "code": "AQ",
+      "textString": "Aloha Airlines (AQ)"
+    },
+    {
+      "name": "Virgin America Airlines",
+      "code": "VX",
+      "textString": "Virgin America Airlines (VX)"
+    },
+    {
+      "name": "TAP Air Portugal",
+      "code": "TP",
+      "textString": "TAP Air Portugal (TP)"
+    },
+    {
+      "name": "West Jet",
+      "code": "WS",
+      "textString": "West Jet (WS)"
+    },
+    {
+      "name": "Ethiopian Air",
+      "code": "ET",
+      "textString": "Ethiopian Air (ET)"
+    },
+    {
+      "name": "SAS Scandinavian Airlines",
+      "code": "SK",
+      "textString": "SAS Scandinavian Airlines (SK)"
+    },
+    {
+      "name": "ATA Airlines",
+      "code": "TZ",
+      "textString": "ATA Airlines (TZ)"
+    },
+    {
+      "name": "Cathay Pacific Airways",
+      "code": "CX",
+      "textString": "Cathay Pacific Airways (CX)"
+    },
+    {
+      "name": "Virgin Australia Airlines",
+      "code": "VA",
+      "textString": "Virgin Australia Airlines (VA)"
+    },
+    {
+      "name": "Icelandair",
+      "code": "FI",
+      "textString": "Icelandair (FI)"
+    },
+    {
+      "name": "LAN Ecuador Airlines",
+      "code": "XL",
+      "textString": "LAN Ecuador Airlines (XL)"
+    },
+    {
+      "name": "China Eastern Airlines",
+      "code": "MU",
+      "textString": "China Eastern Airlines (MU)"
+    },
+    {
+      "name": "KLM Royal Duch Airlines",
+      "code": "KL",
+      "textString": "KLM Royal Duch Airlines (KL)"
+    },
+    {
+      "name": "Air France",
+      "code": "AF",
+      "textString": "Air France (AF)"
+    },
+    {
+      "name": "Southwest Air",
+      "code": "WN",
+      "textString": "Southwest Air (WN)"
+    },
+    {
+      "name": "OTHER - See Comments",
+      "code": "OTHER",
+      "textString": "OTHER - See Comments (OTHER)"
+    },
+    {
+      "name": "Jet Blue",
+      "code": "B6",
+      "textString": "Jet Blue (B6)"
+    },
+    {
+      "name": "Air New Zealand",
+      "code": "NZ",
+      "textString": "Air New Zealand (NZ)"
+    },
+    {
+      "name": "Condor",
+      "code": "DE",
+      "textString": "Condor (DE)"
+    },
+    {
+      "name": "Jetstar Airways",
+      "code": "JQ",
+      "textString": "Jetstar Airways (JQ)"
+    },
+    {
+      "name": "Thai Airways Intl",
+      "code": "TG",
+      "textString": "Thai Airways Intl (TG)"
+    },
+    {
+      "name": "Silver Airways",
+      "code": "3M",
+      "textString": "Silver Airways (3M)"
+    },
+    {
+      "name": "SWISS",
+      "code": "LX",
+      "textString": "SWISS (LX)"
+    },
+    {
+      "name": "Lufthansa",
+      "code": "LH",
+      "textString": "Lufthansa (LH)"
+    },
+    {
+      "name": "LAN (LATAM) Airlines",
+      "code": "LA",
+      "textString": "LAN (LATAM) Airlines (LA)"
+    },
+    {
+      "name": "Hawaiian Airlines",
+      "code": "HA",
+      "textString": "Hawaiian Airlines (HA)"
+    },
+    {
+      "name": "El Al Israel Airlines",
+      "code": "LY",
+      "textString": "El Al Israel Airlines (LY)"
+    },
+    {
+      "name": "China Airlines",
+      "code": "CI",
+      "textString": "China Airlines (CI)"
+    },
+    {
+      "name": "Martinair Holland",
+      "code": "MP",
+      "textString": "Martinair Holland (MP)"
+    },
+    {
+      "name": "Spirit Airlines",
+      "code": "NK",
+      "textString": "Spirit Airlines (NK)"
+    },
+    {
+      "name": "EasyJet Airlines",
+      "code": "U2",
+      "textString": "EasyJet Airlines (U2)"
+    },
+    {
+      "name": "Korean Air",
+      "code": "KE",
+      "textString": "Korean Air (KE)"
+    },
+    {
+      "name": "AVIANCA Airlines",
+      "code": "AV",
+      "textString": "AVIANCA Airlines (AV)"
+    },
+    {
+      "name": "Air Sunshine",
+      "code": "YI",
+      "textString": "Air Sunshine (YI)"
+    },
+    {
+      "name": "Alaska Airlines",
+      "code": "AS",
+      "textString": "Alaska Airlines (AS)"
+    },
+    {
+      "name": "Emirates Airline",
+      "code": "EK",
+      "textString": "Emirates Airline (EK)"
+    },
+    {
+      "name": "Continental Airlines",
+      "code": "CO",
+      "textString": "Continental Airlines (CO)"
+    },
+    {
+      "name": "Air China",
+      "code": "CA",
+      "textString": "Air China (CA)"
+    },
+    {
+      "name": "Delta Air Lines",
+      "code": "DL",
+      "textString": "Delta Air Lines (DL)"
+    },
+    {
+      "name": "Aegean Airlines",
+      "code": "A3",
+      "textString": "Aegean Airlines (A3)"
+    },
+    {
+      "name": "British Airways",
+      "code": "BA",
+      "textString": "British Airways (BA)"
+    },
+    {
+      "name": "Dragon Air",
+      "code": "KA",
+      "textString": "Dragon Air (KA)"
+    },
+    {
+      "name": "Air Europa",
+      "code": "UX",
+      "textString": "Air Europa (UX)"
+    },
+    {
+      "name": "Lauda Air Luftfahrt",
+      "code": "NG",
+      "textString": "Lauda Air Luftfahrt (NG)"
+    },
+    {
+      "name": "Ryanair",
+      "code": "FR",
+      "textString": "Ryanair (FR)"
+    },
+    {
+      "name": "South African Airways",
+      "code": "SA",
+      "textString": "South African Airways (SA)"
+    },
+    {
+      "name": "Alitalia",
+      "code": "AZ",
+      "textString": "Alitalia (AZ)"
+    },
+    {
+      "name": "LOT Polish Airlines",
+      "code": "LO",
+      "textString": "LOT Polish Airlines (LO)"
+    },
+    {
+      "name": "Liat",
+      "code": "LI",
+      "textString": "Liat (LI)"
+    },
+    {
+      "name": "Harmony Airways",
+      "code": "HQ",
+      "textString": "Harmony Airways (HQ)"
+    },
+    {
+      "name": "Japan Airlines International",
+      "code": "JL",
+      "textString": "Japan Airlines International (JL)"
+    },
+    {
+      "name": "Air Transat",
+      "code": "TS",
+      "textString": "Air Transat (TS)"
+    },
+    {
+      "name": "America West Airlines",
+      "code": "HP",
+      "textString": "America West Airlines (HP)"
+    }
+  ];
         function page1() {
             let tabActive = 1;
             if (location.href.split("#")[1] !== undefined) {
@@ -732,18 +1372,6 @@
             } else {
                 tabActive = 1;
             }
-            // Custom Select
-            let where_options = [
-                {
-                    name: "ISRAEL",
-                    code: "ISR",
-                },
-                {
-                    name: "ENGLAND",
-                    code: "ENG",
-                },
-            ];
-
             // datepicker
 
             let newForm = {
