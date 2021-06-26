@@ -2,20 +2,20 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta name="description" content="Zenner" />
-    <link rel="shortcut icon" href="assets/img/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png" />
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <title>Zenner</title>
-    <link type="text/css" href="assets/css/style.css" rel="stylesheet" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Zenner" />
+  <link rel="shortcut icon" href="assets/img/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>Zenner</title>
+  <link type="text/css" href="assets/css/style.css" rel="stylesheet" />
 </head>
 
 <body class="flex " x-data="page1()" x-init="[initDate(), getNoOfDays()]" style="max-width:1920px;margin:auto">
-    <section class="
+  <section class="
         w-full
         lg:w-7/12
         lg:h-screen
@@ -29,33 +29,35 @@
         items-start
         pb-20
       ">
-        <div class="p-10 lg:pl-20 w-full">
-            <img class="m-auto lg:ml-0" width="auto" src="assets/img/logo.png" alt="Logo Zenner" />
-        </div>
+    <div class="p-10 lg:pl-20 w-full">
+      <img class="m-auto lg:ml-0" width="auto" src="assets/img/logo.png" alt="Logo Zenner" />
+    </div>
 
-        <section x-show="data.tab == 1" class="w-full block lg:hidden">
-            <img width="100%" height="auto" src="assets/img/bg1-md.jpg" alt="bg1 md" />
-        </section>
-        <section x-show="data.tab == 2" class="w-full block lg:hidden relative">
-            <img width="100%" height="auto" src="assets/img/bg2-md.jpg" alt="bg2 md" />
-            <div class="text-xs p-2 px-4 bg-white absolute bottom-16 right-2 rounded-full rounded-tr-none">Hello!</div>
-            <div class="w-36 text-xs p-2 px-4 bg-white absolute bottom-2 right-2 rounded-full rounded-tr-none">It's cold out there!
-                Don't forget a coat</div>
-        </section>
-        <section x-show="data.tab == 3" class="w-full block lg:hidden relative">
-            <img width="100%" height="auto" src="assets/img/bg3-md.jpg" alt="bg3 md" />
-            <div class="text-xs p-2 px-4 bg-white absolute bottom-16 right-2 rounded-full rounded-tr-none">Hello!</div>
-        </section>
-        <section x-show="data.tab == 4" class="w-full block lg:hidden relative">
-            <img width="100%" height="auto" src="assets/img/bg4-md.jpg" alt="bg4 md" />
-            <div class="text-xs p-2 px-4 bg-white absolute bottom-16 right-2 rounded-full rounded-tr-none">Hello!</div>
-            <div class="w-36 text-xs p-2 px-4 bg-white absolute bottom-2 right-2 rounded-full rounded-tr-none">It's cold out there!
-                Don't forget a coat</div>
-        </section>
+    <section x-show="data.tab == 1" class="w-full block lg:hidden">
+      <img width="100%" height="auto" src="assets/img/bg1-md.jpg" alt="bg1 md" />
+    </section>
+    <section x-show="data.tab == 2" class="w-full block lg:hidden relative">
+      <img width="100%" height="auto" src="assets/img/bg2-md.jpg" alt="bg2 md" />
+      <div class="text-xs p-2 px-4 bg-white absolute bottom-16 right-2 rounded-full rounded-tr-none">Hello!</div>
+      <div class="w-36 text-xs p-2 px-4 bg-white absolute bottom-2 right-2 rounded-full rounded-tr-none">It's cold out
+        there!
+        Don't forget a coat</div>
+    </section>
+    <section x-show="data.tab == 3" class="w-full block lg:hidden relative">
+      <img width="100%" height="auto" src="assets/img/bg3-md.jpg" alt="bg3 md" />
+      <div class="text-xs p-2 px-4 bg-white absolute bottom-16 right-2 rounded-full rounded-tr-none">Hello!</div>
+    </section>
+    <section x-show="data.tab == 4" class="w-full block lg:hidden relative">
+      <img width="100%" height="auto" src="assets/img/bg4-md.jpg" alt="bg4 md" />
+      <div class="text-xs p-2 px-4 bg-white absolute bottom-16 right-2 rounded-full rounded-tr-none">Hello!</div>
+      <div class="w-36 text-xs p-2 px-4 bg-white absolute bottom-2 right-2 rounded-full rounded-tr-none">It's cold out
+        there!
+        Don't forget a coat</div>
+    </section>
 
-        <!-- Tabs -->
-        <div class="px-5 flex overflow-x-scroll hide-scroll-bar mt-5 lg:w-full lg:px-10">
-            <div class="
+    <!-- Tabs -->
+    <div class="px-5 flex overflow-x-scroll hide-scroll-bar mt-5 lg:w-full lg:px-10">
+      <div class="
             flex flex-nowrap
             lg:text-lg
             xl:text-xl
@@ -69,10 +71,10 @@
             xl:mx-20
             2xl:mx-32
           ">
-                <a @click="data.tab = 1" href="#01"
-                    x-bind:class="data.tab == 1 ? 'mx-1 border-b-4 border-primary_light w-32 lg:w-1/4 py-4 text-primary' : 'mx-1 border-b-4 border-gray-300 w-32 lg:w-1/4 py-4 text-gray-400'">01
-                    WHERE
-                    <div x-show="data.form.where.from" class="
+        <a @click="data.tab = 1" href="#01"
+          x-bind:class="data.tab == 1 ? 'mx-1 border-b-4 border-primary_light w-32 lg:w-1/4 py-4 text-primary' : 'mx-1 border-b-4 border-gray-300 w-32 lg:w-1/4 py-4 text-gray-400'">01
+          WHERE
+          <div x-show="data.form.where.from" class="
                 absolute
                 text-center
                 mt-10
@@ -82,98 +84,98 @@
                 text-primary_light
                 hidden lg:flex
               ">
-                        <div class="flex">
-                            <svg class="2xl:mt-1" width="16" height="16" viewBox="0 0 16 16" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M15.333 6.21316C15.3748 6.04187 15.351 5.86115 15.2663 5.70649C15.0503 5.33159 14.7623 5.00304 14.419 4.73969C14.0756 4.47635 13.6837 4.28339 13.2656 4.1719C12.8475 4.06041 12.4115 4.03257 11.9826 4.08999C11.5537 4.14741 11.1404 4.28895 10.7663 4.50649L9.333 5.33316L5.99967 3.76649C5.9049 3.7174 5.79973 3.69177 5.693 3.69177C5.58627 3.69177 5.4811 3.7174 5.38633 3.76649L3.38633 4.91983C3.28749 4.97684 3.20494 5.05827 3.14658 5.15632C3.08821 5.25437 3.05599 5.36576 3.053 5.47983C3.04977 5.59474 3.07631 5.70853 3.13005 5.81016C3.18378 5.91179 3.26288 5.99779 3.35967 6.05983L5.55967 7.44649L4.39967 8.11316L1.213 8.49983C1.0849 8.51567 0.964149 8.56837 0.865415 8.65151C0.766681 8.73466 0.694208 8.84468 0.656794 8.96821C0.619379 9.09175 0.618633 9.22349 0.654646 9.34745C0.690658 9.4714 0.761881 9.58224 0.859666 9.66649L3.21967 11.7065C3.53037 12.003 3.92827 12.1917 4.3545 12.2445C4.78073 12.2973 5.21264 12.2115 5.58633 11.9998L14.9997 6.61983C15.0799 6.57818 15.1508 6.52066 15.2081 6.45075C15.2654 6.38084 15.3079 6.3 15.333 6.21316ZM4.97967 10.8798C4.85161 10.9503 4.70394 10.9767 4.55939 10.955C4.41484 10.9334 4.28142 10.8648 4.17967 10.7598L2.913 9.67316L4.733 9.45316C4.82244 9.4417 4.90862 9.41222 4.98633 9.36649L7.22633 8.07983C7.32613 8.02223 7.40929 7.93975 7.46771 7.84044C7.52613 7.74113 7.55781 7.62837 7.55967 7.51316C7.56103 7.39874 7.53293 7.28589 7.47805 7.18548C7.42317 7.08506 7.34337 7.00047 7.24633 6.93983L5.04633 5.54649L5.77967 5.12649L9.113 6.67316C9.20777 6.72226 9.31294 6.74788 9.41967 6.74788C9.5264 6.74788 9.63157 6.72226 9.72633 6.67316L11.433 5.68649C11.7827 5.49049 12.1833 5.40413 12.5827 5.4386C12.9822 5.47308 13.362 5.6268 13.673 5.87983L4.97967 10.8798Z"
-                                    fill="#7000FF" />
-                            </svg>
-                            <span class="pl-1 2xl:pl-2 text-xs 2xl:text-sm" x-text="data.form.where.from.code"></span>
-                        </div>
-                        <div class="flex ml-2">
-                            <svg class="2xl:mt-1" width="13" height="12" viewBox="0 0 13 12" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M12.08 8.81998C11.8503 7.97834 11.2998 7.2603 10.5466 6.81998L9.13995 5.99998L8.81995 2.35331C8.81117 2.2468 8.77691 2.14396 8.72006 2.05346C8.6632 1.96296 8.58543 1.88745 8.49328 1.83331L6.49328 0.686644C6.39194 0.628132 6.27697 0.597327 6.15995 0.597327C6.04293 0.597327 5.92796 0.628132 5.82662 0.686644C5.72529 0.741979 5.64007 0.82268 5.5793 0.920845C5.51853 1.01901 5.4843 1.13127 5.47995 1.24664L5.37995 3.84664L4.21328 3.17998L2.30662 0.61331C2.22908 0.510441 2.12341 0.432236 2.00237 0.388153C1.88133 0.34407 1.75012 0.335998 1.62459 0.364912C1.49906 0.393826 1.3846 0.458487 1.29504 0.551078C1.20548 0.643668 1.14467 0.760222 1.11995 0.886644L0.539949 3.95998C0.438942 4.37661 0.47448 4.81467 0.641323 5.20957C0.808165 5.60447 1.09748 5.93531 1.46662 6.15331L10.84 11.56C10.9906 11.6486 11.1701 11.6745 11.3397 11.6321C11.5092 11.5897 11.6554 11.4824 11.7466 11.3333C11.9665 10.9576 12.1093 10.5418 12.1665 10.1102C12.2237 9.67867 12.1943 9.24002 12.08 8.81998ZM10.8266 9.99998L2.13328 4.99998C2.00862 4.92388 1.9124 4.80895 1.8594 4.67285C1.80641 4.53674 1.79957 4.38701 1.83995 4.24664L2.14662 2.61998L3.25328 4.08664C3.30702 4.15961 3.37508 4.22086 3.45328 4.26664L5.68662 5.55998C5.78621 5.61758 5.89902 5.64842 6.01406 5.64951C6.12911 5.6506 6.24248 5.62189 6.34314 5.56619C6.44381 5.51049 6.52835 5.42968 6.58854 5.33163C6.64873 5.23358 6.68251 5.12162 6.68662 5.00664L6.79328 2.40664L7.51995 2.82664L7.83995 6.47331C7.84944 6.58045 7.88472 6.68369 7.94276 6.77424C8.00081 6.86479 8.0799 6.93995 8.17328 6.99331L9.87995 7.99998C10.102 8.12807 10.2964 8.29889 10.452 8.50257C10.6077 8.70625 10.7214 8.93876 10.7866 9.18664C10.861 9.45129 10.8747 9.72931 10.8266 9.99998Z"
-                                    fill="#7000FF" />
-                            </svg>
-                            <span class="pl-1 2xl:pl-2 text-xs 2xl:text-sm" x-text="data.form.where.to.code"></span>
-                        </div>
-                    </div>
-                </a>
-                <a @click="data.tab = 2" href="#02"
-                    x-bind:class="data.tab == 2 ? 'mx-1 border-b-4 border-primary_light w-32 lg:w-1/4 py-4 text-primary' : 'mx-1 border-b-4 border-gray-300 w-32 lg:w-1/4 py-4 text-gray-400'">02
-                    WHAT
-                    <div x-show="data.form.what.code" class="
-                absolute
-                text-center
-                mt-10
-                w-40
-                lg:w-1/4
-                hidden lg:flex
-                justify-center
-                text-primary_light
-              ">
-                        <svg class="2xl:mt-1" width="16" height="16" viewBox="0 0 16 16" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M7.93518 3.9873C7.53962 3.9873 7.15294 4.1046 6.82404 4.32437C6.49514 4.54413 6.2388 4.85649 6.08742 5.22194C5.93605 5.58739 5.89644 5.98952 5.97361 6.37749C6.05078 6.76545 6.24126 7.12181 6.52097 7.40152C6.80067 7.68122 7.15704 7.8717 7.545 7.94888C7.93296 8.02605 8.3351 7.98644 8.70055 7.83506C9.066 7.68369 9.37836 7.42734 9.59812 7.09845C9.81788 6.76955 9.93518 6.38287 9.93518 5.9873C9.93458 5.45706 9.72367 4.9487 9.34873 4.57376C8.97379 4.19882 8.46543 3.98791 7.93518 3.9873ZM7.93518 6.9873C7.7374 6.9873 7.54406 6.92866 7.37961 6.81877C7.21516 6.70889 7.08699 6.55271 7.0113 6.36999C6.93561 6.18726 6.91581 5.9862 6.9544 5.79221C6.99298 5.59823 7.08822 5.42005 7.22807 5.2802C7.36793 5.14035 7.54611 5.0451 7.74009 5.00652C7.93407 4.96793 8.13514 4.98774 8.31786 5.06343C8.50059 5.13911 8.65677 5.26729 8.76665 5.43173C8.87653 5.59618 8.93518 5.78952 8.93518 5.9873C8.93488 6.25243 8.82942 6.5066 8.64195 6.69407C8.45448 6.88154 8.2003 6.987 7.93518 6.9873Z"
-                                fill="#7000FF" />
-                            <path
-                                d="M11.7782 2.14122C10.828 1.19123 9.55958 0.626898 8.21774 0.55714C6.8759 0.487381 5.55577 0.917141 4.51216 1.76347C3.46855 2.60981 2.77543 3.81272 2.56657 5.14004C2.35771 6.46736 2.64792 7.825 3.38119 8.95093L7.15953 14.7513C7.24361 14.8804 7.35858 14.9865 7.494 15.0599C7.62943 15.1333 7.78103 15.1717 7.93508 15.1717C8.08912 15.1717 8.24072 15.1333 8.37615 15.0599C8.51158 14.9865 8.62654 14.8804 8.71062 14.7513L12.4891 8.95093C13.1695 7.90647 13.4702 6.65987 13.3407 5.42007C13.2113 4.18028 12.6597 3.02265 11.7782 2.14122ZM11.6512 8.40509L7.93509 14.1098L4.21894 8.40509C3.08144 6.65887 3.3254 4.322 4.79903 2.84831C5.21086 2.43647 5.69977 2.10978 6.23786 1.88689C6.77595 1.664 7.35267 1.54928 7.93509 1.54928C8.51752 1.54928 9.09423 1.664 9.63232 1.88689C10.1704 2.10978 10.6593 2.43647 11.0712 2.84831C12.5448 4.322 12.7887 6.65887 11.6512 8.40509Z"
-                                fill="#7000FF" />
-                        </svg>
-                        <span class="pl-1 2xl:pl-2 text-xs 2xl:text-sm uppercase" x-text="data.form.what.name"></span>
-                    </div>
-                </a>
-                <a @click="data.tab = 3" href="#03"
-                    x-bind:class="data.tab == 3 ? 'mx-1 border-b-4 border-primary_light w-32 lg:w-1/4 py-4 text-primary' : 'mx-1 border-b-4 border-gray-300 w-32 lg:w-1/4 py-4 text-gray-400'">03
-                    WHEN
-                    <div x-show="data.form.when.from.date" class="
-                absolute
-                text-center
-                mt-10
-                w-40
-                lg:w-1/4
-                hidden lg:flex
-                justify-center
-                text-primary_light
-              ">
-                        <div class="flex">
-                            <svg class="mt-1" width="16" height="16" viewBox="0 0 16 16" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M15.333 6.21316C15.3748 6.04187 15.351 5.86115 15.2663 5.70649C15.0503 5.33159 14.7623 5.00304 14.419 4.73969C14.0756 4.47635 13.6837 4.28339 13.2656 4.1719C12.8475 4.06041 12.4115 4.03257 11.9826 4.08999C11.5537 4.14741 11.1404 4.28895 10.7663 4.50649L9.333 5.33316L5.99967 3.76649C5.9049 3.7174 5.79973 3.69177 5.693 3.69177C5.58627 3.69177 5.4811 3.7174 5.38633 3.76649L3.38633 4.91983C3.28749 4.97684 3.20494 5.05827 3.14658 5.15632C3.08821 5.25437 3.05599 5.36576 3.053 5.47983C3.04977 5.59474 3.07631 5.70853 3.13005 5.81016C3.18378 5.91179 3.26288 5.99779 3.35967 6.05983L5.55967 7.44649L4.39967 8.11316L1.213 8.49983C1.0849 8.51567 0.964149 8.56837 0.865415 8.65151C0.766681 8.73466 0.694208 8.84468 0.656794 8.96821C0.619379 9.09175 0.618633 9.22349 0.654646 9.34745C0.690658 9.4714 0.761881 9.58224 0.859666 9.66649L3.21967 11.7065C3.53037 12.003 3.92827 12.1917 4.3545 12.2445C4.78073 12.2973 5.21264 12.2115 5.58633 11.9998L14.9997 6.61983C15.0799 6.57818 15.1508 6.52066 15.2081 6.45075C15.2654 6.38084 15.3079 6.3 15.333 6.21316ZM4.97967 10.8798C4.85161 10.9503 4.70394 10.9767 4.55939 10.955C4.41484 10.9334 4.28142 10.8648 4.17967 10.7598L2.913 9.67316L4.733 9.45316C4.82244 9.4417 4.90862 9.41222 4.98633 9.36649L7.22633 8.07983C7.32613 8.02223 7.40929 7.93975 7.46771 7.84044C7.52613 7.74113 7.55781 7.62837 7.55967 7.51316C7.56103 7.39874 7.53293 7.28589 7.47805 7.18548C7.42317 7.08506 7.34337 7.00047 7.24633 6.93983L5.04633 5.54649L5.77967 5.12649L9.113 6.67316C9.20777 6.72226 9.31294 6.74788 9.41967 6.74788C9.5264 6.74788 9.63157 6.72226 9.72633 6.67316L11.433 5.68649C11.7827 5.49049 12.1833 5.40413 12.5827 5.4386C12.9822 5.47308 13.362 5.6268 13.673 5.87983L4.97967 10.8798Z"
-                                    fill="#7000FF" />
-                            </svg>
-                            <span class="pl-1 2xl:pl-2 text-xs 2xl:text-sm" x-show="data.form.when.from.date">
-                                <span x-text="data.form.when.from.month"></span>
-                            </span>
-                        </div>
-                        <div class="flex ml-1">
-                            <svg class="mt-1" width="13" height="12" viewBox="0 0 13 12" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M12.08 8.81998C11.8503 7.97834 11.2998 7.2603 10.5466 6.81998L9.13995 5.99998L8.81995 2.35331C8.81117 2.2468 8.77691 2.14396 8.72006 2.05346C8.6632 1.96296 8.58543 1.88745 8.49328 1.83331L6.49328 0.686644C6.39194 0.628132 6.27697 0.597327 6.15995 0.597327C6.04293 0.597327 5.92796 0.628132 5.82662 0.686644C5.72529 0.741979 5.64007 0.82268 5.5793 0.920845C5.51853 1.01901 5.4843 1.13127 5.47995 1.24664L5.37995 3.84664L4.21328 3.17998L2.30662 0.61331C2.22908 0.510441 2.12341 0.432236 2.00237 0.388153C1.88133 0.34407 1.75012 0.335998 1.62459 0.364912C1.49906 0.393826 1.3846 0.458487 1.29504 0.551078C1.20548 0.643668 1.14467 0.760222 1.11995 0.886644L0.539949 3.95998C0.438942 4.37661 0.47448 4.81467 0.641323 5.20957C0.808165 5.60447 1.09748 5.93531 1.46662 6.15331L10.84 11.56C10.9906 11.6486 11.1701 11.6745 11.3397 11.6321C11.5092 11.5897 11.6554 11.4824 11.7466 11.3333C11.9665 10.9576 12.1093 10.5418 12.1665 10.1102C12.2237 9.67867 12.1943 9.24002 12.08 8.81998ZM10.8266 9.99998L2.13328 4.99998C2.00862 4.92388 1.9124 4.80895 1.8594 4.67285C1.80641 4.53674 1.79957 4.38701 1.83995 4.24664L2.14662 2.61998L3.25328 4.08664C3.30702 4.15961 3.37508 4.22086 3.45328 4.26664L5.68662 5.55998C5.78621 5.61758 5.89902 5.64842 6.01406 5.64951C6.12911 5.6506 6.24248 5.62189 6.34314 5.56619C6.44381 5.51049 6.52835 5.42968 6.58854 5.33163C6.64873 5.23358 6.68251 5.12162 6.68662 5.00664L6.79328 2.40664L7.51995 2.82664L7.83995 6.47331C7.84944 6.58045 7.88472 6.68369 7.94276 6.77424C8.00081 6.86479 8.0799 6.93995 8.17328 6.99331L9.87995 7.99998C10.102 8.12807 10.2964 8.29889 10.452 8.50257C10.6077 8.70625 10.7214 8.93876 10.7866 9.18664C10.861 9.45129 10.8747 9.72931 10.8266 9.99998Z"
-                                    fill="#7000FF" />
-                            </svg>
-                            <span class="pl-1 2xl:pl-2 text-xs 2xl:text-sm" x-show="data.form.when.to">
-                                <span x-text="data.form.when.to.month"></span>
-                            </span>
-                        </div>
-                    </div>
-                </a>
-                <a @click="data.tab = 4" href="#04"
-                    x-bind:class="data.tab == 4 ? 'mx-1 border-b-4 border-primary_light w-32 xl:w-48 py-4 text-primary' : 'mx-1 border-b-4 border-gray-300 w-32 lg:w-1/4 py-4 text-gray-400'">04
-                    WHO</a>
+            <div class="flex">
+              <svg class="2xl:mt-1" width="16" height="16" viewBox="0 0 16 16" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M15.333 6.21316C15.3748 6.04187 15.351 5.86115 15.2663 5.70649C15.0503 5.33159 14.7623 5.00304 14.419 4.73969C14.0756 4.47635 13.6837 4.28339 13.2656 4.1719C12.8475 4.06041 12.4115 4.03257 11.9826 4.08999C11.5537 4.14741 11.1404 4.28895 10.7663 4.50649L9.333 5.33316L5.99967 3.76649C5.9049 3.7174 5.79973 3.69177 5.693 3.69177C5.58627 3.69177 5.4811 3.7174 5.38633 3.76649L3.38633 4.91983C3.28749 4.97684 3.20494 5.05827 3.14658 5.15632C3.08821 5.25437 3.05599 5.36576 3.053 5.47983C3.04977 5.59474 3.07631 5.70853 3.13005 5.81016C3.18378 5.91179 3.26288 5.99779 3.35967 6.05983L5.55967 7.44649L4.39967 8.11316L1.213 8.49983C1.0849 8.51567 0.964149 8.56837 0.865415 8.65151C0.766681 8.73466 0.694208 8.84468 0.656794 8.96821C0.619379 9.09175 0.618633 9.22349 0.654646 9.34745C0.690658 9.4714 0.761881 9.58224 0.859666 9.66649L3.21967 11.7065C3.53037 12.003 3.92827 12.1917 4.3545 12.2445C4.78073 12.2973 5.21264 12.2115 5.58633 11.9998L14.9997 6.61983C15.0799 6.57818 15.1508 6.52066 15.2081 6.45075C15.2654 6.38084 15.3079 6.3 15.333 6.21316ZM4.97967 10.8798C4.85161 10.9503 4.70394 10.9767 4.55939 10.955C4.41484 10.9334 4.28142 10.8648 4.17967 10.7598L2.913 9.67316L4.733 9.45316C4.82244 9.4417 4.90862 9.41222 4.98633 9.36649L7.22633 8.07983C7.32613 8.02223 7.40929 7.93975 7.46771 7.84044C7.52613 7.74113 7.55781 7.62837 7.55967 7.51316C7.56103 7.39874 7.53293 7.28589 7.47805 7.18548C7.42317 7.08506 7.34337 7.00047 7.24633 6.93983L5.04633 5.54649L5.77967 5.12649L9.113 6.67316C9.20777 6.72226 9.31294 6.74788 9.41967 6.74788C9.5264 6.74788 9.63157 6.72226 9.72633 6.67316L11.433 5.68649C11.7827 5.49049 12.1833 5.40413 12.5827 5.4386C12.9822 5.47308 13.362 5.6268 13.673 5.87983L4.97967 10.8798Z"
+                  fill="#7000FF" />
+              </svg>
+              <span class="pl-1 2xl:pl-2 text-xs 2xl:text-sm" x-text="data.form.where.from.code"></span>
             </div>
-        </div>
-        <!-- End Tabs -->
+            <div class="flex ml-2">
+              <svg class="2xl:mt-1" width="13" height="12" viewBox="0 0 13 12" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12.08 8.81998C11.8503 7.97834 11.2998 7.2603 10.5466 6.81998L9.13995 5.99998L8.81995 2.35331C8.81117 2.2468 8.77691 2.14396 8.72006 2.05346C8.6632 1.96296 8.58543 1.88745 8.49328 1.83331L6.49328 0.686644C6.39194 0.628132 6.27697 0.597327 6.15995 0.597327C6.04293 0.597327 5.92796 0.628132 5.82662 0.686644C5.72529 0.741979 5.64007 0.82268 5.5793 0.920845C5.51853 1.01901 5.4843 1.13127 5.47995 1.24664L5.37995 3.84664L4.21328 3.17998L2.30662 0.61331C2.22908 0.510441 2.12341 0.432236 2.00237 0.388153C1.88133 0.34407 1.75012 0.335998 1.62459 0.364912C1.49906 0.393826 1.3846 0.458487 1.29504 0.551078C1.20548 0.643668 1.14467 0.760222 1.11995 0.886644L0.539949 3.95998C0.438942 4.37661 0.47448 4.81467 0.641323 5.20957C0.808165 5.60447 1.09748 5.93531 1.46662 6.15331L10.84 11.56C10.9906 11.6486 11.1701 11.6745 11.3397 11.6321C11.5092 11.5897 11.6554 11.4824 11.7466 11.3333C11.9665 10.9576 12.1093 10.5418 12.1665 10.1102C12.2237 9.67867 12.1943 9.24002 12.08 8.81998ZM10.8266 9.99998L2.13328 4.99998C2.00862 4.92388 1.9124 4.80895 1.8594 4.67285C1.80641 4.53674 1.79957 4.38701 1.83995 4.24664L2.14662 2.61998L3.25328 4.08664C3.30702 4.15961 3.37508 4.22086 3.45328 4.26664L5.68662 5.55998C5.78621 5.61758 5.89902 5.64842 6.01406 5.64951C6.12911 5.6506 6.24248 5.62189 6.34314 5.56619C6.44381 5.51049 6.52835 5.42968 6.58854 5.33163C6.64873 5.23358 6.68251 5.12162 6.68662 5.00664L6.79328 2.40664L7.51995 2.82664L7.83995 6.47331C7.84944 6.58045 7.88472 6.68369 7.94276 6.77424C8.00081 6.86479 8.0799 6.93995 8.17328 6.99331L9.87995 7.99998C10.102 8.12807 10.2964 8.29889 10.452 8.50257C10.6077 8.70625 10.7214 8.93876 10.7866 9.18664C10.861 9.45129 10.8747 9.72931 10.8266 9.99998Z"
+                  fill="#7000FF" />
+              </svg>
+              <span class="pl-1 2xl:pl-2 text-xs 2xl:text-sm" x-text="data.form.where.to.code"></span>
+            </div>
+          </div>
+        </a>
+        <a @click="data.tab = 2" href="#02"
+          x-bind:class="data.tab == 2 ? 'mx-1 border-b-4 border-primary_light w-32 lg:w-1/4 py-4 text-primary' : 'mx-1 border-b-4 border-gray-300 w-32 lg:w-1/4 py-4 text-gray-400'">02
+          WHAT
+          <div x-show="data.form.what.code" class="
+                absolute
+                text-center
+                mt-10
+                w-40
+                lg:w-1/4
+                hidden lg:flex
+                justify-center
+                text-primary_light
+              ">
+            <svg class="2xl:mt-1" width="16" height="16" viewBox="0 0 16 16" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M7.93518 3.9873C7.53962 3.9873 7.15294 4.1046 6.82404 4.32437C6.49514 4.54413 6.2388 4.85649 6.08742 5.22194C5.93605 5.58739 5.89644 5.98952 5.97361 6.37749C6.05078 6.76545 6.24126 7.12181 6.52097 7.40152C6.80067 7.68122 7.15704 7.8717 7.545 7.94888C7.93296 8.02605 8.3351 7.98644 8.70055 7.83506C9.066 7.68369 9.37836 7.42734 9.59812 7.09845C9.81788 6.76955 9.93518 6.38287 9.93518 5.9873C9.93458 5.45706 9.72367 4.9487 9.34873 4.57376C8.97379 4.19882 8.46543 3.98791 7.93518 3.9873ZM7.93518 6.9873C7.7374 6.9873 7.54406 6.92866 7.37961 6.81877C7.21516 6.70889 7.08699 6.55271 7.0113 6.36999C6.93561 6.18726 6.91581 5.9862 6.9544 5.79221C6.99298 5.59823 7.08822 5.42005 7.22807 5.2802C7.36793 5.14035 7.54611 5.0451 7.74009 5.00652C7.93407 4.96793 8.13514 4.98774 8.31786 5.06343C8.50059 5.13911 8.65677 5.26729 8.76665 5.43173C8.87653 5.59618 8.93518 5.78952 8.93518 5.9873C8.93488 6.25243 8.82942 6.5066 8.64195 6.69407C8.45448 6.88154 8.2003 6.987 7.93518 6.9873Z"
+                fill="#7000FF" />
+              <path
+                d="M11.7782 2.14122C10.828 1.19123 9.55958 0.626898 8.21774 0.55714C6.8759 0.487381 5.55577 0.917141 4.51216 1.76347C3.46855 2.60981 2.77543 3.81272 2.56657 5.14004C2.35771 6.46736 2.64792 7.825 3.38119 8.95093L7.15953 14.7513C7.24361 14.8804 7.35858 14.9865 7.494 15.0599C7.62943 15.1333 7.78103 15.1717 7.93508 15.1717C8.08912 15.1717 8.24072 15.1333 8.37615 15.0599C8.51158 14.9865 8.62654 14.8804 8.71062 14.7513L12.4891 8.95093C13.1695 7.90647 13.4702 6.65987 13.3407 5.42007C13.2113 4.18028 12.6597 3.02265 11.7782 2.14122ZM11.6512 8.40509L7.93509 14.1098L4.21894 8.40509C3.08144 6.65887 3.3254 4.322 4.79903 2.84831C5.21086 2.43647 5.69977 2.10978 6.23786 1.88689C6.77595 1.664 7.35267 1.54928 7.93509 1.54928C8.51752 1.54928 9.09423 1.664 9.63232 1.88689C10.1704 2.10978 10.6593 2.43647 11.0712 2.84831C12.5448 4.322 12.7887 6.65887 11.6512 8.40509Z"
+                fill="#7000FF" />
+            </svg>
+            <span class="pl-1 2xl:pl-2 text-xs 2xl:text-sm uppercase" x-text="data.form.what.name"></span>
+          </div>
+        </a>
+        <a @click="data.tab = 3" href="#03"
+          x-bind:class="data.tab == 3 ? 'mx-1 border-b-4 border-primary_light w-32 lg:w-1/4 py-4 text-primary' : 'mx-1 border-b-4 border-gray-300 w-32 lg:w-1/4 py-4 text-gray-400'">03
+          WHEN
+          <div x-show="data.form.when.from.date" class="
+                absolute
+                text-center
+                mt-10
+                w-40
+                lg:w-1/4
+                hidden lg:flex
+                justify-center
+                text-primary_light
+              ">
+            <div class="flex">
+              <svg class="mt-1" width="16" height="16" viewBox="0 0 16 16" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M15.333 6.21316C15.3748 6.04187 15.351 5.86115 15.2663 5.70649C15.0503 5.33159 14.7623 5.00304 14.419 4.73969C14.0756 4.47635 13.6837 4.28339 13.2656 4.1719C12.8475 4.06041 12.4115 4.03257 11.9826 4.08999C11.5537 4.14741 11.1404 4.28895 10.7663 4.50649L9.333 5.33316L5.99967 3.76649C5.9049 3.7174 5.79973 3.69177 5.693 3.69177C5.58627 3.69177 5.4811 3.7174 5.38633 3.76649L3.38633 4.91983C3.28749 4.97684 3.20494 5.05827 3.14658 5.15632C3.08821 5.25437 3.05599 5.36576 3.053 5.47983C3.04977 5.59474 3.07631 5.70853 3.13005 5.81016C3.18378 5.91179 3.26288 5.99779 3.35967 6.05983L5.55967 7.44649L4.39967 8.11316L1.213 8.49983C1.0849 8.51567 0.964149 8.56837 0.865415 8.65151C0.766681 8.73466 0.694208 8.84468 0.656794 8.96821C0.619379 9.09175 0.618633 9.22349 0.654646 9.34745C0.690658 9.4714 0.761881 9.58224 0.859666 9.66649L3.21967 11.7065C3.53037 12.003 3.92827 12.1917 4.3545 12.2445C4.78073 12.2973 5.21264 12.2115 5.58633 11.9998L14.9997 6.61983C15.0799 6.57818 15.1508 6.52066 15.2081 6.45075C15.2654 6.38084 15.3079 6.3 15.333 6.21316ZM4.97967 10.8798C4.85161 10.9503 4.70394 10.9767 4.55939 10.955C4.41484 10.9334 4.28142 10.8648 4.17967 10.7598L2.913 9.67316L4.733 9.45316C4.82244 9.4417 4.90862 9.41222 4.98633 9.36649L7.22633 8.07983C7.32613 8.02223 7.40929 7.93975 7.46771 7.84044C7.52613 7.74113 7.55781 7.62837 7.55967 7.51316C7.56103 7.39874 7.53293 7.28589 7.47805 7.18548C7.42317 7.08506 7.34337 7.00047 7.24633 6.93983L5.04633 5.54649L5.77967 5.12649L9.113 6.67316C9.20777 6.72226 9.31294 6.74788 9.41967 6.74788C9.5264 6.74788 9.63157 6.72226 9.72633 6.67316L11.433 5.68649C11.7827 5.49049 12.1833 5.40413 12.5827 5.4386C12.9822 5.47308 13.362 5.6268 13.673 5.87983L4.97967 10.8798Z"
+                  fill="#7000FF" />
+              </svg>
+              <span class="pl-1 2xl:pl-2 text-xs 2xl:text-sm" x-show="data.form.when.from.date">
+                <span x-text="data.form.when.from.month"></span>
+              </span>
+            </div>
+            <div class="flex ml-1">
+              <svg class="mt-1" width="13" height="12" viewBox="0 0 13 12" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12.08 8.81998C11.8503 7.97834 11.2998 7.2603 10.5466 6.81998L9.13995 5.99998L8.81995 2.35331C8.81117 2.2468 8.77691 2.14396 8.72006 2.05346C8.6632 1.96296 8.58543 1.88745 8.49328 1.83331L6.49328 0.686644C6.39194 0.628132 6.27697 0.597327 6.15995 0.597327C6.04293 0.597327 5.92796 0.628132 5.82662 0.686644C5.72529 0.741979 5.64007 0.82268 5.5793 0.920845C5.51853 1.01901 5.4843 1.13127 5.47995 1.24664L5.37995 3.84664L4.21328 3.17998L2.30662 0.61331C2.22908 0.510441 2.12341 0.432236 2.00237 0.388153C1.88133 0.34407 1.75012 0.335998 1.62459 0.364912C1.49906 0.393826 1.3846 0.458487 1.29504 0.551078C1.20548 0.643668 1.14467 0.760222 1.11995 0.886644L0.539949 3.95998C0.438942 4.37661 0.47448 4.81467 0.641323 5.20957C0.808165 5.60447 1.09748 5.93531 1.46662 6.15331L10.84 11.56C10.9906 11.6486 11.1701 11.6745 11.3397 11.6321C11.5092 11.5897 11.6554 11.4824 11.7466 11.3333C11.9665 10.9576 12.1093 10.5418 12.1665 10.1102C12.2237 9.67867 12.1943 9.24002 12.08 8.81998ZM10.8266 9.99998L2.13328 4.99998C2.00862 4.92388 1.9124 4.80895 1.8594 4.67285C1.80641 4.53674 1.79957 4.38701 1.83995 4.24664L2.14662 2.61998L3.25328 4.08664C3.30702 4.15961 3.37508 4.22086 3.45328 4.26664L5.68662 5.55998C5.78621 5.61758 5.89902 5.64842 6.01406 5.64951C6.12911 5.6506 6.24248 5.62189 6.34314 5.56619C6.44381 5.51049 6.52835 5.42968 6.58854 5.33163C6.64873 5.23358 6.68251 5.12162 6.68662 5.00664L6.79328 2.40664L7.51995 2.82664L7.83995 6.47331C7.84944 6.58045 7.88472 6.68369 7.94276 6.77424C8.00081 6.86479 8.0799 6.93995 8.17328 6.99331L9.87995 7.99998C10.102 8.12807 10.2964 8.29889 10.452 8.50257C10.6077 8.70625 10.7214 8.93876 10.7866 9.18664C10.861 9.45129 10.8747 9.72931 10.8266 9.99998Z"
+                  fill="#7000FF" />
+              </svg>
+              <span class="pl-1 2xl:pl-2 text-xs 2xl:text-sm" x-show="data.form.when.to">
+                <span x-text="data.form.when.to.month"></span>
+              </span>
+            </div>
+          </div>
+        </a>
+        <a @click="data.tab = 4" href="#04"
+          x-bind:class="data.tab == 4 ? 'mx-1 border-b-4 border-primary_light w-32 xl:w-48 py-4 text-primary' : 'mx-1 border-b-4 border-gray-300 w-32 lg:w-1/4 py-4 text-gray-400'">04
+          WHO</a>
+      </div>
+    </div>
+    <!-- End Tabs -->
 
-        <div class="w-full px-5 lg:px-20 2xl:px-40 text-left">
-            <div class="w-full flex flex-wrap justify-center" x-show="data.tab == 1">
-                <h1 class="
+    <div class="w-full px-5 lg:px-20 2xl:px-40 text-left">
+      <div class="w-full flex flex-wrap justify-center" x-show="data.tab == 1">
+        <h1 class="
               w-full
               text-2xl
               lg:text-5xl
@@ -185,80 +187,104 @@
               px-2
 
             ">
-                    Where are you traveling to?
-                </h1>
-                <div class="
+          Where are you traveling to?
+        </h1>
+        <div class="
               w-full
+              lg:w-1/2
               flex flex-wrap
               lg:flex-nowrap
-              my-10
               justify-center
               text-xl
+              relative
             ">
-                    <button @click="selectShow.from = !selectShow.from"
-                        x-bind:class="data.form.where.from ? 'relative focus:outline-none my-2 lg:mx-2 w-full lg:w-1/2 py-5 rounded-xl border-2  text-left px-5 border-primary_light text-primary' : 'relative focus:outline-none my-2 lg:mx-2 w-full lg:w-1/2 py-5 rounded-xl border-2 border-gray-400 text-left px-5 text-gray-400 hover:border-primary_light hover:text-primary'">
-                        <span x-show="!data.form.where.from">From</span>
-                        <span x-show="data.form.where.from">
-                            <span x-text="data.form.where.from.name"></span>
-                        </span>
-                        <ul x-show="selectShow.from" class="
-                  bg-white
-                  absolute
-                  top-20
-                  left-0
-                  w-full
-                  border-2
-                  rounded-xl
-                  py-3
-                  z-50
-                  max-h-80
-                  overflow-y-scroll
-                ">
-                            <template x-for="where in whereFilteredOptions()">
-                                <li class="
-                      px-5
-                      py-3
-                      hover:border-primary_light
-                      hover:text-primary_light
-                    " x-bind:class="data.form.where.from ? 'text-primary' : ''" x-text="where.name"
-                                    @click="data.form.where.from = where"></li>
-                            </template>
-                        </ul>
-                    </button>
-                    <button @click="selectShow.to = !selectShow.to"
-                        x-bind:class="data.form.where.to ? 'relative focus:outline-none my-2 lg:mx-2 w-full lg:w-1/2 py-5 rounded-xl border-2  text-left px-5 border-primary_light text-primary' : 'relative focus:outline-none my-2 lg:mx-2 w-full lg:w-1/2 py-5 rounded-xl border-2 border-gray-400 text-left px-5 text-gray-400 hover:border-primary_light hover:text-primary'">
-                        <span x-show="!data.form.where.to">To</span>
-                        <span x-show="data.form.where.to">
-                            <span x-text="data.form.where.to.name"></span>
-                        </span>
-                        <ul x-show="selectShow.to" class="
-                  bg-white
-                  absolute
-                  top-20
-                  left-0
-                  w-full
-                  border-2
-                  rounded-xl
-                  py-3
-                  z-50
-                  max-h-80
-                  overflow-y-scroll
-                ">
-                            <template x-for="where in whereFilteredOptions()">
-                                <li class="
-                      px-5
-                      py-3
-                      hover:border-primary_light
-                      hover:text-primary_light
-                    " x-bind:class="data.form.where.from ? 'text-primary' : ''" x-text="where.name"
-                                    @click="data.form.where.to = where"></li>
-                            </template>
-                        </ul>
-                    </button>
-                </div>
-            </div>
-            <div class="w-full flex flex-wrap justify-center" x-show="data.tab == 2">
-                <h1 class="
+          <input x-show="selectShow.from" x-model="search_where"
+            class="
+              relative focus:outline-none my-2 lg:mx-2 w-full py-5 rounded-xl border-2 border-gray-400 text-left px-5 text-gray-400 hover:border-primary_light hover:text-primary"
+            type="text" />
+
+          <button x-show="!selectShow.from" @click="selectShow.from = !selectShow.from"
+            x-bind:class="data.form.where.from ? 'relative focus:outline-none my-2 lg:mx-2 w-full py-5 rounded-xl border-2  text-left px-5 border-primary_light text-primary' : 'relative focus:outline-none my-2 lg:mx-2 w-full py-5 rounded-xl border-2 border-gray-400 text-left px-5 text-gray-400 hover:border-primary_light hover:text-primary'">
+            <span x-show="!data.form.where.from">From</span>
+            <span x-show="data.form.where.from">
+              <span x-text="data.form.where.from.name"></span>
+            </span>
+          </button>
+          <ul x-show="selectShow.from" class="
+                    bg-white
+                    absolute
+                    top-20
+                    left-0
+                    w-full
+                    border-2
+                    rounded-xl
+                    py-3
+                    z-50
+                    max-h-80
+                    overflow-y-scroll
+                    cursor-pointer
+                  ">
+            <template x-for="where in whereFilteredOptions()">
+              <li class="
+                        px-5
+                        py-3
+                        hover:border-primary_light
+                        hover:text-primary_light
+                      " x-bind:class="data.form.where.from ? 'text-primary' : ''" x-text="where.name"
+                @click="data.form.where.from = where; selectShow.from = false;search_where = ''"></li>
+            </template>
+          </ul>
+</div>
+<div class="
+              w-full
+              lg:w-1/2
+              flex flex-wrap
+              lg:flex-nowrap
+              justify-center
+              text-xl
+              relative
+            ">
+          <input x-show="selectShow.to" x-model="search_where"
+            class="
+                          relative focus:outline-none my-2 lg:mx-2 w-full  py-5 rounded-xl border-2 border-gray-400 text-left px-5 text-gray-400 hover:border-primary_light hover:text-primary"
+            type="text" />
+
+          <button x-show="!selectShow.to" @click="selectShow.to = !selectShow.to"
+            x-bind:class="data.form.where.to ? 'relative focus:outline-none my-2 lg:mx-2 w-full  py-5 rounded-xl border-2  text-left px-5 border-primary_light text-primary' : 'relative focus:outline-none my-2 lg:mx-2 w-full  py-5 rounded-xl border-2 border-gray-400 text-left px-5 text-gray-400 hover:border-primary_light hover:text-primary'">
+            <span x-show="!data.form.where.to">To</span>
+            <span x-show="data.form.where.to">
+              <span x-text="data.form.where.to.name"></span>
+            </span>
+
+          </button>
+
+          <ul x-show="selectShow.to" class="
+                    bg-white
+                    absolute
+                    top-20
+                    left-0
+                    w-full
+                    border-2
+                    rounded-xl
+                    py-3
+                    z-50
+                    max-h-80
+                    overflow-y-scroll
+                  ">
+            <template x-for="where in whereFilteredOptions()">
+              <li class="
+                        px-5
+                        py-3
+                        hover:border-primary_light
+                        hover:text-primary_light
+                      " x-bind:class="data.form.where.from ? 'text-primary' : ''" x-text="where.name"
+                @click="data.form.where.to = where; selectShow.to = false; search_where = ''"></li>
+            </template>
+          </ul>
+        </div>
+      </div>
+      <div class="w-full flex flex-wrap justify-center" x-show="data.tab == 2">
+        <h1 class="
               w-full
               text-2xl
               lg:text-5xl
@@ -269,75 +295,72 @@
               px-2
 
             ">
-                    What’s your state of residence?
-                </h1>
-                <div class="relative w-full flex flex-wrap  my-10 justify-center">
+          What’s your state of residence?
+        </h1>
+        <div class="relative w-full flex flex-wrap  my-10 justify-center">
 
-                    <button
-                    x-show="!selectShow.what"
-                    @click="selectShow.what = !selectShow.what"
-                    class="
+          <button x-show="!selectShow.what" @click="selectShow.what = !selectShow.what" class="
                     w-full
                     px-10
                     py-5
                     rounded-xl
                     border-2
                     border-primary_light
-                    text-2xl
+                    text-xl
                     uppercase
                     focus:outline-none
                     text-left
-                  " 
-                      >  <span x-show="!data.form.what.name">
-                        State of Residence
-                      </span>
-                       <span x-show="data.form.what.name"></span>
-                            <span x-text="data.form.what.name"></span>
-                        </span>
-                        </button>
+                  "> <span x-show="!data.form.what.name">
+              State of Residence
+            </span>
+            <span x-show="data.form.what.name"></span>
+            <span x-text="data.form.what.name"></span>
+            </span>
+          </button>
 
-                    <input x-show="selectShow.what" x-model="search_what" class="
+          <input x-show="selectShow.what" x-model="search_what" class="
                 w-full
                 px-10
                 py-5
                 rounded-xl
                 border-2
                 border-primary_light
-                text-2xl
+                text-xl
                 uppercase
                 focus:outline-none
               " type="text" placeholder="State of Residence" />
 
-                    <ul
-                    
-                    x-show="selectShow.what && whatFilteredOptions()"
-                    class="
+          <ul x-show="selectShow.what && whatFilteredOptions()" class="
                     w-full
                     py-5
                     rounded-xl
-                    text-2xl
+                    text-xl
                     uppercase
                     absolute
                     top-20
                     left-0
                     shadow-lg
                     cursor-pointer
-                    max-h-40
+                    max-h-80
                     overflow-y-scroll
                     bg-white
                     z-50
                     ">
 
-                        <template  x-for="what in whatFilteredOptions()">
-                            <li class="py-3 px-10 hover:bg-gray-100" x-bind:class="data.form.what.code ? 'text-primary' : ''" 
-                            x-text="what.name"
-                                @click="data.form.what = what; selectShow.what = !selectShow.what"></li>
-                        </template>
-                </ul>
-                </div>
-            </div>
-            <div class="w-full flex flex-wrap justify-center" x-show="data.tab == 3">
-                <h1 class="
+            <template x-for="what in whatFilteredOptions()">
+              <li class="
+                          px-5
+                          py-3
+                          hover:border-primary_light
+                          hover:text-primary_light
+                        " x-bind:class="data.form.where.from ? 'text-primary' : ''" x-text="what.name"
+                @click="data.form.what = what; selectShow.what = !selectShow.what"></li>
+            </template>
+          </ul>
+        </div>
+      </div>
+      <div class="w-full flex flex-wrap justify-center" x-show="data.tab == 3">
+        <h1 class="
               w-full
               text-2xl
               lg:text-5xl
@@ -347,9 +370,9 @@
               mt-10
               px-2
             ">
-                    What dates are you traveling?
-                </h1>
-                <div class="
+          What dates are you traveling?
+        </h1>
+        <div class="
               relative
               w-full
               flex flex-wrap
@@ -358,57 +381,135 @@
               justify-center
               text-xl
             ">
-                    <button @click="showDatepicker.from = !showDatepicker.from"
-                        @keydown.escape="showDatepicker = { from: false, to: false } "
-                        x-bind:class="data.form.when.from.date ? 'flex focus:outline-none m-2 w-full lg:w-1/2 py-5 rounded-xl border-2 border-primary_light text-left px-5 text-primary' : 'flex focus:outline-none m-2 w-full lg:w-1/2 py-5 rounded-xl border-2 border-gray-400 text-left px-5 text-gray-400'">
-                        <span x-text="data.form.when.from.label"></span>
-                        <svg class="ml-auto" width="32" height="32" viewBox="0 0 32 32" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M10 5.77778C10 5.34822 10.5858 5 11 5C11.4142 5 12 5.34822 12 5.77778V7.33333H10V5.77778Z"
-                                fill="#9D9D9D" />
-                            <path
-                                d="M20 5.77778C20 5.34822 20.5858 5 21 5C21.4142 5 22 5.34822 22 5.77778V7.33333H20V5.77778Z"
-                                fill="#9D9D9D" />
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M10 7.33333H7.75C7.33579 7.33333 7 7.68156 7 8.11111V25.2222C7 25.6518 7.33579 26 7.75 26H24.25C24.6642 26 25 25.6518 25 25.2222V8.11111C25 7.68156 24.6642 7.33333 24.25 7.33333H22H20H12H10ZM23.5 12H8.5V24.4444H23.5V12Z"
-                                fill="#9D9D9D" />
-                            <path
-                                d="M10 15.5C10 14.6716 10.6716 14 11.5 14C12.3284 14 13 14.6716 13 15.5C13 16.3284 12.3284 17 11.5 17C10.6716 17 10 16.3284 10 15.5Z"
-                                fill="#9D9D9D" />
-                            <path
-                                d="M22 18.5C22 17.6716 21.3284 17 20.5 17C19.6716 17 19 17.6716 19 18.5C19 19.3284 19.6716 20 20.5 20C21.3284 20 22 19.3284 22 18.5Z"
-                                fill="#9D9D9D" />
-                        </svg>
-                    </button>
+          <button @click="showDatepicker.from = !showDatepicker.from; showDatepicker.to = false"
+            @keydown.escape="showDatepicker = { from: false, to: false } "
+            x-bind:class="data.form.when.from.date ? 'flex focus:outline-none m-2 w-full lg:w-1/2 py-5 rounded-xl border-2 border-primary_light text-left px-5 text-primary' : 'flex focus:outline-none m-2 w-full lg:w-1/2 py-5 rounded-xl border-2 border-gray-400 text-left px-5 text-gray-400'">
+            <span x-text="data.form.when.from.label"></span>
+            <svg class="ml-auto" width="32" height="32" viewBox="0 0 32 32" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path d="M10 5.77778C10 5.34822 10.5858 5 11 5C11.4142 5 12 5.34822 12 5.77778V7.33333H10V5.77778Z"
+                fill="#9D9D9D" />
+              <path d="M20 5.77778C20 5.34822 20.5858 5 21 5C21.4142 5 22 5.34822 22 5.77778V7.33333H20V5.77778Z"
+                fill="#9D9D9D" />
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M10 7.33333H7.75C7.33579 7.33333 7 7.68156 7 8.11111V25.2222C7 25.6518 7.33579 26 7.75 26H24.25C24.6642 26 25 25.6518 25 25.2222V8.11111C25 7.68156 24.6642 7.33333 24.25 7.33333H22H20H12H10ZM23.5 12H8.5V24.4444H23.5V12Z"
+                fill="#9D9D9D" />
+              <path
+                d="M10 15.5C10 14.6716 10.6716 14 11.5 14C12.3284 14 13 14.6716 13 15.5C13 16.3284 12.3284 17 11.5 17C10.6716 17 10 16.3284 10 15.5Z"
+                fill="#9D9D9D" />
+              <path
+                d="M22 18.5C22 17.6716 21.3284 17 20.5 17C19.6716 17 19 17.6716 19 18.5C19 19.3284 19.6716 20 20.5 20C21.3284 20 22 19.3284 22 18.5Z"
+                fill="#9D9D9D" />
+            </svg>
+          </button>
 
-                    <button @click="showDatepicker.to = !showDatepicker.to"
-                        @keydown.escape="showDatepicker = { from: false, to: false } "
-                        x-bind:class="data.form.when.to.date ? 'flex focus:outline-none m-2 w-full lg:w-1/2 py-5 rounded-xl border-2 border-primary_light text-left px-5 text-primary' : 'flex focus:outline-none m-2 w-full lg:w-1/2 py-5 rounded-xl border-2 border-gray-400 text-left px-5 text-gray-400'">
-                        <span x-text="data.form.when.to.label"></span>
-                        <svg class="ml-auto" width="32" height="32" viewBox="0 0 32 32" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M10 5.77778C10 5.34822 10.5858 5 11 5C11.4142 5 12 5.34822 12 5.77778V7.33333H10V5.77778Z"
-                                fill="#9D9D9D" />
-                            <path
-                                d="M20 5.77778C20 5.34822 20.5858 5 21 5C21.4142 5 22 5.34822 22 5.77778V7.33333H20V5.77778Z"
-                                fill="#9D9D9D" />
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M10 7.33333H7.75C7.33579 7.33333 7 7.68156 7 8.11111V25.2222C7 25.6518 7.33579 26 7.75 26H24.25C24.6642 26 25 25.6518 25 25.2222V8.11111C25 7.68156 24.6642 7.33333 24.25 7.33333H22H20H12H10ZM23.5 12H8.5V24.4444H23.5V12Z"
-                                fill="#9D9D9D" />
-                            <path
-                                d="M10 15.5C10 14.6716 10.6716 14 11.5 14C12.3284 14 13 14.6716 13 15.5C13 16.3284 12.3284 17 11.5 17C10.6716 17 10 16.3284 10 15.5Z"
-                                fill="#9D9D9D" />
-                            <path
-                                d="M22 18.5C22 17.6716 21.3284 17 20.5 17C19.6716 17 19 17.6716 19 18.5C19 19.3284 19.6716 20 20.5 20C21.3284 20 22 19.3284 22 18.5Z"
-                                fill="#9D9D9D" />
-                        </svg>
-                    </button>
-                </div>
-            </div>
-            <div class="w-full flex flex-wrap justify-center" x-show="data.tab == 4">
-                <h1 class="
+          <button @click="showDatepicker.to = !showDatepicker.to; showDatepicker.from = false"
+            @keydown.escape="showDatepicker = { from: false, to: false } "
+            x-bind:class="data.form.when.to.date ? 'flex focus:outline-none m-2 w-full lg:w-1/2 py-5 rounded-xl border-2 border-primary_light text-left px-5 text-primary' : 'flex focus:outline-none m-2 w-full lg:w-1/2 py-5 rounded-xl border-2 border-gray-400 text-left px-5 text-gray-400'">
+            <span x-text="data.form.when.to.label"></span>
+            <svg class="ml-auto" width="32" height="32" viewBox="0 0 32 32" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path d="M10 5.77778C10 5.34822 10.5858 5 11 5C11.4142 5 12 5.34822 12 5.77778V7.33333H10V5.77778Z"
+                fill="#9D9D9D" />
+              <path d="M20 5.77778C20 5.34822 20.5858 5 21 5C21.4142 5 22 5.34822 22 5.77778V7.33333H20V5.77778Z"
+                fill="#9D9D9D" />
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M10 7.33333H7.75C7.33579 7.33333 7 7.68156 7 8.11111V25.2222C7 25.6518 7.33579 26 7.75 26H24.25C24.6642 26 25 25.6518 25 25.2222V8.11111C25 7.68156 24.6642 7.33333 24.25 7.33333H22H20H12H10ZM23.5 12H8.5V24.4444H23.5V12Z"
+                fill="#9D9D9D" />
+              <path
+                d="M10 15.5C10 14.6716 10.6716 14 11.5 14C12.3284 14 13 14.6716 13 15.5C13 16.3284 12.3284 17 11.5 17C10.6716 17 10 16.3284 10 15.5Z"
+                fill="#9D9D9D" />
+              <path
+                d="M22 18.5C22 17.6716 21.3284 17 20.5 17C19.6716 17 19 17.6716 19 18.5C19 19.3284 19.6716 20 20.5 20C21.3284 20 22 19.3284 22 18.5Z"
+                fill="#9D9D9D" />
+            </svg>
+          </button>
+
+
+
+  <!-- Datepicker -->
+  <div 
+  class=" absolute flex items-center justify-center"
+  :class="(showDatepicker.from) ? 'left-2 top-24' : 'right-2 top-48 lg:top-24'" 
+
+  x-show.transition="showDatepicker.from !== false || showDatepicker.to !== false">
+  <input type="hidden" name="date" x-ref="date" />
+  <div class="bg-white rounded-lg shadow p-4" style="width: 17rem" @click.away="showDatepicker = false">
+    <div class="flex justify-between items-center mb-2">
+      <div>
+        <span x-text="MONTH_NAMES[month]" class="text-lg font-bold text-gray-800"></span>
+        <span x-text="year" class="ml-1 text-lg text-gray-600 font-normal"></span>
+      </div>
+      <div>
+        <button type="button" class="
+            transition
+            ease-in-out
+            duration-100
+            inline-flex
+            cursor-pointer
+            hover:bg-gray-200
+            p-1
+            rounded-full
+          " :class="{'cursor-not-allowed opacity-25': month == 0 }" :disabled="month == 0 ? true : false"
+          @click="month--; getNoOfDays()">
+          <svg class="h-6 w-6 text-gray-500 inline-flex" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+        <button type="button" class="
+            transition
+            ease-in-out
+            duration-100
+            inline-flex
+            cursor-pointer
+            hover:bg-gray-200
+            p-1
+            rounded-full
+          " :class="{'cursor-not-allowed opacity-25': month == 11 }" :disabled="month == 11 ? true : false"
+          @click="month++; getNoOfDays()">
+          <svg class="h-6 w-6 text-gray-500 inline-flex" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="flex flex-wrap mb-3 -mx-1">
+      <template x-for="(day, index) in DAYS" :key="index">
+        <div style="width: 14.26%" class="px-1">
+          <div x-text="day" class="text-gray-800 font-medium text-center text-xs"></div>
+        </div>
+      </template>
+    </div>
+
+    <div class="flex flex-wrap -mx-1">
+      <template x-for="blankday in blankdays">
+        <div style="width: 14.28%" class="text-center border p-1 border-transparent text-sm"></div>
+      </template>
+      <template x-for="(date, dateIndex) in no_of_days" :key="dateIndex">
+        <div style="width: 14.28%" class="px-1 mb-1">
+          <div @click="getDateValue(date)" x-text="date" class="
+              cursor-pointer
+              text-center text-sm
+              leading-none
+              rounded-full
+              leading-loose
+              transition
+              ease-in-out
+              duration-100
+            "
+            :class="{'bg-blue-500 text-white': isToday(date) == true, 'text-gray-700 hover:bg-blue-200': isToday(date) == false }">
+          </div>
+        </div>
+      </template>
+    </div>
+  </div>
+
+</div>
+        </div>
+      </div>
+      <div class="w-full flex flex-wrap justify-center" x-show="data.tab == 4">
+        <h1 class="
               w-full
               text-2xl
               lg:text-5xl
@@ -419,9 +520,9 @@
               px-2
 
             ">
-                    Are you traveling with any of the following:
-                </h1>
-                <div class="
+          Are you traveling with any of the following:
+        </h1>
+        <div class="
               w-full
               flex flex-wrap
               lg:flex-nowrap
@@ -432,9 +533,7 @@
               justify-center
               text-xl
             ">
-                    <div 
-                    @click="(data.form.who.includes('Parents')) ? '' : data.form.who.push('Parents')"
-                    class="
+          <div @click="(data.form.who.includes('Parents')) ? '' : data.form.who.push('Parents')" class="
                 lg:h-52
                 w-full
                 lg:w-1/4
@@ -443,7 +542,7 @@
                 items-center
                 relative
               ">
-                        <input x-model="data.form.who" value="Parents" class="
+            <input x-model="data.form.who" value="Parents" class="
                   mr-10
                   lg:mx-auto
                   mb-5
@@ -455,47 +554,42 @@
                   lg:absolute
                   -bottom-20
                 " type="checkbox" />
-                        <svg class="mr-10 mb-5 w-10 lg:w-20 lg:absolute bottom-20" viewBox="0 0 64 96" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <g clip-path="url(#clip0)">
-                                <path
-                                    d="M4.83896 36.2562L27.1201 64.7099C28.3089 66.2289 30.5885 66.2289 31.7773 64.7099L54.0584 36.2562C55.0511 34.9965 54.1565 33.144 52.5632 33.144H6.33417C4.74091 33.144 3.84624 34.9965 4.83896 36.2562Z"
-                                    stroke="#391F75" stroke-width="2" stroke-miterlimit="10" />
-                                <path d="M29.4486 64.7092V91.1993" stroke="#391F75" stroke-width="2"
-                                    stroke-miterlimit="10" />
-                                <path d="M57.6985 3.59116L31.2994 51.4215" stroke="#391F75" stroke-width="2"
-                                    stroke-miterlimit="10" />
-                                <path
-                                    d="M13.6141 95.2385C13.6141 92.0523 20.698 89.4589 29.4364 89.4589C38.1748 89.4589 45.2587 92.0399 45.2587 95.2385"
-                                    fill="#391F75" />
-                                <path
-                                    d="M55.6668 20.5879C58.618 15.4374 58.316 9.6945 54.9925 7.76087C51.6689 5.82725 46.5822 8.43508 43.631 13.5856C40.6799 18.7362 40.9818 24.479 44.3054 26.4127C47.629 28.3463 52.7156 25.7385 55.6668 20.5879Z"
-                                    fill="#391F75" />
-                                <path
-                                    d="M9.45959 42.1592L29.4489 67.7972L48.3964 43.493C29.0934 39.8004 29.9636 49.5197 9.45959 42.1592Z"
-                                    fill="#391F75" />
-                                <path
-                                    d="M21.5886 50.05C22.1505 50.05 22.6059 49.5911 22.6059 49.025C22.6059 48.4589 22.1505 48 21.5886 48C21.0268 48 20.5714 48.4589 20.5714 49.025C20.5714 49.5911 21.0268 50.05 21.5886 50.05Z"
-                                    fill="white" />
-                                <path
-                                    d="M24.0276 54.3596C24.5894 54.3596 25.0448 53.9006 25.0448 53.3345C25.0448 52.7684 24.5894 52.3095 24.0276 52.3095C23.4658 52.3095 23.0104 52.7684 23.0104 53.3345C23.0104 53.9006 23.4658 54.3596 24.0276 54.3596Z"
-                                    fill="white" />
-                                <path
-                                    d="M26.8089 50.05C27.3707 50.05 27.8261 49.5911 27.8261 49.025C27.8261 48.4589 27.3707 48 26.8089 48C26.2471 48 25.7916 48.4589 25.7916 49.025C25.7916 49.5911 26.2471 50.05 26.8089 50.05Z"
-                                    fill="white" />
-                            </g>
-                            <defs>
-                                <clipPath id="clip0">
-                                    <rect width="64" height="95.2385" fill="white" />
-                                </clipPath>
-                            </defs>
-                        </svg>
-                        <span class="mr-10 lg:w-full lg:mx-auto text-center font-bold mb-5 lg:mt-40">Parents</span>
-                    </div>
-                    <div 
-                    @click="(data.form.who.includes('Kids')) ? '' : data.form.who.push('Kids')"
-                    
-                    class="
+            <svg class="mr-10 mb-5 w-10 lg:w-20 lg:absolute bottom-20" viewBox="0 0 64 96" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0)">
+                <path
+                  d="M4.83896 36.2562L27.1201 64.7099C28.3089 66.2289 30.5885 66.2289 31.7773 64.7099L54.0584 36.2562C55.0511 34.9965 54.1565 33.144 52.5632 33.144H6.33417C4.74091 33.144 3.84624 34.9965 4.83896 36.2562Z"
+                  stroke="#391F75" stroke-width="2" stroke-miterlimit="10" />
+                <path d="M29.4486 64.7092V91.1993" stroke="#391F75" stroke-width="2" stroke-miterlimit="10" />
+                <path d="M57.6985 3.59116L31.2994 51.4215" stroke="#391F75" stroke-width="2" stroke-miterlimit="10" />
+                <path
+                  d="M13.6141 95.2385C13.6141 92.0523 20.698 89.4589 29.4364 89.4589C38.1748 89.4589 45.2587 92.0399 45.2587 95.2385"
+                  fill="#391F75" />
+                <path
+                  d="M55.6668 20.5879C58.618 15.4374 58.316 9.6945 54.9925 7.76087C51.6689 5.82725 46.5822 8.43508 43.631 13.5856C40.6799 18.7362 40.9818 24.479 44.3054 26.4127C47.629 28.3463 52.7156 25.7385 55.6668 20.5879Z"
+                  fill="#391F75" />
+                <path
+                  d="M9.45959 42.1592L29.4489 67.7972L48.3964 43.493C29.0934 39.8004 29.9636 49.5197 9.45959 42.1592Z"
+                  fill="#391F75" />
+                <path
+                  d="M21.5886 50.05C22.1505 50.05 22.6059 49.5911 22.6059 49.025C22.6059 48.4589 22.1505 48 21.5886 48C21.0268 48 20.5714 48.4589 20.5714 49.025C20.5714 49.5911 21.0268 50.05 21.5886 50.05Z"
+                  fill="white" />
+                <path
+                  d="M24.0276 54.3596C24.5894 54.3596 25.0448 53.9006 25.0448 53.3345C25.0448 52.7684 24.5894 52.3095 24.0276 52.3095C23.4658 52.3095 23.0104 52.7684 23.0104 53.3345C23.0104 53.9006 23.4658 54.3596 24.0276 54.3596Z"
+                  fill="white" />
+                <path
+                  d="M26.8089 50.05C27.3707 50.05 27.8261 49.5911 27.8261 49.025C27.8261 48.4589 27.3707 48 26.8089 48C26.2471 48 25.7916 48.4589 25.7916 49.025C25.7916 49.5911 26.2471 50.05 26.8089 50.05Z"
+                  fill="white" />
+              </g>
+              <defs>
+                <clipPath id="clip0">
+                  <rect width="64" height="95.2385" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
+            <span class="mr-10 lg:w-full lg:mx-auto text-center font-bold mb-5 lg:mt-40">Parents</span>
+          </div>
+          <div @click="(data.form.who.includes('Kids')) ? '' : data.form.who.push('Kids')" class="
                 lg:h-52
                 w-full
                 lg:w-1/4
@@ -504,7 +598,7 @@
                 items-center
                 relative
               ">
-                        <input x-model="data.form.who" value="Kids" class="
+            <input x-model="data.form.who" value="Kids" class="
                   mr-10
                   lg:mx-auto
                   mb-5
@@ -516,26 +610,22 @@
                   lg:absolute
                   -bottom-20
                 " type="checkbox" />
-                        <svg class="mr-10 lg:mx-auto mb-5 w-10 lg:w-20 lg:absolute bottom-20" viewBox="0 0 27 30"
-                            fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g clip-path="url(#clip0)">
-                                <path
-                                    d="M23.2628 0.255547C22.7527 0.234102 22.2498 0.51314 22.0179 0.998844L21.8154 1.42299C21.5489 1.98133 21.7224 2.64386 22.1899 3.01458L20.4665 6.28661C20.2793 6.64701 20.5874 7.06538 20.9871 6.99352C20.9871 6.99352 21.4189 6.93343 21.7591 7.03363C22.0978 7.13346 22.4096 7.41293 22.4096 7.41293C22.6425 7.63684 23.0247 7.57745 23.1787 7.29349L24.8056 4.27556C25.4018 4.43418 26.0552 4.15078 26.3294 3.57627L26.5309 3.15308C26.8401 2.50549 26.5604 1.7149 25.9128 1.40578L23.7653 0.38068C23.6033 0.303405 23.4328 0.262757 23.2628 0.255547ZM23.2131 1.22908C23.3337 1.2838 24.7416 1.93058 25.4916 2.28854C25.6653 2.37155 25.7312 2.55804 25.6482 2.73181L25.4457 3.155C25.3627 3.32878 25.1772 3.39464 25.0034 3.31178L22.8558 2.28663C22.682 2.20362 22.6162 2.01809 22.6991 1.84431L22.9007 1.42011C22.9629 1.28978 23.0924 1.17427 23.2131 1.22908H23.2131ZM16.4952 7.34415C15.4464 7.34415 14.5235 7.7616 13.7295 8.31859C13.2751 7.88175 12.7574 7.47408 12.0863 7.47408C10.8062 7.47408 9.84701 8.49637 9.42858 9.85382C8.9754 9.85752 8.52139 9.87268 8.22677 10.085C7.83843 10.3649 7.63968 10.7702 7.54371 11.1426C7.46236 11.4582 7.45077 11.7564 7.45677 12.009H6.90458C6.63594 12.01 6.41843 12.2276 6.41736 12.4963V14.2293L1.74483 17.8949C-0.21003 19.4279 -0.542653 22.2714 1.06272 24.3185C2.66809 26.3655 5.50573 26.718 7.46058 25.185L15.2752 19.1492C15.5288 19.3318 15.8386 19.4415 16.1799 19.4415C17.0453 19.4415 17.7323 18.7545 17.7323 17.8891C17.7323 17.0237 17.0453 16.3367 16.1799 16.3367C15.3145 16.3367 14.6332 17.0237 14.6332 17.8891C14.6332 18.0511 14.6633 18.2035 14.7077 18.3496L6.85777 24.4159C5.31606 25.625 3.13129 25.3689 1.83176 23.7119C0.532237 22.0548 0.806883 19.8768 2.3486 18.6677L7.08514 14.9515H25.525C25.7955 14.951 26.0142 14.7309 26.0132 14.4604V12.4963C26.0122 12.2273 25.794 12.0096 25.525 12.009H24.6977C24.6851 11.8188 24.6595 11.6072 24.5868 11.3775C24.4884 11.0661 24.3077 10.7239 23.9869 10.4633C23.7465 10.2679 23.3726 10.2066 23.0019 10.1461C22.8123 8.93763 21.8955 7.95081 20.6471 7.95081C20.1529 7.95081 19.7306 8.16057 19.3363 8.38737C18.513 7.78649 17.5655 7.34415 16.4952 7.34415ZM16.4952 8.32243C17.4494 8.32243 18.3176 8.66189 19.0259 9.25388C19.1957 9.3966 19.4404 9.40729 19.622 9.27955C19.9342 9.05915 20.2787 8.92897 20.6471 8.92897C21.5041 8.92897 22.1939 9.62832 22.1785 10.5177C22.1731 10.7893 22.3902 11.0132 22.6619 11.0164C23.0316 11.0201 23.2309 11.1128 23.3698 11.2255C23.5086 11.3383 23.5982 11.4929 23.6554 11.6736C23.7059 11.8332 23.681 11.8779 23.6841 12.009H8.47802C8.46001 11.807 8.41926 11.6639 8.49044 11.388C8.54906 11.1605 8.64838 10.9887 8.80093 10.8788C8.95348 10.7688 9.19433 10.6811 9.6741 10.7488C9.92706 10.7841 10.1647 10.6191 10.2196 10.3696C10.4881 9.13824 11.2236 8.45219 12.0863 8.45219C12.6032 8.45219 13.0496 8.70172 13.3321 9.09512C13.4965 9.32247 13.818 9.36527 14.0362 9.18889C14.7063 8.65077 15.5608 8.32237 16.4952 8.32237L16.4952 8.32243ZM7.59147 15.8475L8.49904 21.8833L13.826 17.7067C13.8882 16.9122 14.3505 16.2292 15.0068 15.8475H7.59147ZM17.3502 15.8475C18.0607 16.2578 18.5482 17.0177 18.5482 17.891C18.5482 19.1908 17.4807 20.2555 16.1809 20.2555C15.9362 20.2555 15.704 20.2068 15.4816 20.1369L9.00154 25.2193L9.3961 27.8455C9.46469 28.3042 9.65057 28.7361 9.96356 29.0693C10.2766 29.4025 10.7341 29.6253 11.2447 29.6253H21.2069C21.7173 29.6253 22.1751 29.4026 22.4889 29.0693C22.8028 28.7361 22.9892 28.3025 23.0554 27.8417L24.7779 15.8475L17.3502 15.8475Z"
-                                    fill="#391F75" />
-                            </g>
-                            <defs>
-                                <clipPath id="clip0">
-                                    <rect width="27" height="29.7391" fill="white"
-                                        transform="translate(0 -0.00012207)" />
-                                </clipPath>
-                            </defs>
-                        </svg>
-                        <span class="mr-10 lg:w-full lg:mx-auto text-center font-bold mb-5 lg:mt-40">Kids</span>
-                    </div>
-                    <div 
-                    @click="(data.form.who.includes('Friends')) ? '' : data.form.who.push('Friends')"
-                    
-                    class="
+            <svg class="mr-10 lg:mx-auto mb-5 w-10 lg:w-20 lg:absolute bottom-20" viewBox="0 0 27 30" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0)">
+                <path
+                  d="M23.2628 0.255547C22.7527 0.234102 22.2498 0.51314 22.0179 0.998844L21.8154 1.42299C21.5489 1.98133 21.7224 2.64386 22.1899 3.01458L20.4665 6.28661C20.2793 6.64701 20.5874 7.06538 20.9871 6.99352C20.9871 6.99352 21.4189 6.93343 21.7591 7.03363C22.0978 7.13346 22.4096 7.41293 22.4096 7.41293C22.6425 7.63684 23.0247 7.57745 23.1787 7.29349L24.8056 4.27556C25.4018 4.43418 26.0552 4.15078 26.3294 3.57627L26.5309 3.15308C26.8401 2.50549 26.5604 1.7149 25.9128 1.40578L23.7653 0.38068C23.6033 0.303405 23.4328 0.262757 23.2628 0.255547ZM23.2131 1.22908C23.3337 1.2838 24.7416 1.93058 25.4916 2.28854C25.6653 2.37155 25.7312 2.55804 25.6482 2.73181L25.4457 3.155C25.3627 3.32878 25.1772 3.39464 25.0034 3.31178L22.8558 2.28663C22.682 2.20362 22.6162 2.01809 22.6991 1.84431L22.9007 1.42011C22.9629 1.28978 23.0924 1.17427 23.2131 1.22908H23.2131ZM16.4952 7.34415C15.4464 7.34415 14.5235 7.7616 13.7295 8.31859C13.2751 7.88175 12.7574 7.47408 12.0863 7.47408C10.8062 7.47408 9.84701 8.49637 9.42858 9.85382C8.9754 9.85752 8.52139 9.87268 8.22677 10.085C7.83843 10.3649 7.63968 10.7702 7.54371 11.1426C7.46236 11.4582 7.45077 11.7564 7.45677 12.009H6.90458C6.63594 12.01 6.41843 12.2276 6.41736 12.4963V14.2293L1.74483 17.8949C-0.21003 19.4279 -0.542653 22.2714 1.06272 24.3185C2.66809 26.3655 5.50573 26.718 7.46058 25.185L15.2752 19.1492C15.5288 19.3318 15.8386 19.4415 16.1799 19.4415C17.0453 19.4415 17.7323 18.7545 17.7323 17.8891C17.7323 17.0237 17.0453 16.3367 16.1799 16.3367C15.3145 16.3367 14.6332 17.0237 14.6332 17.8891C14.6332 18.0511 14.6633 18.2035 14.7077 18.3496L6.85777 24.4159C5.31606 25.625 3.13129 25.3689 1.83176 23.7119C0.532237 22.0548 0.806883 19.8768 2.3486 18.6677L7.08514 14.9515H25.525C25.7955 14.951 26.0142 14.7309 26.0132 14.4604V12.4963C26.0122 12.2273 25.794 12.0096 25.525 12.009H24.6977C24.6851 11.8188 24.6595 11.6072 24.5868 11.3775C24.4884 11.0661 24.3077 10.7239 23.9869 10.4633C23.7465 10.2679 23.3726 10.2066 23.0019 10.1461C22.8123 8.93763 21.8955 7.95081 20.6471 7.95081C20.1529 7.95081 19.7306 8.16057 19.3363 8.38737C18.513 7.78649 17.5655 7.34415 16.4952 7.34415ZM16.4952 8.32243C17.4494 8.32243 18.3176 8.66189 19.0259 9.25388C19.1957 9.3966 19.4404 9.40729 19.622 9.27955C19.9342 9.05915 20.2787 8.92897 20.6471 8.92897C21.5041 8.92897 22.1939 9.62832 22.1785 10.5177C22.1731 10.7893 22.3902 11.0132 22.6619 11.0164C23.0316 11.0201 23.2309 11.1128 23.3698 11.2255C23.5086 11.3383 23.5982 11.4929 23.6554 11.6736C23.7059 11.8332 23.681 11.8779 23.6841 12.009H8.47802C8.46001 11.807 8.41926 11.6639 8.49044 11.388C8.54906 11.1605 8.64838 10.9887 8.80093 10.8788C8.95348 10.7688 9.19433 10.6811 9.6741 10.7488C9.92706 10.7841 10.1647 10.6191 10.2196 10.3696C10.4881 9.13824 11.2236 8.45219 12.0863 8.45219C12.6032 8.45219 13.0496 8.70172 13.3321 9.09512C13.4965 9.32247 13.818 9.36527 14.0362 9.18889C14.7063 8.65077 15.5608 8.32237 16.4952 8.32237L16.4952 8.32243ZM7.59147 15.8475L8.49904 21.8833L13.826 17.7067C13.8882 16.9122 14.3505 16.2292 15.0068 15.8475H7.59147ZM17.3502 15.8475C18.0607 16.2578 18.5482 17.0177 18.5482 17.891C18.5482 19.1908 17.4807 20.2555 16.1809 20.2555C15.9362 20.2555 15.704 20.2068 15.4816 20.1369L9.00154 25.2193L9.3961 27.8455C9.46469 28.3042 9.65057 28.7361 9.96356 29.0693C10.2766 29.4025 10.7341 29.6253 11.2447 29.6253H21.2069C21.7173 29.6253 22.1751 29.4026 22.4889 29.0693C22.8028 28.7361 22.9892 28.3025 23.0554 27.8417L24.7779 15.8475L17.3502 15.8475Z"
+                  fill="#391F75" />
+              </g>
+              <defs>
+                <clipPath id="clip0">
+                  <rect width="27" height="29.7391" fill="white" transform="translate(0 -0.00012207)" />
+                </clipPath>
+              </defs>
+            </svg>
+            <span class="mr-10 lg:w-full lg:mx-auto text-center font-bold mb-5 lg:mt-40">Kids</span>
+          </div>
+          <div @click="(data.form.who.includes('Friends')) ? '' : data.form.who.push('Friends')" class="
                 lg:h-52
                 w-full
                 lg:w-1/4
@@ -544,7 +634,7 @@
                 items-center
                 relative
               ">
-                        <input x-model="data.form.who" value="Friends" class="
+            <input x-model="data.form.who" value="Friends" class="
                   mr-10
                   lg:mx-auto
                   mb-5
@@ -556,26 +646,22 @@
                   lg:absolute
                   -bottom-20
                 " type="checkbox" />
-                        <svg class="mr-10 lg:mx-auto mb-5 w-10 lg:w-20 lg:absolute bottom-20" viewBox="0 0 32 31"
-                            fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g clip-path="url(#clip0)">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M6.66738 14.716L4.79138 19.4188L9.66229 20.281L6.66738 14.716ZM29.5853 21.7278L29.4254 21.6992C29.3925 21.6934 29.3673 21.675 29.3537 21.6464C29.3397 21.6183 29.3412 21.5878 29.3576 21.5607C29.6637 21.0574 29.6366 20.3255 29.066 19.8479C29.0321 19.8198 29.0224 19.7753 29.0428 19.737C29.0626 19.6987 29.1057 19.6784 29.1503 19.6862L29.998 19.8363C31.5339 20.1071 31.2336 22.0218 29.5853 21.7278ZM11.9229 1.96917C12.3797 1.9527 12.8461 2.19489 13.1663 2.78437L20.7778 16.7799C21.1687 17.4987 21.6386 18.2878 22.414 18.4844L27.7994 19.8508C29.0684 20.173 28.7308 21.5665 28.1699 21.6416L19.563 22.7924C19.3053 22.8264 19.1014 22.5483 19.0137 22.1075C18.8907 21.4909 18.6659 21.1199 17.7664 20.9576L13.3286 20.1589C12.5899 20.0257 12.4707 19.784 11.9592 18.8114L3.56202 2.858C3.48452 2.71075 3.4913 2.54994 3.5814 2.40898C3.67101 2.26851 3.81874 2.18666 3.9936 2.1823L11.9229 1.96917ZM15.3029 0.69914L24.959 17.8073C25.0539 17.9758 25.0345 18.1696 24.9086 18.3188C24.7822 18.468 24.5855 18.5285 24.3898 18.4791L23.1135 18.155C22.974 18.1197 22.8679 18.0393 22.8016 17.9187L13.656 1.32495C12.9275 0.137749 14.6838 -0.629016 15.3029 0.69914ZM27.6202 22.5222L29.8841 26.5333C30.7982 28.0411 28.7061 28.9149 28.0372 27.4187L25.6487 23.0845C25.5712 22.9445 25.5717 22.791 25.6502 22.651C25.7282 22.511 25.8623 22.4238 26.029 22.4045L27.1188 22.2771C27.3281 22.2524 27.5209 22.3473 27.6202 22.5222ZM4.06578 21.2376L3.18082 23.4575C2.98367 23.952 2.39176 24.2049 1.86621 24.0194C1.34066 23.8339 1.07232 23.2773 1.26946 22.7828L5.41477 12.389L0.192683 2.68605C-0.54987 1.48237 1.06311 0.889984 1.6061 1.77494L11.8614 20.3057C12.0077 20.5692 12.2503 20.7387 12.5608 20.7934L17.1154 21.5994C18.6514 21.8702 18.3511 23.7849 16.7027 23.4909L13.2874 22.8821L16.9464 29.4933C17.6332 30.6122 15.9287 31.7335 15.097 30.3782L10.8263 22.4432L4.06578 21.2376Z"
-                                    fill="#391F75" />
-                            </g>
-                            <defs>
-                                <clipPath id="clip0">
-                                    <rect width="31.1292" height="31" fill="white"
-                                        transform="translate(0 -0.00012207)" />
-                                </clipPath>
-                            </defs>
-                        </svg>
-                        <span class="mr-10 lg:w-full lg:mx-auto text-center font-bold mb-5 lg:mt-40">Friends</span>
-                    </div>
-                    <div 
-                    @click="(data.form.who.includes('Pets')) ? '' : data.form.who.push('Pets')"
-                    
-                    class="
+            <svg class="mr-10 lg:mx-auto mb-5 w-10 lg:w-20 lg:absolute bottom-20" viewBox="0 0 32 31" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0)">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M6.66738 14.716L4.79138 19.4188L9.66229 20.281L6.66738 14.716ZM29.5853 21.7278L29.4254 21.6992C29.3925 21.6934 29.3673 21.675 29.3537 21.6464C29.3397 21.6183 29.3412 21.5878 29.3576 21.5607C29.6637 21.0574 29.6366 20.3255 29.066 19.8479C29.0321 19.8198 29.0224 19.7753 29.0428 19.737C29.0626 19.6987 29.1057 19.6784 29.1503 19.6862L29.998 19.8363C31.5339 20.1071 31.2336 22.0218 29.5853 21.7278ZM11.9229 1.96917C12.3797 1.9527 12.8461 2.19489 13.1663 2.78437L20.7778 16.7799C21.1687 17.4987 21.6386 18.2878 22.414 18.4844L27.7994 19.8508C29.0684 20.173 28.7308 21.5665 28.1699 21.6416L19.563 22.7924C19.3053 22.8264 19.1014 22.5483 19.0137 22.1075C18.8907 21.4909 18.6659 21.1199 17.7664 20.9576L13.3286 20.1589C12.5899 20.0257 12.4707 19.784 11.9592 18.8114L3.56202 2.858C3.48452 2.71075 3.4913 2.54994 3.5814 2.40898C3.67101 2.26851 3.81874 2.18666 3.9936 2.1823L11.9229 1.96917ZM15.3029 0.69914L24.959 17.8073C25.0539 17.9758 25.0345 18.1696 24.9086 18.3188C24.7822 18.468 24.5855 18.5285 24.3898 18.4791L23.1135 18.155C22.974 18.1197 22.8679 18.0393 22.8016 17.9187L13.656 1.32495C12.9275 0.137749 14.6838 -0.629016 15.3029 0.69914ZM27.6202 22.5222L29.8841 26.5333C30.7982 28.0411 28.7061 28.9149 28.0372 27.4187L25.6487 23.0845C25.5712 22.9445 25.5717 22.791 25.6502 22.651C25.7282 22.511 25.8623 22.4238 26.029 22.4045L27.1188 22.2771C27.3281 22.2524 27.5209 22.3473 27.6202 22.5222ZM4.06578 21.2376L3.18082 23.4575C2.98367 23.952 2.39176 24.2049 1.86621 24.0194C1.34066 23.8339 1.07232 23.2773 1.26946 22.7828L5.41477 12.389L0.192683 2.68605C-0.54987 1.48237 1.06311 0.889984 1.6061 1.77494L11.8614 20.3057C12.0077 20.5692 12.2503 20.7387 12.5608 20.7934L17.1154 21.5994C18.6514 21.8702 18.3511 23.7849 16.7027 23.4909L13.2874 22.8821L16.9464 29.4933C17.6332 30.6122 15.9287 31.7335 15.097 30.3782L10.8263 22.4432L4.06578 21.2376Z"
+                  fill="#391F75" />
+              </g>
+              <defs>
+                <clipPath id="clip0">
+                  <rect width="31.1292" height="31" fill="white" transform="translate(0 -0.00012207)" />
+                </clipPath>
+              </defs>
+            </svg>
+            <span class="mr-10 lg:w-full lg:mx-auto text-center font-bold mb-5 lg:mt-40">Friends</span>
+          </div>
+          <div @click="(data.form.who.includes('Pets')) ? '' : data.form.who.push('Pets')" class="
                 lg:h-52
                 w-full
                 lg:w-1/4
@@ -584,7 +670,7 @@
                 items-center
                 relative
               ">
-                        <input x-model="data.form.who" value="Pets" class="
+            <input x-model="data.form.who" value="Pets" class="
                   mr-10
                   lg:mx-auto
                   mb-5
@@ -596,48 +682,46 @@
                   lg:absolute
                   -bottom-20
                 " type="checkbox" />
-                        <svg class="mr-10 lg:mx-auto mb-5 w-10 lg:w-20 lg:absolute bottom-20" viewBox="0 0 34 27"
-                            fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g clip-path="url(#clip0)">
-                                <path
-                                    d="M5.47542 6.51062C6.60167 6.2911 7.86958 6.09978 9.25792 5.94395C9.23667 5.86603 9.2225 5.78812 9.21542 5.70312L8.90375 1.3752V1.33978C3.60542 1.8852 0 2.94062 0 4.15194C0 5.07978 2.11083 5.91569 5.47542 6.51062Z"
-                                    fill="#391F75" />
-                                <path
-                                    d="M16.993 0.957275H16.738L17.0355 5.13637C17.0497 5.27811 17.0355 5.41262 17.0001 5.54728C21.4555 5.54728 25.5072 5.91561 28.5247 6.51061C31.8893 5.91561 34.0001 5.07977 34.0001 4.15186C34.0001 2.38818 26.3926 0.957275 16.993 0.957275Z"
-                                    fill="#391F75" />
-                                <path
-                                    d="M15.3849 12.9989V13.176C15.3849 13.5726 15.5336 13.941 15.7816 14.2172C16.1782 14.2243 16.5891 14.2243 16.9999 14.2243C17.3966 14.2243 17.7932 14.2243 18.1828 14.2172C18.4307 13.941 18.5795 13.5727 18.5795 13.176V13.0413C18.1545 13.3955 17.602 13.6079 16.9999 13.6079C16.3836 13.608 15.817 13.3814 15.3849 12.9989Z"
-                                    fill="#391F75" />
-                                <path
-                                    d="M28.5175 7.22603L28.4537 7.21187C25.4292 7.73603 21.4129 8.04777 17 8.04777C12.5871 8.04777 8.57083 7.73603 5.54625 7.21902L5.4825 7.2261L5.355 7.20485C2.295 6.66652 0.757917 6.0361 0 5.43402V11.0369C0 12.5739 5.75875 13.849 13.4371 14.1535C13.345 13.8419 13.3025 13.509 13.3025 13.1761V11.8444C13.3025 10.9094 13.9683 10.1232 14.8467 9.93902C15.2717 9.15985 16.0863 8.66402 17.0001 8.66402C17.9138 8.66402 18.7355 9.16701 19.1605 9.95326C20.0317 10.1658 20.6551 10.9378 20.6551 11.8444V13.1762C20.6551 13.5091 20.6126 13.8419 20.5205 14.1536C28.22 13.856 34 12.5739 34 11.0369V5.44103C33.2421 6.03603 31.705 6.66645 28.6521 7.20478L28.5175 7.22603Z"
-                                    fill="#391F75" />
-                                <path
-                                    d="M15.3566 0.291448L10.1787 0.666865C9.83163 0.688044 9.58372 0.978602 9.60497 1.32569L9.92372 5.65353C9.94497 5.98652 10.2354 6.2486 10.5825 6.22735L15.7604 5.84485C16.1075 5.8236 16.3554 5.51902 16.327 5.18617L16.2775 4.52735L14.9883 4.61235H14.9387C14.273 4.61235 13.7275 4.10235 13.6991 3.44367L13.6354 2.55826C13.5787 1.90659 14.0816 1.31159 14.7616 1.25485L16.0366 1.17694L16.0154 0.858115C15.9941 0.518044 15.7037 0.263185 15.3566 0.291448ZM11.5833 4.30274C11.0056 4.30274 10.5373 3.83446 10.5373 3.25682C10.5373 2.67903 11.0056 2.21075 11.5833 2.21075C12.161 2.21075 12.6293 2.67903 12.6293 3.25682C12.6293 3.83439 12.161 4.30274 11.5833 4.30274Z"
-                                    fill="#391F75" />
-                                <path
-                                    d="M15.1653 2.69272L16.1499 2.61481L16.0932 1.88522L14.8253 1.95606C14.542 1.98439 14.3224 2.22522 14.3436 2.50856L14.4074 3.41522C14.4216 3.70557 14.6624 3.91814 14.9599 3.9039L16.2349 3.8189L16.1782 3.04682L15.2008 3.12474C15.1937 3.12474 15.1937 3.12474 15.1866 3.12474C15.0733 3.12474 14.9812 3.03974 14.9671 2.92647C14.9599 2.80599 15.052 2.70689 15.1653 2.69272Z"
-                                    fill="#391F75" />
-                                <path
-                                    d="M16.98 23.0722C16.4929 23.0722 16.098 23.4672 16.098 23.9544C16.098 24.3631 16.3818 24.6917 16.7591 24.7919V26.6241H17.2001V24.792C17.5779 24.6922 17.862 24.3634 17.862 23.9544C17.8621 23.4672 17.4671 23.0722 16.98 23.0722Z"
-                                    fill="#391F75" />
-                                <path
-                                    d="M20.9524 21.3006H20.8816L20.4779 18.6302C20.3574 17.6385 19.2524 16.8806 17.9987 16.8806H17.3399V16.1084C18.8062 15.9243 19.9466 14.6918 19.9466 13.176V11.8443C19.9466 11.1572 19.3941 10.6047 18.707 10.6047H18.6716C18.4449 9.88928 17.7862 9.37219 16.9999 9.37219C16.2137 9.37219 15.5549 9.88928 15.3283 10.6047H15.2504C14.5704 10.6047 14.0108 11.1572 14.0108 11.8443V13.176C14.0108 14.6847 15.1512 15.9243 16.6104 16.1084V16.8806H15.9658C14.7049 16.8806 13.5999 17.6384 13.4866 18.6302L13.0829 21.3006H12.9979C12.7216 21.3006 12.4949 21.5272 12.4949 21.8106C12.4949 22.0868 12.7216 22.3135 12.9979 22.3135H13.097L13.4866 24.8707C13.5999 25.8693 14.7049 26.6273 15.9658 26.6273H16.0508V25.2248C15.647 24.9344 15.392 24.4668 15.392 23.9569C15.392 23.0786 16.1004 22.3632 16.9787 22.3632C17.8571 22.3632 18.5724 23.0786 18.5724 23.9569C18.5724 24.4669 18.3174 24.9414 17.9066 25.2319V26.6273H17.9987C19.2524 26.6273 20.3574 25.8693 20.4779 24.8707L20.8674 22.3135H20.9524C21.2358 22.3135 21.4624 22.0869 21.4624 21.8106C21.4624 21.5273 21.2358 21.3006 20.9524 21.3006ZM16.3624 18.6302L16.0437 20.1531C15.9658 20.5073 15.6469 20.7481 15.3283 20.6843L14.9883 20.6135C14.6695 20.5426 14.4712 20.1955 14.5491 19.8414L14.8679 18.3185C14.9387 17.9573 15.2645 17.7164 15.5833 17.7873L15.9162 17.858C16.2349 17.9218 16.4333 18.2689 16.3624 18.6302ZM16.9716 15.3577C16.8795 15.3577 16.7945 15.4001 16.7308 15.4568C15.5762 15.3293 14.6766 14.3589 14.6766 13.176V11.8443C14.6766 11.5255 14.9316 11.2635 15.2504 11.2635C15.3141 12.1773 16.072 12.8997 16.9999 12.8997C17.9279 12.8997 18.6787 12.1843 18.7495 11.2706C19.047 11.2989 19.2879 11.5398 19.2879 11.8443V13.176C19.2879 14.3659 18.3741 15.3364 17.2195 15.4568C17.1558 15.4001 17.0708 15.3577 16.9716 15.3577ZM18.9691 20.6136L18.6291 20.6844C18.3104 20.7482 17.9916 20.5073 17.9208 20.1532L17.602 18.6303C17.5241 18.269 17.7224 17.9219 18.0412 17.8581L18.3812 17.7873C18.6999 17.7164 19.0187 17.9573 19.0966 18.3186L19.4083 19.8414C19.4862 20.1956 19.2879 20.5427 18.9691 20.6136Z"
-                                    fill="#391F75" />
-                            </g>
-                            <defs>
-                                <clipPath id="clip0">
-                                    <rect width="34" height="26.9167" fill="white"
-                                        transform="translate(0 -0.00012207)" />
-                                </clipPath>
-                            </defs>
-                        </svg>
+            <svg class="mr-10 lg:mx-auto mb-5 w-10 lg:w-20 lg:absolute bottom-20" viewBox="0 0 34 27" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0)">
+                <path
+                  d="M5.47542 6.51062C6.60167 6.2911 7.86958 6.09978 9.25792 5.94395C9.23667 5.86603 9.2225 5.78812 9.21542 5.70312L8.90375 1.3752V1.33978C3.60542 1.8852 0 2.94062 0 4.15194C0 5.07978 2.11083 5.91569 5.47542 6.51062Z"
+                  fill="#391F75" />
+                <path
+                  d="M16.993 0.957275H16.738L17.0355 5.13637C17.0497 5.27811 17.0355 5.41262 17.0001 5.54728C21.4555 5.54728 25.5072 5.91561 28.5247 6.51061C31.8893 5.91561 34.0001 5.07977 34.0001 4.15186C34.0001 2.38818 26.3926 0.957275 16.993 0.957275Z"
+                  fill="#391F75" />
+                <path
+                  d="M15.3849 12.9989V13.176C15.3849 13.5726 15.5336 13.941 15.7816 14.2172C16.1782 14.2243 16.5891 14.2243 16.9999 14.2243C17.3966 14.2243 17.7932 14.2243 18.1828 14.2172C18.4307 13.941 18.5795 13.5727 18.5795 13.176V13.0413C18.1545 13.3955 17.602 13.6079 16.9999 13.6079C16.3836 13.608 15.817 13.3814 15.3849 12.9989Z"
+                  fill="#391F75" />
+                <path
+                  d="M28.5175 7.22603L28.4537 7.21187C25.4292 7.73603 21.4129 8.04777 17 8.04777C12.5871 8.04777 8.57083 7.73603 5.54625 7.21902L5.4825 7.2261L5.355 7.20485C2.295 6.66652 0.757917 6.0361 0 5.43402V11.0369C0 12.5739 5.75875 13.849 13.4371 14.1535C13.345 13.8419 13.3025 13.509 13.3025 13.1761V11.8444C13.3025 10.9094 13.9683 10.1232 14.8467 9.93902C15.2717 9.15985 16.0863 8.66402 17.0001 8.66402C17.9138 8.66402 18.7355 9.16701 19.1605 9.95326C20.0317 10.1658 20.6551 10.9378 20.6551 11.8444V13.1762C20.6551 13.5091 20.6126 13.8419 20.5205 14.1536C28.22 13.856 34 12.5739 34 11.0369V5.44103C33.2421 6.03603 31.705 6.66645 28.6521 7.20478L28.5175 7.22603Z"
+                  fill="#391F75" />
+                <path
+                  d="M15.3566 0.291448L10.1787 0.666865C9.83163 0.688044 9.58372 0.978602 9.60497 1.32569L9.92372 5.65353C9.94497 5.98652 10.2354 6.2486 10.5825 6.22735L15.7604 5.84485C16.1075 5.8236 16.3554 5.51902 16.327 5.18617L16.2775 4.52735L14.9883 4.61235H14.9387C14.273 4.61235 13.7275 4.10235 13.6991 3.44367L13.6354 2.55826C13.5787 1.90659 14.0816 1.31159 14.7616 1.25485L16.0366 1.17694L16.0154 0.858115C15.9941 0.518044 15.7037 0.263185 15.3566 0.291448ZM11.5833 4.30274C11.0056 4.30274 10.5373 3.83446 10.5373 3.25682C10.5373 2.67903 11.0056 2.21075 11.5833 2.21075C12.161 2.21075 12.6293 2.67903 12.6293 3.25682C12.6293 3.83439 12.161 4.30274 11.5833 4.30274Z"
+                  fill="#391F75" />
+                <path
+                  d="M15.1653 2.69272L16.1499 2.61481L16.0932 1.88522L14.8253 1.95606C14.542 1.98439 14.3224 2.22522 14.3436 2.50856L14.4074 3.41522C14.4216 3.70557 14.6624 3.91814 14.9599 3.9039L16.2349 3.8189L16.1782 3.04682L15.2008 3.12474C15.1937 3.12474 15.1937 3.12474 15.1866 3.12474C15.0733 3.12474 14.9812 3.03974 14.9671 2.92647C14.9599 2.80599 15.052 2.70689 15.1653 2.69272Z"
+                  fill="#391F75" />
+                <path
+                  d="M16.98 23.0722C16.4929 23.0722 16.098 23.4672 16.098 23.9544C16.098 24.3631 16.3818 24.6917 16.7591 24.7919V26.6241H17.2001V24.792C17.5779 24.6922 17.862 24.3634 17.862 23.9544C17.8621 23.4672 17.4671 23.0722 16.98 23.0722Z"
+                  fill="#391F75" />
+                <path
+                  d="M20.9524 21.3006H20.8816L20.4779 18.6302C20.3574 17.6385 19.2524 16.8806 17.9987 16.8806H17.3399V16.1084C18.8062 15.9243 19.9466 14.6918 19.9466 13.176V11.8443C19.9466 11.1572 19.3941 10.6047 18.707 10.6047H18.6716C18.4449 9.88928 17.7862 9.37219 16.9999 9.37219C16.2137 9.37219 15.5549 9.88928 15.3283 10.6047H15.2504C14.5704 10.6047 14.0108 11.1572 14.0108 11.8443V13.176C14.0108 14.6847 15.1512 15.9243 16.6104 16.1084V16.8806H15.9658C14.7049 16.8806 13.5999 17.6384 13.4866 18.6302L13.0829 21.3006H12.9979C12.7216 21.3006 12.4949 21.5272 12.4949 21.8106C12.4949 22.0868 12.7216 22.3135 12.9979 22.3135H13.097L13.4866 24.8707C13.5999 25.8693 14.7049 26.6273 15.9658 26.6273H16.0508V25.2248C15.647 24.9344 15.392 24.4668 15.392 23.9569C15.392 23.0786 16.1004 22.3632 16.9787 22.3632C17.8571 22.3632 18.5724 23.0786 18.5724 23.9569C18.5724 24.4669 18.3174 24.9414 17.9066 25.2319V26.6273H17.9987C19.2524 26.6273 20.3574 25.8693 20.4779 24.8707L20.8674 22.3135H20.9524C21.2358 22.3135 21.4624 22.0869 21.4624 21.8106C21.4624 21.5273 21.2358 21.3006 20.9524 21.3006ZM16.3624 18.6302L16.0437 20.1531C15.9658 20.5073 15.6469 20.7481 15.3283 20.6843L14.9883 20.6135C14.6695 20.5426 14.4712 20.1955 14.5491 19.8414L14.8679 18.3185C14.9387 17.9573 15.2645 17.7164 15.5833 17.7873L15.9162 17.858C16.2349 17.9218 16.4333 18.2689 16.3624 18.6302ZM16.9716 15.3577C16.8795 15.3577 16.7945 15.4001 16.7308 15.4568C15.5762 15.3293 14.6766 14.3589 14.6766 13.176V11.8443C14.6766 11.5255 14.9316 11.2635 15.2504 11.2635C15.3141 12.1773 16.072 12.8997 16.9999 12.8997C17.9279 12.8997 18.6787 12.1843 18.7495 11.2706C19.047 11.2989 19.2879 11.5398 19.2879 11.8443V13.176C19.2879 14.3659 18.3741 15.3364 17.2195 15.4568C17.1558 15.4001 17.0708 15.3577 16.9716 15.3577ZM18.9691 20.6136L18.6291 20.6844C18.3104 20.7482 17.9916 20.5073 17.9208 20.1532L17.602 18.6303C17.5241 18.269 17.7224 17.9219 18.0412 17.8581L18.3812 17.7873C18.6999 17.7164 19.0187 17.9573 19.0966 18.3186L19.4083 19.8414C19.4862 20.1956 19.2879 20.5427 18.9691 20.6136Z"
+                  fill="#391F75" />
+              </g>
+              <defs>
+                <clipPath id="clip0">
+                  <rect width="34" height="26.9167" fill="white" transform="translate(0 -0.00012207)" />
+                </clipPath>
+              </defs>
+            </svg>
 
-                        <span
-                            class="mr-10 lg:mx-auto lg:w-full lg:mx-auto text-center font-bold mb-5 lg:mt-40">Pet</span>
-                    </div>
-                </div>
-            </div>
-            <button x-show="data.tab < 4" @click="nextTab()" class="
+            <span class="mr-10 lg:mx-auto lg:w-full lg:mx-auto text-center font-bold mb-5 lg:mt-40">Pet</span>
+          </div>
+        </div>
+      </div>
+      <button x-show="data.tab < 4" @click="nextTab()" class="
             w-full
             lg:w-auto
             focus:outline-none
@@ -653,16 +737,14 @@
             ml-auto
             lg:relative
           ">
-                <span class="mr-10">NEXT</span>
-                <svg class="ml-auto" width="25" height="24" viewBox="0 0 25 24" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path d="M5.5 12L19.5 12" stroke="white" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                    <path d="M12.5 5L19.5 12L12.5 19" stroke="white" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                </svg>
-            </button>
-            <button x-show="data.tab >= 4" @click="getQuote()" class="
+        <span class="mr-10">NEXT</span>
+        <svg class="ml-auto" width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5.5 12L19.5 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M12.5 5L19.5 12L12.5 19" stroke="white" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </button>
+      <button x-show="data.tab >= 4" @click="getQuote()" class="
                 w-full
                 lg:w-auto
                 focus:outline-none
@@ -678,977 +760,495 @@
                 ml-auto
                 lg:relative
           ">
-                <span class="mr-10">GET A QUOTE</span>
-                <svg class="ml-auto" width="25" height="24" viewBox="0 0 25 24" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path d="M5.5 12L19.5 12" stroke="white" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                    <path d="M12.5 5L19.5 12L12.5 19" stroke="white" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                </svg>
-            </button>
-        </div>
-    </section>
-    <section x-show="data.tab == 1" class="lg:w-5/12 hidden lg:block h-screen bg-01 bg-cover">
-    
-    </section>
-    <section x-show="data.tab == 2" class="lg:w-5/12 hidden lg:block h-screen bg-02 bg-cover relative">
-        <div class="p-2 px-4 bg-white absolute bottom-32 right-10 rounded-full rounded-tr-none">Hello!</div>
-        <div class="w-52 p-2 px-4 bg-white absolute bottom-10 right-10 rounded-full rounded-tr-none">It's cold out there!
-            Don't forget a coat</div>
-    </section>
-    <section x-show="data.tab == 3" class="lg:w-5/12 hidden lg:block h-screen bg-03 bg-cover relative">
-        <div class="p-2 px-4 bg-white absolute bottom-32 right-10 rounded-full rounded-tr-none">Hello!</div>
-    </section>
-    <section x-show="data.tab == 4" class="lg:w-5/12 hidden lg:block h-screen bg-04 bg-cover relative">
-        <div class="p-2 px-4 bg-white absolute bottom-32 right-10 rounded-full rounded-tr-none">Hello!</div>
-        <div class="w-52 p-2 px-4 bg-white absolute bottom-10 right-10 rounded-full rounded-tr-none">It's cold out there!
-            Don't forget a coat</div>
-    </section>
-
-
-
-    <!-- Datepicker -->
-
-    <div class="w-screen h-screen bg-gray-200 fixed flex items-center justify-center"
-        x-show.transition="showDatepicker.from !== false || showDatepicker.to !== false">
-        <input type="hidden" name="date" x-ref="date" />
-        <div class="bg-white mt-12 rounded-lg shadow p-4" style="width: 17rem" @click.away="showDatepicker = false">
-            <div class="flex justify-between items-center mb-2">
-                <div>
-                    <span x-text="MONTH_NAMES[month]" class="text-lg font-bold text-gray-800"></span>
-                    <span x-text="year" class="ml-1 text-lg text-gray-600 font-normal"></span>
-                </div>
-                <div>
-                    <button type="button" class="
-              transition
-              ease-in-out
-              duration-100
-              inline-flex
-              cursor-pointer
-              hover:bg-gray-200
-              p-1
-              rounded-full
-            " :class="{'cursor-not-allowed opacity-25': month == 0 }" :disabled="month == 0 ? true : false"
-                        @click="month--; getNoOfDays()">
-                        <svg class="h-6 w-6 text-gray-500 inline-flex" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-                        </svg>
-                    </button>
-                    <button type="button" class="
-              transition
-              ease-in-out
-              duration-100
-              inline-flex
-              cursor-pointer
-              hover:bg-gray-200
-              p-1
-              rounded-full
-            " :class="{'cursor-not-allowed opacity-25': month == 11 }" :disabled="month == 11 ? true : false"
-                        @click="month++; getNoOfDays()">
-                        <svg class="h-6 w-6 text-gray-500 inline-flex" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                        </svg>
-                    </button>
-                </div>
-            </div>
-
-            <div class="flex flex-wrap mb-3 -mx-1">
-                <template x-for="(day, index) in DAYS" :key="index">
-                    <div style="width: 14.26%" class="px-1">
-                        <div x-text="day" class="text-gray-800 font-medium text-center text-xs"></div>
-                    </div>
-                </template>
-            </div>
-
-            <div class="flex flex-wrap -mx-1">
-                <template x-for="blankday in blankdays">
-                    <div style="width: 14.28%" class="text-center border p-1 border-transparent text-sm"></div>
-                </template>
-                <template x-for="(date, dateIndex) in no_of_days" :key="dateIndex">
-                    <div style="width: 14.28%" class="px-1 mb-1">
-                        <div @click="getDateValue(date)" x-text="date" class="
-                cursor-pointer
-                text-center text-sm
-                leading-none
-                rounded-full
-                leading-loose
-                transition
-                ease-in-out
-                duration-100
-              " :class="{'bg-blue-500 text-white': isToday(date) == true, 'text-gray-700 hover:bg-blue-200': isToday(date) == false }">
-                        </div>
-                    </div>
-                </template>
-            </div>
-        </div>
-
+        <span class="mr-10">GET A QUOTE</span>
+        <svg class="ml-auto" width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5.5 12L19.5 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M12.5 5L19.5 12L12.5 19" stroke="white" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </button>
     </div>
+  </section>
+  <section x-show="data.tab == 1" class="lg:w-5/12 hidden lg:block h-screen bg-01 bg-cover">
 
-    <script type="text/javascript" src="assets/js/main.js" defer></script>
+  </section>
+  <section x-show="data.tab == 2" class="lg:w-5/12 hidden lg:block h-screen bg-02 bg-cover relative">
+    <div class="p-2 px-4 bg-white absolute bottom-32 right-10 rounded-full rounded-tr-none">Hello!</div>
+    <div class="w-52 p-2 px-4 bg-white absolute bottom-10 right-10 rounded-full rounded-tr-none">It's cold out there!
+      Don't forget a coat</div>
+  </section>
+  <section x-show="data.tab == 3" class="lg:w-5/12 hidden lg:block h-screen bg-03 bg-cover relative">
+    <div class="p-2 px-4 bg-white absolute bottom-32 right-10 rounded-full rounded-tr-none">Hello!</div>
+  </section>
+  <section x-show="data.tab == 4" class="lg:w-5/12 hidden lg:block h-screen bg-04 bg-cover relative">
+    <div class="p-2 px-4 bg-white absolute bottom-32 right-10 rounded-full rounded-tr-none">Hello!</div>
+    <div class="w-52 p-2 px-4 bg-white absolute bottom-10 right-10 rounded-full rounded-tr-none">It's cold out there!
+      Don't forget a coat</div>
+  </section>
 
-    <script>
-        const MONTH_NAMES = [
-            "JAN",
-            "FEB",
-            "MAR",
-            "APR",
-            "MAY",
-            "JUN",
-            "JUL",
-            "AUG",
-            "SEP",
-            "OCT",
-            "NOV",
-            "DEC",
-        ];
-        const DAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
-        let where_options = [
-    {
-      "name": "United Airlines",
-      "code": "UA",
-      "textString": "United Airlines (UA)"
-    },
-    {
-      "name": "American Airlines",
-      "code": "AA",
-      "textString": "American Airlines (AA)"
-    },
-    {
-      "name": "Air Jamaica",
-      "code": "JM",
-      "textString": "Air Jamaica (JM)"
-    },
-    {
-      "name": "Air Namibia",
-      "code": "SW",
-      "textString": "Air Namibia (SW)"
-    },
-    {
-      "name": "Iberia",
-      "code": "IB",
-      "textString": "Iberia (IB)"
-    },
-    {
-      "name": "Virgin Blue Airlines",
-      "code": "DJ",
-      "textString": "Virgin Blue Airlines (DJ)"
-    },
-    {
-      "name": "Silk Air",
-      "code": "MI",
-      "textString": "Silk Air (MI)"
-    },
-    {
-      "name": "US Air / American Code Share",
-      "code": "US/AA",
-      "textString": "US Air / American Code Share (US/AA)"
-    },
-    {
-      "name": "Allegiant Air",
-      "code": "G4",
-      "textString": "Allegiant Air (G4)"
-    },
-    {
-      "name": "All Nippon Airways",
-      "code": "NH",
-      "textString": "All Nippon Airways (NH)"
-    },
-    {
-      "name": "Air Berlin",
-      "code": "AB",
-      "textString": "Air Berlin (AB)"
-    },
-    {
-      "name": "Kulula Airlines",
-      "code": "MN",
-      "textString": "Kulula Airlines (MN)"
-    },
-    {
-      "name": "Caribbean Airlines",
-      "code": "BW",
-      "textString": "Caribbean Airlines (BW)"
-    },
-    {
-      "name": "TACA Airlines",
-      "code": "TA",
-      "textString": "TACA Airlines (TA)"
-    },
-    {
-      "name": "Inter Caribbean Airlines",
-      "code": "JY",
-      "textString": "Inter Caribbean Airlines (JY)"
-    },
-    {
-      "name": "Midwest Express Airlines",
-      "code": "YX",
-      "textString": "Midwest Express Airlines (YX)"
-    },
-    {
-      "name": "Aerolineas Argentinas",
-      "code": "AR",
-      "textString": "Aerolineas Argentinas (AR)"
-    },
-    {
-      "name": "Singapore Airlines",
-      "code": "SQ",
-      "textString": "Singapore Airlines (SQ)"
-    },
-    {
-      "name": "Spanair",
-      "code": "JK",
-      "textString": "Spanair (JK)"
-    },
-    {
-      "name": "WinAir",
-      "code": "WM",
-      "textString": "WinAir (WM)"
-    },
-    {
-      "name": "Sun Country Airlines",
-      "code": "SY",
-      "textString": "Sun Country Airlines (SY)"
-    },
-    {
-      "name": "Northwest Airlines",
-      "code": "NWA",
-      "textString": "Northwest Airlines (NWA)"
-    },
-    {
-      "name": "Aerogal Airlines",
-      "code": "2K",
-      "textString": "Aerogal Airlines (2K)"
-    },
-    {
-      "name": "Aer Lingus P.L.C.",
-      "code": "EI",
-      "textString": "Aer Lingus P.L.C. (EI)"
-    },
-    {
-      "name": "Malaysia Airline",
-      "code": "MH",
-      "textString": "Malaysia Airline (MH)"
-    },
-    {
-      "name": "Carribean Star",
-      "code": "8B",
-      "textString": "Carribean Star (8B)"
-    },
-    {
-      "name": "Tigerair",
-      "code": "TGW",
-      "textString": "Tigerair (TGW)"
-    },
-    {
-      "name": "China Southern Airlines",
-      "code": "CZ",
-      "textString": "China Southern Airlines (CZ)"
-    },
-    {
-      "name": "Cape Air",
-      "code": "9K",
-      "textString": "Cape Air (9K)"
-    },
-    {
-      "name": "Austrian",
-      "code": "OS",
-      "textString": "Austrian (OS)"
-    },
-    {
-      "name": "Etihad Airways",
-      "code": "EY",
-      "textString": "Etihad Airways (EY)"
-    },
-    {
-      "name": "Insel Air International BV",
-      "code": "71",
-      "textString": "Insel Air International BV (71)"
-    },
-    {
-      "name": "Aeromexico",
-      "code": "AM",
-      "textString": "Aeromexico (AM)"
-    },
-    {
-      "name": "Seabourne Airlines",
-      "code": "BB",
-      "textString": "Seabourne Airlines (BB)"
-    },
-    {
-      "name": "Kenya Airways",
-      "code": "KQ",
-      "textString": "Kenya Airways (KQ)"
-    },
-    {
-      "name": "Eurowings",
-      "code": "EW",
-      "textString": "Eurowings (EW)"
-    },
-    {
-      "name": "LANPERU",
-      "code": "LP",
-      "textString": "LANPERU (LP)"
-    },
-    {
-      "name": "Hainan Airlines",
-      "code": "HU",
-      "textString": "Hainan Airlines (HU)"
-    },
-    {
-      "name": "Air India",
-      "code": "AI",
-      "textString": "Air India (AI)"
-    },
-    {
-      "name": "Norwegian Airlines",
-      "code": "DY",
-      "textString": "Norwegian Airlines (DY)"
-    },
-    {
-      "name": "Kingfisher",
-      "code": "IT",
-      "textString": "Kingfisher (IT)"
-    },
-    {
-      "name": "Private Jet",
-      "code": "PV",
-      "textString": "Private Jet (PV)"
-    },
-    {
-      "name": "Kiwi International",
-      "code": "KP",
-      "textString": "Kiwi International (KP)"
-    },
-    {
-      "name": "Bangkok Airways",
-      "code": "PG",
-      "textString": "Bangkok Airways (PG)"
-    },
-    {
-      "name": "Mexicana De Aviacion",
-      "code": "MX",
-      "textString": "Mexicana De Aviacion (MX)"
-    },
-    {
-      "name": "Air Tahiti Nui",
-      "code": "VT",
-      "textString": "Air Tahiti Nui (VT)"
-    },
-    {
-      "name": "Copa",
-      "code": "CM",
-      "textString": "Copa (CM)"
-    },
-    {
-      "name": "Turkish Airlines",
-      "code": "TK",
-      "textString": "Turkish Airlines (TK)"
-    },
-    {
-      "name": "Varig",
-      "code": "RG",
-      "textString": "Varig (RG)"
-    },
-    {
-      "name": "Jet Airways",
-      "code": "9W",
-      "textString": "Jet Airways (9W)"
-    },
-    {
-      "name": "Airtran Airways Inc",
-      "code": "FL",
-      "textString": "Airtran Airways Inc (FL)"
-    },
-    {
-      "name": "Egyptair",
-      "code": "MS",
-      "textString": "Egyptair (MS)"
-    },
-    {
-      "name": "Qatar Airways",
-      "code": "QR",
-      "textString": "Qatar Airways (QR)"
-    },
-    {
-      "name": "Flybaboo Airlines",
-      "code": "F7",
-      "textString": "Flybaboo Airlines (F7)"
-    },
-    {
-      "name": "Gulf Air",
-      "code": "GF",
-      "textString": "Gulf Air (GF)"
-    },
-    {
-      "name": "Piedmont Airlines",
-      "code": "PI",
-      "textString": "Piedmont Airlines (PI)"
-    },
-    {
-      "name": "Luxair",
-      "code": "LG",
-      "textString": "Luxair (LG)"
-    },
-    {
-      "name": "Qantas Airways",
-      "code": "QF",
-      "textString": "Qantas Airways (QF)"
-    },
-    {
-      "name": "Air Asia",
-      "code": "AK",
-      "textString": "Air Asia (AK)"
-    },
-    {
-      "name": "Frontier Airlines",
-      "code": "F9",
-      "textString": "Frontier Airlines (F9)"
-    },
-    {
-      "name": "EVA Airways Corporation",
-      "code": "BR",
-      "textString": "EVA Airways Corporation (BR)"
-    },
-    {
-      "name": "Aeroflot Russian Airlines",
-      "code": "SU",
-      "textString": "Aeroflot Russian Airlines (SU)"
-    },
-    {
-      "name": "Virgin Atlantic Airways Ltd.",
-      "code": "VS",
-      "textString": "Virgin Atlantic Airways Ltd. (VS)"
-    },
-    {
-      "name": "LACSA (Lineas Aereas Costarricenses)",
-      "code": "LR",
-      "textString": "LACSA (Lineas Aereas Costarricenses) (LR)"
-    },
-    {
-      "name": "Finnair",
-      "code": "AY",
-      "textString": "Finnair (AY)"
-    },
-    {
-      "name": "US Airways",
-      "code": "US",
-      "textString": "US Airways (US)"
-    },
-    {
-      "name": "Air Canada",
-      "code": "AC",
-      "textString": "Air Canada (AC)"
-    },
-    {
-      "name": "Nature Air",
-      "code": "5C",
-      "textString": "Nature Air (5C)"
-    },
-    {
-      "name": "SN Brussels Airlines",
-      "code": "SN",
-      "textString": "SN Brussels Airlines (SN)"
-    },
-    {
-      "name": "Asiana Airlines",
-      "code": "OZ",
-      "textString": "Asiana Airlines (OZ)"
-    },
-    {
-      "name": "Aloha Airlines",
-      "code": "AQ",
-      "textString": "Aloha Airlines (AQ)"
-    },
-    {
-      "name": "Virgin America Airlines",
-      "code": "VX",
-      "textString": "Virgin America Airlines (VX)"
-    },
-    {
-      "name": "TAP Air Portugal",
-      "code": "TP",
-      "textString": "TAP Air Portugal (TP)"
-    },
-    {
-      "name": "West Jet",
-      "code": "WS",
-      "textString": "West Jet (WS)"
-    },
-    {
-      "name": "Ethiopian Air",
-      "code": "ET",
-      "textString": "Ethiopian Air (ET)"
-    },
-    {
-      "name": "SAS Scandinavian Airlines",
-      "code": "SK",
-      "textString": "SAS Scandinavian Airlines (SK)"
-    },
-    {
-      "name": "ATA Airlines",
-      "code": "TZ",
-      "textString": "ATA Airlines (TZ)"
-    },
-    {
-      "name": "Cathay Pacific Airways",
-      "code": "CX",
-      "textString": "Cathay Pacific Airways (CX)"
-    },
-    {
-      "name": "Virgin Australia Airlines",
-      "code": "VA",
-      "textString": "Virgin Australia Airlines (VA)"
-    },
-    {
-      "name": "Icelandair",
-      "code": "FI",
-      "textString": "Icelandair (FI)"
-    },
-    {
-      "name": "LAN Ecuador Airlines",
-      "code": "XL",
-      "textString": "LAN Ecuador Airlines (XL)"
-    },
-    {
-      "name": "China Eastern Airlines",
-      "code": "MU",
-      "textString": "China Eastern Airlines (MU)"
-    },
-    {
-      "name": "KLM Royal Duch Airlines",
-      "code": "KL",
-      "textString": "KLM Royal Duch Airlines (KL)"
-    },
-    {
-      "name": "Air France",
-      "code": "AF",
-      "textString": "Air France (AF)"
-    },
-    {
-      "name": "Southwest Air",
-      "code": "WN",
-      "textString": "Southwest Air (WN)"
-    },
-    {
-      "name": "OTHER - See Comments",
-      "code": "OTHER",
-      "textString": "OTHER - See Comments (OTHER)"
-    },
-    {
-      "name": "Jet Blue",
-      "code": "B6",
-      "textString": "Jet Blue (B6)"
-    },
-    {
-      "name": "Air New Zealand",
-      "code": "NZ",
-      "textString": "Air New Zealand (NZ)"
-    },
-    {
-      "name": "Condor",
-      "code": "DE",
-      "textString": "Condor (DE)"
-    },
-    {
-      "name": "Jetstar Airways",
-      "code": "JQ",
-      "textString": "Jetstar Airways (JQ)"
-    },
-    {
-      "name": "Thai Airways Intl",
-      "code": "TG",
-      "textString": "Thai Airways Intl (TG)"
-    },
-    {
-      "name": "Silver Airways",
-      "code": "3M",
-      "textString": "Silver Airways (3M)"
-    },
-    {
-      "name": "SWISS",
-      "code": "LX",
-      "textString": "SWISS (LX)"
-    },
-    {
-      "name": "Lufthansa",
-      "code": "LH",
-      "textString": "Lufthansa (LH)"
-    },
-    {
-      "name": "LAN (LATAM) Airlines",
-      "code": "LA",
-      "textString": "LAN (LATAM) Airlines (LA)"
-    },
-    {
-      "name": "Hawaiian Airlines",
-      "code": "HA",
-      "textString": "Hawaiian Airlines (HA)"
-    },
-    {
-      "name": "El Al Israel Airlines",
-      "code": "LY",
-      "textString": "El Al Israel Airlines (LY)"
-    },
-    {
-      "name": "China Airlines",
-      "code": "CI",
-      "textString": "China Airlines (CI)"
-    },
-    {
-      "name": "Martinair Holland",
-      "code": "MP",
-      "textString": "Martinair Holland (MP)"
-    },
-    {
-      "name": "Spirit Airlines",
-      "code": "NK",
-      "textString": "Spirit Airlines (NK)"
-    },
-    {
-      "name": "EasyJet Airlines",
-      "code": "U2",
-      "textString": "EasyJet Airlines (U2)"
-    },
-    {
-      "name": "Korean Air",
-      "code": "KE",
-      "textString": "Korean Air (KE)"
-    },
-    {
-      "name": "AVIANCA Airlines",
-      "code": "AV",
-      "textString": "AVIANCA Airlines (AV)"
-    },
-    {
-      "name": "Air Sunshine",
-      "code": "YI",
-      "textString": "Air Sunshine (YI)"
-    },
-    {
-      "name": "Alaska Airlines",
-      "code": "AS",
-      "textString": "Alaska Airlines (AS)"
-    },
-    {
-      "name": "Emirates Airline",
-      "code": "EK",
-      "textString": "Emirates Airline (EK)"
-    },
-    {
-      "name": "Continental Airlines",
-      "code": "CO",
-      "textString": "Continental Airlines (CO)"
-    },
-    {
-      "name": "Air China",
-      "code": "CA",
-      "textString": "Air China (CA)"
-    },
-    {
-      "name": "Delta Air Lines",
-      "code": "DL",
-      "textString": "Delta Air Lines (DL)"
-    },
-    {
-      "name": "Aegean Airlines",
-      "code": "A3",
-      "textString": "Aegean Airlines (A3)"
-    },
-    {
-      "name": "British Airways",
-      "code": "BA",
-      "textString": "British Airways (BA)"
-    },
-    {
-      "name": "Dragon Air",
-      "code": "KA",
-      "textString": "Dragon Air (KA)"
-    },
-    {
-      "name": "Air Europa",
-      "code": "UX",
-      "textString": "Air Europa (UX)"
-    },
-    {
-      "name": "Lauda Air Luftfahrt",
-      "code": "NG",
-      "textString": "Lauda Air Luftfahrt (NG)"
-    },
-    {
-      "name": "Ryanair",
-      "code": "FR",
-      "textString": "Ryanair (FR)"
-    },
-    {
-      "name": "South African Airways",
-      "code": "SA",
-      "textString": "South African Airways (SA)"
-    },
-    {
-      "name": "Alitalia",
-      "code": "AZ",
-      "textString": "Alitalia (AZ)"
-    },
-    {
-      "name": "LOT Polish Airlines",
-      "code": "LO",
-      "textString": "LOT Polish Airlines (LO)"
-    },
-    {
-      "name": "Liat",
-      "code": "LI",
-      "textString": "Liat (LI)"
-    },
-    {
-      "name": "Harmony Airways",
-      "code": "HQ",
-      "textString": "Harmony Airways (HQ)"
-    },
-    {
-      "name": "Japan Airlines International",
-      "code": "JL",
-      "textString": "Japan Airlines International (JL)"
-    },
-    {
-      "name": "Air Transat",
-      "code": "TS",
-      "textString": "Air Transat (TS)"
-    },
-    {
-      "name": "America West Airlines",
-      "code": "HP",
-      "textString": "America West Airlines (HP)"
+
+
+  <script type="text/javascript" src="assets/js/main.js" defer></script>
+
+  <script>
+    const MONTH_NAMES = [
+      "JAN",
+      "FEB",
+      "MAR",
+      "APR",
+      "MAY",
+      "JUN",
+      "JUL",
+      "AUG",
+      "SEP",
+      "OCT",
+      "NOV",
+      "DEC",
+    ];
+    const DAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+
+
+    let where_options = [
+      { name: 'Afghanistan', code: 'AF' },
+      { name: 'Åland Islands', code: 'AX' },
+      { name: 'Albania', code: 'AL' },
+      { name: 'Algeria', code: 'DZ' },
+      { name: 'American Samoa', code: 'AS' },
+      { name: 'AndorrA', code: 'AD' },
+      { name: 'Angola', code: 'AO' },
+      { name: 'Anguilla', code: 'AI' },
+      { name: 'Antarctica', code: 'AQ' },
+      { name: 'Antigua and Barbuda', code: 'AG' },
+      { name: 'Argentina', code: 'AR' },
+      { name: 'Armenia', code: 'AM' },
+      { name: 'Aruba', code: 'AW' },
+      { name: 'Australia', code: 'AU' },
+      { name: 'Austria', code: 'AT' },
+      { name: 'Azerbaijan', code: 'AZ' },
+      { name: 'Bahamas', code: 'BS' },
+      { name: 'Bahrain', code: 'BH' },
+      { name: 'Bangladesh', code: 'BD' },
+      { name: 'Barbados', code: 'BB' },
+      { name: 'Belarus', code: 'BY' },
+      { name: 'Belgium', code: 'BE' },
+      { name: 'Belize', code: 'BZ' },
+      { name: 'Benin', code: 'BJ' },
+      { name: 'Bermuda', code: 'BM' },
+      { name: 'Bhutan', code: 'BT' },
+      { name: 'Bolivia', code: 'BO' },
+      { name: 'Bosnia and Herzegovina', code: 'BA' },
+      { name: 'Botswana', code: 'BW' },
+      { name: 'Bouvet Island', code: 'BV' },
+      { name: 'Brazil', code: 'BR' },
+      { name: 'British Indian Ocean Territory', code: 'IO' },
+      { name: 'Brunei Darussalam', code: 'BN' },
+      { name: 'Bulgaria', code: 'BG' },
+      { name: 'Burkina Faso', code: 'BF' },
+      { name: 'Burundi', code: 'BI' },
+      { name: 'Cambodia', code: 'KH' },
+      { name: 'Cameroon', code: 'CM' },
+      { name: 'Canada', code: 'CA' },
+      { name: 'Cape Verde', code: 'CV' },
+      { name: 'Cayman Islands', code: 'KY' },
+      { name: 'Central African Republic', code: 'CF' },
+      { name: 'Chad', code: 'TD' },
+      { name: 'Chile', code: 'CL' },
+      { name: 'China', code: 'CN' },
+      { name: 'Christmas Island', code: 'CX' },
+      { name: 'Cocos (Keeling) Islands', code: 'CC' },
+      { name: 'Colombia', code: 'CO' },
+      { name: 'Comoros', code: 'KM' },
+      { name: 'Congo', code: 'CG' },
+      { name: 'Congo, The Democratic Republic of the', code: 'CD' },
+      { name: 'Cook Islands', code: 'CK' },
+      { name: 'Costa Rica', code: 'CR' },
+      { name: 'Cote D\'Ivoire', code: 'CI' },
+      { name: 'Croatia', code: 'HR' },
+      { name: 'Cuba', code: 'CU' },
+      { name: 'Cyprus', code: 'CY' },
+      { name: 'Czech Republic', code: 'CZ' },
+      { name: 'Denmark', code: 'DK' },
+      { name: 'Djibouti', code: 'DJ' },
+      { name: 'Dominica', code: 'DM' },
+      { name: 'Dominican Republic', code: 'DO' },
+      { name: 'Ecuador', code: 'EC' },
+      { name: 'Egypt', code: 'EG' },
+      { name: 'El Salvador', code: 'SV' },
+      { name: 'Equatorial Guinea', code: 'GQ' },
+      { name: 'Eritrea', code: 'ER' },
+      { name: 'Estonia', code: 'EE' },
+      { name: 'Ethiopia', code: 'ET' },
+      { name: 'Falkland Islands (Malvinas)', code: 'FK' },
+      { name: 'Faroe Islands', code: 'FO' },
+      { name: 'Fiji', code: 'FJ' },
+      { name: 'Finland', code: 'FI' },
+      { name: 'France', code: 'FR' },
+      { name: 'French Guiana', code: 'GF' },
+      { name: 'French Polynesia', code: 'PF' },
+      { name: 'French Southern Territories', code: 'TF' },
+      { name: 'Gabon', code: 'GA' },
+      { name: 'Gambia', code: 'GM' },
+      { name: 'Georgia', code: 'GE' },
+      { name: 'Germany', code: 'DE' },
+      { name: 'Ghana', code: 'GH' },
+      { name: 'Gibraltar', code: 'GI' },
+      { name: 'Greece', code: 'GR' },
+      { name: 'Greenland', code: 'GL' },
+      { name: 'Grenada', code: 'GD' },
+      { name: 'Guadeloupe', code: 'GP' },
+      { name: 'Guam', code: 'GU' },
+      { name: 'Guatemala', code: 'GT' },
+      { name: 'Guernsey', code: 'GG' },
+      { name: 'Guinea', code: 'GN' },
+      { name: 'Guinea-Bissau', code: 'GW' },
+      { name: 'Guyana', code: 'GY' },
+      { name: 'Haiti', code: 'HT' },
+      { name: 'Heard Island and Mcdonald Islands', code: 'HM' },
+      { name: 'Holy See (Vatican City State)', code: 'VA' },
+      { name: 'Honduras', code: 'HN' },
+      { name: 'Hong Kong', code: 'HK' },
+      { name: 'Hungary', code: 'HU' },
+      { name: 'Iceland', code: 'IS' },
+      { name: 'India', code: 'IN' },
+      { name: 'Indonesia', code: 'ID' },
+      { name: 'Iran, Islamic Republic Of', code: 'IR' },
+      { name: 'Iraq', code: 'IQ' },
+      { name: 'Ireland', code: 'IE' },
+      { name: 'Isle of Man', code: 'IM' },
+      { name: 'Israel', code: 'IL' },
+      { name: 'Italy', code: 'IT' },
+      { name: 'Jamaica', code: 'JM' },
+      { name: 'Japan', code: 'JP' },
+      { name: 'Jersey', code: 'JE' },
+      { name: 'Jordan', code: 'JO' },
+      { name: 'Kazakhstan', code: 'KZ' },
+      { name: 'Kenya', code: 'KE' },
+      { name: 'Kiribati', code: 'KI' },
+      { name: 'Korea, Democratic People\'S Republic of', code: 'KP' },
+      { name: 'Korea, Republic of', code: 'KR' },
+      { name: 'Kuwait', code: 'KW' },
+      { name: 'Kyrgyzstan', code: 'KG' },
+      { name: 'Lao People\'S Democratic Republic', code: 'LA' },
+      { name: 'Latvia', code: 'LV' },
+      { name: 'Lebanon', code: 'LB' },
+      { name: 'Lesotho', code: 'LS' },
+      { name: 'Liberia', code: 'LR' },
+      { name: 'Libyan Arab Jamahiriya', code: 'LY' },
+      { name: 'Liechtenstein', code: 'LI' },
+      { name: 'Lithuania', code: 'LT' },
+      { name: 'Luxembourg', code: 'LU' },
+      { name: 'Macao', code: 'MO' },
+      { name: 'Macedonia, The Former Yugoslav Republic of', code: 'MK' },
+      { name: 'Madagascar', code: 'MG' },
+      { name: 'Malawi', code: 'MW' },
+      { name: 'Malaysia', code: 'MY' },
+      { name: 'Maldives', code: 'MV' },
+      { name: 'Mali', code: 'ML' },
+      { name: 'Malta', code: 'MT' },
+      { name: 'Marshall Islands', code: 'MH' },
+      { name: 'Martinique', code: 'MQ' },
+      { name: 'Mauritania', code: 'MR' },
+      { name: 'Mauritius', code: 'MU' },
+      { name: 'Mayotte', code: 'YT' },
+      { name: 'Mexico', code: 'MX' },
+      { name: 'Micronesia, Federated States of', code: 'FM' },
+      { name: 'Moldova, Republic of', code: 'MD' },
+      { name: 'Monaco', code: 'MC' },
+      { name: 'Mongolia', code: 'MN' },
+      { name: 'Montserrat', code: 'MS' },
+      { name: 'Morocco', code: 'MA' },
+      { name: 'Mozambique', code: 'MZ' },
+      { name: 'Myanmar', code: 'MM' },
+      { name: 'Namibia', code: 'NA' },
+      { name: 'Nauru', code: 'NR' },
+      { name: 'Nepal', code: 'NP' },
+      { name: 'Netherlands', code: 'NL' },
+      { name: 'Netherlands Antilles', code: 'AN' },
+      { name: 'New Caledonia', code: 'NC' },
+      { name: 'New Zealand', code: 'NZ' },
+      { name: 'Nicaragua', code: 'NI' },
+      { name: 'Niger', code: 'NE' },
+      { name: 'Nigeria', code: 'NG' },
+      { name: 'Niue', code: 'NU' },
+      { name: 'Norfolk Island', code: 'NF' },
+      { name: 'Northern Mariana Islands', code: 'MP' },
+      { name: 'Norway', code: 'NO' },
+      { name: 'Oman', code: 'OM' },
+      { name: 'Pakistan', code: 'PK' },
+      { name: 'Palau', code: 'PW' },
+      { name: 'Palestinian Territory, Occupied', code: 'PS' },
+      { name: 'Panama', code: 'PA' },
+      { name: 'Papua New Guinea', code: 'PG' },
+      { name: 'Paraguay', code: 'PY' },
+      { name: 'Peru', code: 'PE' },
+      { name: 'Philippines', code: 'PH' },
+      { name: 'Pitcairn', code: 'PN' },
+      { name: 'Poland', code: 'PL' },
+      { name: 'Portugal', code: 'PT' },
+      { name: 'Puerto Rico', code: 'PR' },
+      { name: 'Qatar', code: 'QA' },
+      { name: 'Reunion', code: 'RE' },
+      { name: 'Romania', code: 'RO' },
+      { name: 'Russian Federation', code: 'RU' },
+      { name: 'RWANDA', code: 'RW' },
+      { name: 'Saint Helena', code: 'SH' },
+      { name: 'Saint Kitts and Nevis', code: 'KN' },
+      { name: 'Saint Lucia', code: 'LC' },
+      { name: 'Saint Pierre and Miquelon', code: 'PM' },
+      { name: 'Saint Vincent and the Grenadines', code: 'VC' },
+      { name: 'Samoa', code: 'WS' },
+      { name: 'San Marino', code: 'SM' },
+      { name: 'Sao Tome and Principe', code: 'ST' },
+      { name: 'Saudi Arabia', code: 'SA' },
+      { name: 'Senegal', code: 'SN' },
+      { name: 'Serbia and Montenegro', code: 'CS' },
+      { name: 'Seychelles', code: 'SC' },
+      { name: 'Sierra Leone', code: 'SL' },
+      { name: 'Singapore', code: 'SG' },
+      { name: 'Slovakia', code: 'SK' },
+      { name: 'Slovenia', code: 'SI' },
+      { name: 'Solomon Islands', code: 'SB' },
+      { name: 'Somalia', code: 'SO' },
+      { name: 'South Africa', code: 'ZA' },
+      { name: 'South Georgia and the South Sandwich Islands', code: 'GS' },
+      { name: 'Spain', code: 'ES' },
+      { name: 'Sri Lanka', code: 'LK' },
+      { name: 'Sudan', code: 'SD' },
+      { name: 'Suriname', code: 'SR' },
+      { name: 'Svalbard and Jan Mayen', code: 'SJ' },
+      { name: 'Swaziland', code: 'SZ' },
+      { name: 'Sweden', code: 'SE' },
+      { name: 'Switzerland', code: 'CH' },
+      { name: 'Syrian Arab Republic', code: 'SY' },
+      { name: 'Taiwan, Province of China', code: 'TW' },
+      { name: 'Tajikistan', code: 'TJ' },
+      { name: 'Tanzania, United Republic of', code: 'TZ' },
+      { name: 'Thailand', code: 'TH' },
+      { name: 'Timor-Leste', code: 'TL' },
+      { name: 'Togo', code: 'TG' },
+      { name: 'Tokelau', code: 'TK' },
+      { name: 'Tonga', code: 'TO' },
+      { name: 'Trinidad and Tobago', code: 'TT' },
+      { name: 'Tunisia', code: 'TN' },
+      { name: 'Turkey', code: 'TR' },
+      { name: 'Turkmenistan', code: 'TM' },
+      { name: 'Turks and Caicos Islands', code: 'TC' },
+      { name: 'Tuvalu', code: 'TV' },
+      { name: 'Uganda', code: 'UG' },
+      { name: 'Ukraine', code: 'UA' },
+      { name: 'United Arab Emirates', code: 'AE' },
+      { name: 'United Kingdom', code: 'GB' },
+      { name: 'United States', code: 'US' },
+      { name: 'United States Minor Outlying Islands', code: 'UM' },
+      { name: 'Uruguay', code: 'UY' },
+      { name: 'Uzbekistan', code: 'UZ' },
+      { name: 'Vanuatu', code: 'VU' },
+      { name: 'Venezuela', code: 'VE' },
+      { name: 'Viet Nam', code: 'VN' },
+      { name: 'Virgin Islands, British', code: 'VG' },
+      { name: 'Virgin Islands, U.S.', code: 'VI' },
+      { name: 'Wallis and Futuna', code: 'WF' },
+      { name: 'Western Sahara', code: 'EH' },
+      { name: 'Yemen', code: 'YE' },
+      { name: 'Zambia', code: 'ZM' },
+      { name: 'Zimbabwe', code: 'ZW' }
+    ];
+
+    let what_options = where_options;
+
+    function page1() {
+      let tabActive = 1;
+      if (location.href.split("#")[1] !== undefined) {
+        tabActive = parseInt(location.href.split("#")[1]);
+      } else {
+        tabActive = 1;
+      }
+      // datepicker
+
+      let newForm = {
+        where: {
+          from: "",
+          to: "",
+        },
+        what: {
+          name: "",
+          code: ""
+        },
+        when: {
+          from: {
+            label: "",
+            month: "",
+            date: ""
+          },
+          to: {
+            label: "",
+            month: "",
+            date: ""
+          },
+        },
+        who: [],
+      }
+
+      if (localStorage.getItem("form-data-page1")) {
+        let jsonData = localStorage.getItem("form-data-page1") || "";
+        newForm = JSON.parse(jsonData);
+      }
+
+      function getQuote() {
+        // Action data
+        localStorage.setItem("form-data-page1", JSON.stringify(newForm));
+        location.href = "quote.html"
+      }
+      return {
+        selectShow: {
+          from: false,
+          to: false,
+          what: false,
+        },
+        search_what: "",
+        search_where: "",
+        data: {
+          tab: tabActive,
+          form: newForm
+        },
+        where_options: where_options,
+        what_options: what_options,
+        dynamicSort(property) {
+          var sortOrder = 1;
+          if (property[0] === "-") {
+            sortOrder = -1;
+            property = property.substr(1);
+          }
+          return function (a, b) {
+            /* next line works with strings and numbers, 
+            * and you may want to customize it to your needs
+            */
+            var result = (a[property] < b[property]) ? -1 : (a[property] > b[property]) ? 1 : 0;
+            return result * sortOrder;
+          }
+        },
+        whereFilteredOptions() {
+          // return where_options.sort(this.dynamicSort("name"));
+          return where_options.filter((option) => {
+            name = option.name.toLowerCase()
+            return name.includes(this.search_where.toLowerCase());
+          }).sort(this.dynamicSort("name"));
+        },
+        whatFilteredOptions() {
+          return what_options.filter((option) => {
+            name = option.name.toLowerCase()
+            return name.includes(this.search_what.toLowerCase());
+          }).sort(this.dynamicSort("name"));
+        },
+        nextTab() {
+          // Validation
+          let nexttab = false
+          if (this.data.tab === 1 && this.data.form.where.from !== "" && this.data.form.where.to !== "") {
+            nexttab = true
+          }
+          else if (this.data.tab === 2 && this.data.form.what.code !== "") {
+            nexttab = true
+          }
+          else if (this.data.tab === 3 && this.data.form.when.from.date !== "" && this.data.form.when.to.date !== "") {
+            nexttab = true
+          }
+          else if (this.data.tab === 4) {
+            nexttab = true
+          }
+          else {
+            nexttab = false
+          }
+          // End
+          if (nexttab) {
+            this.data.tab = this.data.tab + 1
+            location.href = '#0' + this.data.tab
+          } else {
+            // alert("Nooo")
+          }
+        },
+        getQuote,
+        showDatepicker: {
+          from: false,
+          to: false
+        },
+        datepickerValue: "",
+        month: "",
+        year: "",
+        no_of_days: [],
+        blankdays: [],
+        days: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+        initDate() {
+          let today = new Date();
+          this.month = today.getMonth();
+          this.year = today.getFullYear();
+          this.datepickerValue = new Date(
+            this.year,
+            this.month,
+            today.getDate()
+          ).toDateString();
+        },
+        isToday(date) {
+          const today = new Date();
+          const d = new Date(this.year, this.month, date);
+          return today.toDateString() === d.toDateString() ? true : false;
+        },
+
+        getDateValue(date) {
+          let selectedDate = new Date(this.year, this.month, date);
+          this.datepickerValue = selectedDate.toDateString();
+
+          this.$refs.date.value =
+            selectedDate.getFullYear() +
+            "-" +
+            ("0" + selectedDate.getMonth()).slice(-2) +
+            "-" +
+            ("0" + selectedDate.getDate()).slice(-2);
+
+          // save to real model
+          if (this.showDatepicker.from) {
+            this.data.form.when.from = {
+              label: ("0" + selectedDate.getDate()).slice(-2) + " " + MONTH_NAMES[this.month] + " " + this.year,
+              month: ("0" + selectedDate.getDate()).slice(-2) + " " + MONTH_NAMES[this.month],
+              date: this.$refs.date.value
+            }
+          }
+          if (this.showDatepicker.to) {
+            this.data.form.when.to = {
+              label: ("0" + selectedDate.getDate()).slice(-2) + " " + MONTH_NAMES[this.month] + " " + this.year,
+              month: ("0" + selectedDate.getDate()).slice(-2) + " " + MONTH_NAMES[this.month],
+              date: this.$refs.date.value
+            }
+          }
+
+          this.showDatepicker = {
+            from: false,
+            to: false
+          };
+        },
+
+        getNoOfDays() {
+          let daysInMonth = new Date(this.year, this.month + 1, 0).getDate();
+
+          // find where to start calendar day of week
+          let dayOfWeek = new Date(this.year, this.month).getDay();
+          let blankdaysArray = [];
+          for (var i = 1; i <= dayOfWeek; i++) {
+            blankdaysArray.push(i);
+          }
+
+          let daysArray = [];
+          for (var i = 1; i <= daysInMonth; i++) {
+            daysArray.push(i);
+          }
+
+          this.blankdays = blankdaysArray;
+          this.no_of_days = daysArray;
+        },
+      };
     }
-  ];
-
-  let what_options = [
-    {
-        "name": "Country Name",
-        "code": "CN"
-    },
-    {
-        "name": "Country Name 2",
-        "code": "CN2"
-    },
-    {
-        "name": "Country Name 3",
-        "code": "CN3"
-    },
-    {
-        "name": "Country Name 4",
-        "code": "CN4"
-    },
-    {
-        "name": "Country Name 5",
-        "code": "CN5"
-    },
-    {
-        "name": "Country Name 6",
-        "code": "CN6"
-    },
-  ];
-        function page1() {
-            let tabActive = 1;
-            if (location.href.split("#")[1] !== undefined) {
-                tabActive = parseInt(location.href.split("#")[1]);
-            } else {
-                tabActive = 1;
-            }
-            // datepicker
-
-            let newForm = {
-                where: {
-                    from: "",
-                    to: "",
-                },
-                what: {
-                    name: "",
-                    code: ""
-                },
-                when: {
-                    from: {
-                        label: "",
-                        month: "",
-                        date: ""
-                    },
-                    to: {
-                        label: "",
-                        month: "",
-                        date: ""
-                    },
-                },
-                who: [],
-            }
-
-            if (localStorage.getItem("form-data-page1")) {
-                let jsonData = localStorage.getItem("form-data-page1") || "";
-                newForm = JSON.parse(jsonData);
-            }
-
-            function getQuote() {
-                // Action data
-                localStorage.setItem("form-data-page1", JSON.stringify(newForm));
-                location.href = "quote.html"
-            }
-            return {
-                selectShow: {
-                    from: false,
-                    to: false,
-                    what: false,
-                },
-                search_what: "",
-                search_where: "",
-                data: {
-                    tab: tabActive,
-                    form: newForm
-                },
-                where_options: where_options,
-                what_options: what_options,
-                dynamicSort(property) {
-                var sortOrder = 1;
-                if(property[0] === "-") {
-                    sortOrder = -1;
-                    property = property.substr(1);
-                }
-                return function (a,b) {
-                    /* next line works with strings and numbers, 
-                    * and you may want to customize it to your needs
-                    */
-                    var result = (a[property] < b[property]) ? -1 : (a[property] > b[property]) ? 1 : 0;
-                    return result * sortOrder;
-                }
-            },
-                whereFilteredOptions() {
-                    return where_options.sort(this.dynamicSort("name"));
-                    // if(this.search_where){
-                        // return where_options.filter((option) => {
-                        //     name = option.name.toLowerCase()
-                        //     return name.includes(this.search_where.toLowerCase());
-                        // });
-                    // }else{
-                    //     return ""
-                    // }
-                },
-                whatFilteredOptions() {
-                    if(this.search_what){
-                        return what_options.filter((option) => {
-                            name = option.name.toLowerCase()
-                            return name.includes(this.search_what.toLowerCase());
-                        }).sort(this.dynamicSort("name"));
-                    }else{
-                        return ""
-                    }
-                },
-                nextTab() {
-                    // Validation
-                    let nexttab = false
-                    if(this.data.tab === 1 && this.data.form.where.from !== ""  && this.data.form.where.to !== ""){
-                        nexttab = true
-                    }
-                    else if(this.data.tab === 2 && this.data.form.what.code !== ""){
-                        nexttab = true
-                    }
-                    else if(this.data.tab === 3 && this.data.form.when.from.date !== "" && this.data.form.when.to.date !== ""){
-                        nexttab = true
-                    }
-                    else if(this.data.tab === 4){
-                        nexttab = true
-                    }
-                    else{
-                        nexttab = false
-                    }
-                    // End
-                    if(nexttab){
-                        this.data.tab = this.data.tab+1
-                        location.href = '#0'+this.data.tab
-                    }else{
-                        // alert("Nooo")
-                    }
-                },
-                getQuote,
-                showDatepicker: {
-                    from: false,
-                    to: false
-                },
-                datepickerValue: "",
-                month: "",
-                year: "",
-                no_of_days: [],
-                blankdays: [],
-                days: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
-                initDate() {
-                    let today = new Date();
-                    this.month = today.getMonth();
-                    this.year = today.getFullYear();
-                    this.datepickerValue = new Date(
-                        this.year,
-                        this.month,
-                        today.getDate()
-                    ).toDateString();
-                },
-                isToday(date) {
-                    const today = new Date();
-                    const d = new Date(this.year, this.month, date);
-                    return today.toDateString() === d.toDateString() ? true : false;
-                },
-
-                getDateValue(date) {
-                    let selectedDate = new Date(this.year, this.month, date);
-                    this.datepickerValue = selectedDate.toDateString();
-
-                    this.$refs.date.value =
-                        selectedDate.getFullYear() +
-                        "-" +
-                        ("0" + selectedDate.getMonth()).slice(-2) +
-                        "-" +
-                        ("0" + selectedDate.getDate()).slice(-2);
-
-                    // save to real model
-                    if (this.showDatepicker.from) {
-                        this.data.form.when.from = {
-                            label: ("0" + selectedDate.getDate()).slice(-2) + " " + MONTH_NAMES[this.month] + " " + this.year,
-                            month: ("0" + selectedDate.getDate()).slice(-2) + " " + MONTH_NAMES[this.month],
-                            date: this.$refs.date.value
-                        }
-                    }
-                    if (this.showDatepicker.to) {
-                        this.data.form.when.to = {
-                            label: ("0" + selectedDate.getDate()).slice(-2) + " " + MONTH_NAMES[this.month] + " " + this.year,
-                            month: ("0" + selectedDate.getDate()).slice(-2) + " " + MONTH_NAMES[this.month],
-                            date: this.$refs.date.value
-                        }
-                    }
-
-                    this.showDatepicker = {
-                        from: false,
-                        to: false
-                    };
-                },
-
-                getNoOfDays() {
-                    let daysInMonth = new Date(this.year, this.month + 1, 0).getDate();
-
-                    // find where to start calendar day of week
-                    let dayOfWeek = new Date(this.year, this.month).getDay();
-                    let blankdaysArray = [];
-                    for (var i = 1; i <= dayOfWeek; i++) {
-                        blankdaysArray.push(i);
-                    }
-
-                    let daysArray = [];
-                    for (var i = 1; i <= daysInMonth; i++) {
-                        daysArray.push(i);
-                    }
-
-                    this.blankdays = blankdaysArray;
-                    this.no_of_days = daysArray;
-                },
-            };
-        }
-    </script>
+  </script>
 </body>
 
 </html>
